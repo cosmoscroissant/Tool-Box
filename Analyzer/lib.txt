@@ -1,0 +1,74 @@
+=== FUNCTIONS ===
+# add actual function names here, one per line
+runtime__*
+main_*
+
+=== NON-FUNCTIONS ===
+# add non-function names here, one per line
+# language keywords
+if
+else if
+while
+for
+switch
+int
+return
+char
+void
+static
+extern
+memset
+qmemcpy
+reflect_*
+# helper macros from IDA
+a*
+v*
+LABEL_*
+qword_*
+BYTE*
+SBYTE*
+*WORD
+LOWORD
+JUMPOUT
+LOBYTE
+LODWORD
+HIBYTE
+HIDWORD
+_BitScanForward*
+_InterlockedAnd*
+_InterlockedOr*
+__int*
+_mm_*
+os_*
+sys_*
+fmt_*
+type_*
+time_*
+_Interlocked*
+__PAIR64__
+__SPAIR64__
+__int64
+__writefsqword
+__readfsqword
+_InterlockedExchange
+__rdtsc
+sys_arch_prctl
+internal_bytealg_IndexByteString
+__CFADD__
+__OFADD__
+__OFSUB__
+__PAIR128__
+__ROL4__
+__ROR4__
+__ROR8__
+__debugbreak
+_byteswap_uint64
+_byteswap_ulong
+# other
+memory
+called
+indexbytebody
+tracealloc
+callRet
+d
+edx
