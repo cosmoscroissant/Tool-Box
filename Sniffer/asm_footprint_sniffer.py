@@ -250,7 +250,7 @@ class IoCScanner:
             "",
             "SUMMARY",
             "-" * 40,
-            f"Total files processed: {total_files}",
+            f"Total Files Processed: {total_files}",
             f"Files with IoCs: {files_with_iocs}",
             f"Files with Hashes: {files_with_hashes}",
             f"Files with Errors: {files_with_errors}",

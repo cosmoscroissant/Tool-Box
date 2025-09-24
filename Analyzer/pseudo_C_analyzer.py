@@ -288,7 +288,7 @@ class FileManager:
         
         return len(new_names)
 
-    # # create organized_code.txt, flow_chart.txt, missing_functions.txt
+    # create organized_code.txt, flow_chart.txt, missing_functions.txt
     @staticmethod
     def write_output_files(flow, all_functions, call_map, missing_functions, lib_functions, lib_non_functions):
         filtered_names = FunctionFilter.filter_functions(all_functions, missing_functions,lib_functions, lib_non_functions)
