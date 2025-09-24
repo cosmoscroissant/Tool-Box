@@ -1,4 +1,8 @@
 # Tool Box
+## Requirements
+- Python 3.10+
+- IDA 9.2
+
 ## Downloader
 ### Malware Sample Downloader
 sample_downloader.py will log in to virus.exchange and download the malware samples that are shown on the web page. It will refresh every 15 seconds to check for new samples. Before running the script, please change these three values:
@@ -37,7 +41,9 @@ asm_footprint_sniffer.py generates report containing hashes of the files and IoC
 - ssh_patterns: referenced SSH client
 - openssh_full: catches identity spoofing (complete email address)
 - operational_files: files that carried out the operation
-- dependency_paths: dependency in used 
+- dependency_paths: dependency in used
+
+f.y.i. lib.txt is for blacklisting URLs that are unrelated to samples, such as hex-rays.com.
 
 ### How-To
 `python3 asm_footprint_sniffer.py <file_path> -o report.txt`
