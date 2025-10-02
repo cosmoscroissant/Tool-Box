@@ -1,0 +1,39 @@
+================================================================================
+Sniffer Report - 1000-10-02 10:10:10
+================================================================================
+
+SUMMARY
+----------------------------------------
+Total Files Processed: 1
+Files with IoCs: 1
+Files with Hashes: 1
+Files with Errors: 0
+
+IoC CATEGORIES
+----------------------------------------
+Domains: 1
+Files: 2
+Main Functions/Variables: 4
+
+DETAILED RESULTS
+================================================================================
+File: sample\hello.asm
+------------------------------------------------------------
+File Hashes:
+SHA256: f9aaf2fb9c19e9e83cfd82743720346e92f5ceaf55b4d8edb825fa82f6556407
+MD5: 28cae262b22a4a7a9d9a6c7403a79793
+CRC32: d40d3fe5
+
+Domains:
+eq.io
+
+Files:
+go.sh
+zoneinfo.zip
+
+Main Functions/Variables:
+main.func1
+main.func2
+main.main
+main_main
+
