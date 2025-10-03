@@ -135,9 +135,9 @@ class FunctionExtractor:
         return '\n'.join(result)
 
 class LibraryManager:
-    # load lib.txt file that erase noise by whitelisting function and blacklisting non-function
+    # load pseudo_C_analyzer_lib.txt file that erase noise by whitelisting function and blacklisting non-function
     @staticmethod
-    def load_library(lib_file="lib.txt"):
+    def load_library(lib_file="pseudo_C_analyzer_lib.txt"):
         if not os.path.exists(lib_file):
             LibraryManager._create_empty_library(lib_file)
             return set(), set()
@@ -170,7 +170,7 @@ class LibraryManager:
     def matches_pattern(name, patterns):
         return any(fnmatch.fnmatch(name, pattern) for pattern in patterns)
 
-    # creat lib.txt if absent
+    # creat pseudo_C_analyzer_lib.txt if absent
     @staticmethod
     def _create_empty_library(lib_file):
         with open(lib_file, 'w', encoding='utf-8') as f:
@@ -250,7 +250,7 @@ class CallGraphBuilder:
         return not any(pattern in context for pattern in exclusion_patterns)
 
 class FunctionFilter:
-    # apply non-function filter pattern (lib.txt)
+    # apply non-function filter pattern (pseudo_C_analyzer_lib.txt)
     @staticmethod
     def filter_functions(all_functions, missing_functions, lib_functions, lib_non_functions):
         all_names = set(all_functions.keys()) | missing_functions
@@ -267,7 +267,7 @@ class FileManager:
         
         with open("all_functions.txt", "w", encoding='utf-8') as f:
             f.write("=== NEW FUNCTIONS TO CLASSIFY ===\n"
-                   "(add these to lib.txt under FUNCTIONS or NON-FUNCTIONS)\n")
+                   "(add these to pseudo_C_analyzer_lib.txt under FUNCTIONS or NON-FUNCTIONS)\n")
             
             if new_names:
                 found = [name for name in new_names 
@@ -284,7 +284,7 @@ class FileManager:
                     cleaned_missing = [clean_function_name(name) for name in sorted(missing)]
                     f.write('\n'.join(cleaned_missing) + '\n')
             else:
-                f.write("all functions already classified in lib.txt\n")
+                f.write("all functions already classified in pseudo_C_analyzer_lib.txt\n")
         
         return len(new_names)
 

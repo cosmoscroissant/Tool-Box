@@ -1,5 +1,5 @@
 === NEW FUNCTIONS TO CLASSIFY ===
-(add these to lib.txt under FUNCTIONS or NON-FUNCTIONS)
+(add these to pseudo_C_analyzer_lib.txt under FUNCTIONS or NON-FUNCTIONS)
 === FOUND FUNCTIONS ===
 cmpbody
 debugCall1024

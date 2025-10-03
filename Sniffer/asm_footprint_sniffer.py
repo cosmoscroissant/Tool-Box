@@ -84,7 +84,7 @@ class IoCScanner:
         self.format_prefixes = ('%s', '%a', '%d')
 
     def load_lib(self) -> Set[str]:
-        lib_file = "lib.txt"
+        lib_file = "asm_footprint_sniffer_lib.txt"
         lib = set()
         
         try:

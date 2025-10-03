@@ -1,5 +1,47 @@
-# IDA Python API
-## ida_funcs
+# Extractor
+## IR Extractor
+ida_ir_progress_extractor.ps1 runs under **Administrator mode in powershell**, it monitors the progress of analysis_files_generator.py.
+
+ida_ir_extractor.py generates 3 files:
+- ir.txt: IR for entire file
+- ir_with_idainfo.txt: IR with IDA default information
+- ir_summary.txt: summary for duration time and success rate of generating IR
+
+f.y.i. 
+
+1. Microcode is IR (Intermediate Representation) in IDA
+- [IDA 7.1](https://docs.hex-rays.com/release-notes/7_1)
+    - "With this version of IDA we publish the decompiler intermediate language: the microcode."
+- [IDA 9.2 Spying on Decompiler Internals: The Hex-Rays Microcode Viewer](https://hex-rays.com/blog/spying-on-decompiler-internals-the-hex-rays-microcode-viewer)
+
+2. Fix Execution Policy Error
+
+If there is an error after executing ida_ir_progress_extractor.ps1, such as:
+
+```
+ida_ir_progress_extractor.ps1 cannot be loaded because running scripts isdisabled on this system.
+For more information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
+```
+
+You can fix it by setting the execution policy `Set-ExecutionPolicy RemoteSigned`. After execution, use `Set-ExecutionPolicy Restricted` to set the policy back to its default value. ([PowerShell says "execution of scripts is disabled on this system."](https://stackoverflow.com/questions/4037939/powershell-says-execution-of-scripts-is-disabled-on-this-system))
+
+3. Warnings in ida_ir_extractor.py
+
+The warnings appear because ida_* modules (ida_range, ida_kernwin, ida_hexrays, etc.) are part of IDA Pro's Python API and are only available when the script runs inside IDA Pro.
+
+### How-To
+`pip3 install python-idb`
+
+`.\ida_ir_progress_extractor.ps1 <sample_name>`
+
+or
+
+`pip3 install python-idb`
+
+`"C:\Program Files\IDA Professional 9.2\ida.exe" -L"ir_with_idainfo.txt" -A -S"ida_ir_extractor.py" "<sample_name>"`
+
+### IDA Python API
+#### ida_funcs
 ```
 function_quantity = ida_funcs.get_func_qty()
 function_count = 0
@@ -26,7 +68,7 @@ Get pointer to function structure by number.
 
 Get function name.
 
-## ida_hexrays
+#### ida_hexrays
 ```
 hex_ray_failure = ida_hexrays.hexrays_failure_t()
 microcode_ranges = ida_hexrays.mba_ranges_t()
@@ -97,14 +139,14 @@ _print is API layered architected, it prints out the visual display.
 └────────────────────────────────────────────────────┘ 
 ```
 
-## ida_range
-### range_t
+#### ida_range
+##### range_t
 ```
 microcode_ranges.ranges.push_back(ida_range.range_t(func.start_ea, func.end_ea))
 ```
 range_t is a continuous address range from start_ea (included) to end_ea (excluded).
 
-## Referenced Documents
+#### Referenced Documents
 ida_ir_extractor.py is based of these documents.
 - [-L#### name of the log file](https://docs.hex-rays.com/user-guide/configuration/command-line-switches)
 - [IDAPython/examples/decompiler/vds13.py](https://github.com/HexRaysSA/IDAPython/blob/9.0sp1/examples/decompiler/vds13.py)
