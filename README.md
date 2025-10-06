@@ -13,6 +13,8 @@ Tool_Box/
 ├── analysis_files_generator.py
 ├── pseudo_C_analyzer.py
 ├── asm_footprint_sniffer.py
+├── ida_ir_pattern_analyzer.py
+├── ida_ir_pattern_visualizer.html
 └── sample/
     ├── hello.exe
     ├── ida_ir_progress_extractor.ps1
@@ -35,6 +37,17 @@ Tool_Box/
 ├── flow_chart.txt
 ├── asm_footprint_sniffer.py
 ├── report.txt
+├── ida_ir_pattern_analyzer.py
+├── ida_ir_pattern_visualizer.html
+├── ir_analysis_output/
+|   └── 20151225_080000/
+|       ├── graph_data.json
+|       ├── index.html
+|       ├── results.json
+|       ├── metadata.json
+|       └── images
+|           ├── feature_scatter.png
+|           └── similarity_heatmap.png
 └── sample/
     ├── hello.exe (sample)
     ├── hello.i64
