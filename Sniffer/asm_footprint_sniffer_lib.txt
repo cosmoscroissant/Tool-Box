@@ -1,6 +1,0 @@
-=== BLACKLIST URLS ===
-hex-rays.com
-godebug.update
-golang.org
-libssh.org
-openssh.com

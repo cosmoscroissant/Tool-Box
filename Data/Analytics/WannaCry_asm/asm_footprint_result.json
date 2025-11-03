@@ -1,0 +1,169 @@
+[
+  {
+    "file": "Data/WannaCry/ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.asm",
+    "file_hashes": {
+      "sha256": "ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa",
+      "md5": "84c82835a5d21bbcf75a61706d8ab549",
+      "crc32": "4022fcaa"
+    },
+    "iocs": {
+      "universal_paths": [
+        "%s\\Intel",
+        "%s\\ProgramData",
+        "%s\\\\%s",
+        "%s\\\\Intel",
+        "%s\\\\ProgramData",
+        "/..\\\\",
+        "Global\\MsWinZonesCacheCounterMutexA",
+        "Global\\\\MsWinZonesCacheCounterMutexA",
+        "Software\\\\",
+        "\\../",
+        "\\..\\",
+        "\\\\../",
+        "\\\\..\\\\"
+      ],
+      "files": [
+        "ADVAPI32.dll",
+        "KERNEL32.dll",
+        "MSVCP60.dll",
+        "MSVCRT.dll",
+        "OLEAUT32.dll",
+        "SHELL32.dll",
+        "USER32.dll",
+        "WS2_32.dll",
+        "advapi32.dll",
+        "cmd.exe",
+        "kernel32.dll",
+        "tasksche.exe"
+      ],
+      "suspicious_string": [
+        "UAE@XZ",
+        "WNcry@2ol7",
+        "YAPAXI@Z",
+        "YAXPAX@Z",
+        "_WinMain@16"
+      ],
+      "bitcoin_wallets": [
+        "115p7UMMngoj1pMvkpHijcRdfJNXj6LrLn",
+        "12t9YDPgwueZ9NyMgw519p7AA8isjr6SMw",
+        "13AM4VW2dhxYgXeQepoHkHSQuy6NgaEb94"
+      ],
+      "windows_commands": [
+        "attrib +h",
+        "attrib +h .',0",
+        "cmd.exe /c \"%s\"',0",
+        "cmd.exe /c \\\"%s\\",
+        "icacls . /grant Everyone:F /T /C /Q"
+      ],
+      "custom_strings": [
+        "CHAR aTWnry[]",
+        "Str2 db 'c.wnry',0",
+        "WANACRY!",
+        "WanaCrypt0r",
+        "aTWnry db",
+        "aTWnry db 't.wnry',0",
+        "aWanacry db",
+        "aWanacry db 'WANACRY!',0",
+        "c.wnry",
+        "push    offset Source   ; \"WanaCrypt0r\"",
+        "push    offset Str2     ; \"c.wnry\"",
+        "push    offset aTWnry   ; \"t.wnry\"",
+        "push    offset aWanacry ; \"WANACRY!\"",
+        "t.wnry",
+        "text \"UTF-16LE\", 'WanaCrypt0r',0"
+      ],
+      "indicator_strings": [
+        "attrib +h .",
+        "kernel32.dll",
+        "tasksche.exe"
+      ]
+    }
+  },
+  {
+    "file": "Data/WannaCry/24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.asm",
+    "file_hashes": {
+      "sha256": "24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c",
+      "md5": "db349b97c37d22f5ea1d1841e3c89eb4",
+      "crc32": "9fbb1227"
+    },
+    "iocs": {
+      "protocols_full": [
+        "http://www.iuqerfsodp9ifjaposdfjhgo",
+        "http://www.iuqerfsodp9ifjaposdfjhgosuri"
+      ],
+      "urls": [
+        "http://www.iuqerfsodp9ifjaposdfjhgo",
+        "http://www.iuqerfsodp9ifjaposdfjhgosuri"
+      ],
+      "domains": [
+        "surijfaewrwergwea.com"
+      ],
+      "universal_paths": [
+        "C:\\%s\\%s",
+        "C:\\%s\\qeriuwjhrf",
+        "C:\\\\%s\\\\%s",
+        "C:\\\\%s\\\\qeriuwjhrf",
+        "\\\\%s\\IPC$",
+        "\\\\\\\\%s\\\\IPC$"
+      ],
+      "files": [
+        "32.dll",
+        "ADVAPI32.dll",
+        "KERNEL32.dll",
+        "MSVCP60.dll",
+        "MSVCRT.dll",
+        "WININET.dll",
+        "WS2_32.dll",
+        "iphlpapi.dll",
+        "surijfaewrwergwea.com",
+        "tasksche.exe"
+      ],
+      "suspicious_string": [
+        "0_Lockit@std",
+        "1_Lockit@std",
+        "QAE@XZ",
+        "YAPAXI@Z",
+        "_WinMain@16"
+      ],
+      "bitcoin_wallets": [
+        "11fB8idliLHC2l1nYd2tklRf04bSMxBlcZa",
+        "19HE4ctdxuhxCXMh2oQfHkYe2cxb1Y3Q6uH",
+        "1D5hn82L2KejU4OnLaNrMFiGieF4C53LX7M",
+        "1E1TMadDs0nlbPlGBftJmUsG7mvQfgv4XYX",
+        "1IiqBm2TMu6vR8ISFbSJMgLtedMtOpDMjvX",
+        "1LVWtUkgqM0cPkq7k6KEwW7ued",
+        "1MdKiBVBsf10KiFSGBxBEBSIUGcwj7NWJmE",
+        "1O8h7UMITpVrhQvkEMcrDODxVi6",
+        "1Oe4sfNcUHLpDtHW05OCUj7HyIV1cOr2a",
+        "1QLIx87qMRxXTwTDP690T6BmRPwbnDjLrdc",
+        "1Y4dYgvVmE9JSmet0QqeSEB5gFqS8ae8I",
+        "1cT5EzU5oIR7Sj5jVO7miqlawsIW33Wxlqh",
+        "1n6CQZn5FObY8LvAFP7wJQNGxh4wIin9TF9",
+        "1oJGT5WeYPevOCpQJUGBZavDgjC",
+        "34VNQ2uQRSspH9b4QaNlc3QHOSu0ZyWgl",
+        "3CXM7P0q8SIiNebTjCmERyc8gaTh7IiN8g2",
+        "3D2nRt9wLJmA44P8hcsWfuNL7SRflVzXQHc",
+        "3GN5G5hzthnw2zIj0irwsbGLd3o",
+        "3LB0Yi5Wjp0t2It2PyrnnzZsgKGv",
+        "3Q3bKY4mQGAT5ptJdS4cPnRuhyaUgGdABBu",
+        "3ftxH95kTkKdGtEbMfbdMxurHPTBKTm5MG6",
+        "3g08sJ5IIvrDPUg9UDxblaYNQjYb2zirFVO",
+        "3hIycfQUnnzWBhAHD95r8ITOsP1f",
+        "3yNhHJhcnGqyI1nFFSiHLzRfbzT5nDJWj20",
+        "3z9XR9rS0gpX9YYbuxOvXgcEhj8A4G"
+      ],
+      "command_line_strings": [
+        "C:\\%s\\qeriuwjhrf",
+        "C:\\\\%s\\\\qeriuwjhrf"
+      ],
+      "format_string_commands": [
+        "%s -m security",
+        "'%s -m security',0"
+      ],
+      "indicator_strings": [
+        "Microsoft Security Center (2.0) Service",
+        "mssecsvc2.0"
+      ]
+    }
+  }
+]

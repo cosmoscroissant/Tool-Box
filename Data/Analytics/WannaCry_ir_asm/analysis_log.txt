@@ -1,0 +1,207 @@
+================================================================================
+Session started: 0000-00-00 00:00:00
+Logging to: Data/Analytics/WannaCry_ir_asm/analysis_log.txt
+================================================================================
+============================================================
+IR STRUCTURAL SIMILARITY ANALYZER
+Purpose: analyze and cluster IDA microcode by structural patterns
+Features: CFG/DFG analysis with 25 structural features
+============================================================
+
+Scanning Files From: Data/WannaCry
+found 2 files
+
+
+Processing file: ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt
+full dataflow analysis on 17 blocks
+Parse Microcode Complete: 17 blocks
+CFG built: 17 nodes
+Features Extracted: 27 features
+ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt: 17 blocks (complex_algorithm)
+Tags: uses_aes, aes_detected, has_memset, has_malloc, has_strcpy
+
+Processing file: 24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt
+full dataflow analysis on 17 blocks
+Parse Microcode Complete: 17 blocks
+CFG built: 17 nodes
+Features Extracted: 27 features
+24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt: 17 blocks (complex_algorithm)
+Tags: uses_aes, aes_detected, has_memset, has_malloc, has_strcpy
+
+Feature Extraction Complete:
+  - valid_files: 2
+  - all_blocks: 2
+  - feature_matrix shape: (2, 27)
+
+Extracting Canonical Graph Forms
+  [1/2] processing ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt (17 blocks)
+  [2/2] processing 24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt (17 blocks)
+SUCCESS: extracted 2 canonical forms
+
+Computing Isomorphic Groups for 2 Files
+found 0 isomorphic groups
+SUCCESS: found 0 groups
+
+Clustering Similar Structures
+Trying 5 Different DBSCAN Epsilon Values
+  [1/5] testing eps=0.3
+    found 2 clusters
+  [2/5] testing eps=0.5
+    found 2 clusters
+  [3/5] testing eps=0.7
+    found 2 clusters
+  [4/5] testing eps=1.0
+    found 2 clusters
+  [5/5] testing eps=1.5
+    found 2 clusters
+best clustering: 0 clusters
+
+Mining Frequent Subgraph Patterns
+processing 2 files
+  [1/2] ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt (17 blocks)
+  extracted 124 subgraphs
+  [2/2] 24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt (17 blocks)
+  extracted 156 subgraphs
+  collected 229 total unique patterns
+Found 51 Frequent Patterns (appearing in 2+ files)
+
+Matching Patterns to Files
+matching 51 patterns to files
+  ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt: 51 patterns matched
+  24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt: 51 patterns matched
+
+Computing Semantic Similarity Matrix (2x2 = 4 comparisons)
+  processed 0/2 files (1/1 comparisons, 100.0%)
+  processed 1/2 files (1/1 comparisons, 100.0%)
+
+Computing Structural Similarity from Canonical Forms
+computing canonical similarity matrix (2x2 comparisons)
+  processed 0/2 files (1/1 comparisons, 100.0%)
+  processed 1/2 files (1/1 comparisons, 100.0%)
+
+
+
+============================================================
+IR STRUCTURAL ANALYSIS RESULTS
+============================================================
+Total Files Scanned: 2
+Successfully Analyzed: 2
+Structural Clusters: 0
+Unique/Unmatched Files: 2
+
+Semantic Analysis:
+  Files with Crypto: 2
+  Files with Stdlib Patterns: 2
+
+Cryptographic Algorithms Detected:
+  AES: 2 samples
+
+============================================================
+Results Directory: Data/Analytics/WannaCry_ir_asm
+Starting Web Visualizer
+============================================================
+
+
+High Semantic Similarity Pairs (>80%):
+ ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt ↔ 24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt: 85.0%
+
+============================================================
+SIMILARITY METRICS COMPARISON
+============================================================
+
+Semantically Similar but Structurally Different Pairs:
+ ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt ↔ 24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt
+ Semantic: 85.0% | Structural: 35.8% | Feature: -100.0%
+
+Frequent Code Patterns:
+  Found 50 patterns across multiple functions
+  1. Pattern: E((9, 10),)|O('N/O', 'jbe')
+     Appears in 2 functions
+  2. Pattern: E((4, 5), (5, 4))|O('N/O', 'jnz')
+     Appears in 2 functions
+  3. Pattern: E((7, 1), (7, 9), (9, 7))|O('N/O', 'N/O', 'jbe')
+     Appears in 2 functions
+  4. Pattern: E((6, 7),)|O('N/O', 'jnz')
+     Appears in 2 functions
+  5. Pattern: E((10, 11), (11, 15))|O('N/O', 'N/O', 'goto')
+     Appears in 2 functions
+
+Pattern-based Similarity:
+  ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt ↔ 24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt: 51/51 patterns (100%)
+
+IR analysis completed: Data/Analytics/WannaCry_ir_asm
+loaded 5 lib entries from Sniffer/src/LoadFiles/asm_footprint_sniffer_lib.txt
+  Loaded Regex Pattern: custom_malware_urls
+  Loaded Regex Pattern: custom_c2_domains
+  Loaded Keyword Set: custom_suspicious_keywords (5 items)
+  Loaded Keyword Set: assembly_context_keywords (2 items)
+  loaded 10 simple strings
+loaded custom patterns from Sniffer/src/LoadFiles/custom_pattern.txt
+  created new keyword set 'custom_suspicious_keywords'
+  merged 2 keywords into existing 'assembly_context_keywords'
+JSON results saved to: Data/Analytics/WannaCry_ir_asm/asm_footprint_result.json
+report saved to: Data/Analytics/WannaCry_ir_asm/asm_footprint_sniffer_report.txt
+ASM sniffer completed: Data/Analytics/WannaCry_ir_asm/asm_footprint_result.json
+
+============================================================
+CROSS REFERENCE ANALYSIS
+============================================================
+Loaded IR results from Data/Analytics/WannaCry_ir_asm/results.json
+  Normalized 2 filenames to match IR format
+Loaded ASM results from Data/Analytics/WannaCry_ir_asm/asm_footprint_result.json
+
+Data loaded:
+  IR: 2 files
+    + Semantic enrichments
+  ASM: 2 files
+
+
+============================================================
+CROSS REFERENCE ANALYSIS REPORT
+============================================================
+
+Shared Infrastructure: None detected
+  (no samples share C2 domains, URLs, or file hashes)
+
+Identified Variant Families: None detected
+  (No samples meet the 75% similarity threshold across multiple factors)
+
+Function to IoC Mappings (showing first 3 files):
+
+  ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt:
+    memory_operation_function: 16 IoCs
+      • file_hash_sha256: ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa
+      • file_hash_md5: 84c82835a5d21bbcf75a61706d8ab549
+      • file_hash_crc32: 4022fcaa
+       and 13 more
+
+  24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt:
+    crypto_aes_function: 3 IoCs
+      • c2_url: http://www.iuqerfsodp9ifjaposdfjhgo
+      • c2_url: http://www.iuqerfsodp9ifjaposdfjhgosuri
+      • c2_domain: surijfaewrwergwea.com
+    memory_operation_function: 9 IoCs
+      • file_hash_sha256: 24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c
+      • file_hash_md5: db349b97c37d22f5ea1d1841e3c89eb4
+      • file_hash_crc32: 9fbb1227
+       and 6 more
+
+High Confidence C2 Infrastructure (1 files):
+  24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt:
+    • http://www.iuqerfsodp9ifjaposdfjhgo (c2_url, confidence: 0.95)
+    • http://www.iuqerfsodp9ifjaposdfjhgosuri (c2_url, confidence: 0.95)
+    • surijfaewrwergwea.com (c2_domain, confidence: 0.90)
+
+------------------------------------------------------------
+Summary Statistics:
+  Total Files Analyzed: 2
+  Files with IoCs: 2
+  Shared Infrastructure Indicators: 0
+  Variant Families Identified: 0
+  Files with C2 Indicators: 1
+
+Cross reference data exported to Data/Analytics/WannaCry_ir_asm/cross_reference_analysis.json
+
+================================================================================
+Session ended: 0000-00-00 00:00:00
+================================================================================

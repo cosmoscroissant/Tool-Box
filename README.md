@@ -6,59 +6,27 @@
 ## File Structure
 hello.exe represents the samples downloaded by "Downloader". IDA_Files/ represents the files you downloaded from IDA. 0 is pseudo-C of sample's entry point.
 
-### scripts only
+## How-To
+main.py will open a local Python server that presents visualization for IR analysis results and ASM footprint (IoC) results. Use same file names for .asm file and ir file, for example hello.asm and hello.txt.
+
 ```
-Tool_Box/
-├── sample_downloader.py
-├── analysis_files_generator.py
-├── pseudo_C_analyzer.py
-├── asm_footprint_sniffer.py
-├── ida_ir_pattern_analyzer.py
-├── ida_ir_pattern_visualizer.html
-└── sample/
-    ├── hello.exe
-    ├── ida_ir_progress_extractor.ps1
-    ├── ida_ir_extractor.py
-    └── IDA_Files/
-        ├── 0 
-        ├── hello.c
-        └── ...
+1. view existing results
+python3 main.py --results ./Data/Analytics/<file_name>
+
+2. run both analyses together
+python3 main.py --ir 'Data/Test-Data/' --asm 'Data/Test-Data/'
+
+3. run IR pattern analysis (minutes)
+python3 main.py --ir 'Data/Test-Data/'
+
+4. run IR pattern analysis in thorough mode (hours)
+python3 main.py --ir 'Data/Test-Data/' --thorough
+
+5. run ASM footprint sniff
+python3 main.py --asm 'Data/Test-Data/'
 ```
 
-### scripts with output files
-```
-Tool_Box/
-├── sample_downloader.py
-├── analysis_files_generator.py
-├── pseudo_C_analyzer.py
-├── all_function.txt
-├── missing_functions.txt
-├── organized_code.txt
-├── flow_chart.txt
-├── asm_footprint_sniffer.py
-├── report.txt
-├── ida_ir_pattern_analyzer.py
-├── ida_ir_pattern_visualizer.html
-├── ir_analysis_output/
-|   └── 20151225_080000/
-|       ├── graph_data.json
-|       ├── index.html
-|       ├── results.json
-|       ├── metadata.json
-|       └── images
-|           ├── feature_scatter.png
-|           └── similarity_heatmap.png
-└── sample/
-    ├── hello.exe (sample)
-    ├── hello.i64
-    ├── hello.asm
-    ├── ida_ir_progress_extractor.ps1
-    ├── ida_ir_extractor.py
-    ├── ir.txt
-    ├── ir_with_idainfo.txt
-    ├── ir_summary.txt
-    └── IDA_Files/
-        ├── 0 
-        ├── hello.c
-        └── ...
-```
+## Data
+Hello is a Go program that prints "hello", hello1 and hello2 are identical.
+
+WannaCry are two different 2017 WannaCry files, wannacry.exe (24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c) and tasksche.exe (24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c).

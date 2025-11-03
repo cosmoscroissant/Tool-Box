@@ -1,0 +1,136 @@
+[
+  {
+    "file": "Data/Hello-Test-Data/hello1.asm",
+    "file_hashes": {
+      "sha256": "f9aaf2fb9c19e9e83cfd82743720346e92f5ceaf55b4d8edb825fa82f6556407",
+      "md5": "28cae262b22a4a7a9d9a6c7403a79793",
+      "crc32": "d40d3fe5"
+    },
+    "iocs": {
+      "domains": [
+        "eq.io"
+      ],
+      "universal_paths": [
+        "\"\\n\\tm",
+        "\"\\nruntime",
+        "\"\\tgoroutine",
+        "\"\\tstack",
+        "\"\\tvalue",
+        "\\n-----\\n\\n",
+        "\\n\\tmorebuf",
+        "\\n\\tsched",
+        "\\nruntime",
+        "\\tgoroutine",
+        "\\tstack",
+        "stack:\\n"
+      ],
+      "files": [
+        "go.sh",
+        "zoneinfo.zip"
+      ],
+      "main_patterns": [
+        "main.func1",
+        "main.func2",
+        "main.main",
+        "main_main"
+      ],
+      "bitcoin_wallets": [
+        "11102230246251565404236316680908203125",
+        "1136868377216160297393798828125",
+        "138777878078144567552953958511352539062",
+        "1387778780781445675529539585113525390625",
+        "142108547152020037174224853515625",
+        "14551915228366851806640625",
+        "173472347597680709441192448139190673828",
+        "173472347597680709441192448139190673828125",
+        "17763568394002504646778106689453125",
+        "1818989403545856475830078125",
+        "346944695195361418882384896278381347656",
+        "34694469519536141888238489627838134765625",
+        "3552713678800500929355621337890625",
+        "363797880709171295166015625"
+      ],
+      "windows_commands": [
+        "type\nruntime.Pinner: found leaking pinned po"
+      ],
+      "indicator_strings": [
+        "SIGWINCH: window size change",
+        "broken pipe",
+        "executable_path=",
+        "http2server",
+        "no child processes",
+        "no route to host",
+        "no such process",
+        "tls10server",
+        "too many processes"
+      ]
+    }
+  },
+  {
+    "file": "Data/Hello-Test-Data/hello2.asm",
+    "file_hashes": {
+      "sha256": "f9aaf2fb9c19e9e83cfd82743720346e92f5ceaf55b4d8edb825fa82f6556407",
+      "md5": "28cae262b22a4a7a9d9a6c7403a79793",
+      "crc32": "d40d3fe5"
+    },
+    "iocs": {
+      "domains": [
+        "eq.io"
+      ],
+      "universal_paths": [
+        "\"\\n\\tm",
+        "\"\\nruntime",
+        "\"\\tgoroutine",
+        "\"\\tstack",
+        "\"\\tvalue",
+        "\\n-----\\n\\n",
+        "\\n\\tmorebuf",
+        "\\n\\tsched",
+        "\\nruntime",
+        "\\tgoroutine",
+        "\\tstack",
+        "stack:\\n"
+      ],
+      "files": [
+        "go.sh",
+        "zoneinfo.zip"
+      ],
+      "main_patterns": [
+        "main.func1",
+        "main.func2",
+        "main.main",
+        "main_main"
+      ],
+      "bitcoin_wallets": [
+        "11102230246251565404236316680908203125",
+        "1136868377216160297393798828125",
+        "138777878078144567552953958511352539062",
+        "1387778780781445675529539585113525390625",
+        "142108547152020037174224853515625",
+        "14551915228366851806640625",
+        "173472347597680709441192448139190673828",
+        "173472347597680709441192448139190673828125",
+        "17763568394002504646778106689453125",
+        "1818989403545856475830078125",
+        "346944695195361418882384896278381347656",
+        "34694469519536141888238489627838134765625",
+        "3552713678800500929355621337890625",
+        "363797880709171295166015625"
+      ],
+      "windows_commands": [
+        "type\nruntime.Pinner: found leaking pinned po"
+      ],
+      "indicator_strings": [
+        "SIGWINCH: window size change",
+        "broken pipe",
+        "executable_path=",
+        "http2server",
+        "no child processes",
+        "no route to host",
+        "no such process",
+        "tls10server",
+        "too many processes"
+      ]
+    }
+  }
+]

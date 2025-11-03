@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cross Reference Analysis</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.6/standalone/umd/vis-network.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Share+Tech+Mono&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: "Anton", sans-serif;
+            background: #000000;
+            color: #204ef1;
+            line-height: 1.6;
+            padding: 20px;
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(32, 78, 241, 0.03) 2px, rgba(32, 78, 241, 0.03) 4px);
+        }
+        
+        .container { max-width: 1600px; margin: 0 auto; }
+        
+        .terminal-header {
+            border: 2px solid #204ef1;
+            border-bottom: none;
+            padding: 10px 20px;
+            background: rgba(39, 31, 54, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #204ef1;
+        }
+        
+        .terminal-title {
+            margin-left: 15px;
+            color: #dce5f4;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .card { 
+            background: rgba(45, 45, 45, 0.95);
+            border: 2px solid #204ef1;
+            margin: 0 0 30px 0;
+            position: relative;
+            box-shadow: 0 0 20px rgba(32, 78, 241, 0.3);
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #204ef1, transparent);
+        }
+        
+        .card-content {
+            padding: 25px;
+            font-family: "Share Tech Mono";
+        }
+        
+        h1 { 
+            color: #ffffff; 
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 0 0 5px rgba(220, 229, 244, 0.5);
+            border-left: 4px solid #204ef1;
+            padding-left: 20px;
+        }
+        
+        h2 { 
+            color: #dce5f4;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #204ef1;
+            font-family: "Anton", sans-serif;
+        }
+        
+        h2::before {
+            content: '> ';
+            color: #204ef1;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .stat { 
+            background: rgba(39, 31, 54, 0.5);
+            border: 1px solid #204ef1;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 229, 244, 0.1), transparent);
+            animation: scan 3s infinite;
+        }
+        
+        @keyframes scan {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .stat-value { 
+            font-size: 42px; 
+            font-weight: bold; 
+            color: #e7eaeb;
+            text-shadow: 0 0 10px rgba(40, 176, 243, 1);
+            display: block;
+            margin-bottom: 5px;
+            font-family: "Anton", sans-serif;
+        }
+        
+        .stat-label { 
+            color: #dce5f4; 
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .infrastructure-item {
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(39, 31, 54, 0.3);
+            border-left: 3px solid #204ef1;
+            transition: all 0.3s ease;
+        }
+        
+        .infrastructure-item:hover {
+            background: rgba(39, 31, 54, 0.5);
+            border-left-width: 5px;
+        }
+        
+        .infra-title {
+            font-weight: bold;
+            color: #dce5f4;
+            margin-bottom: 10px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .sample-list { margin-left: 20px; }
+        
+        .sample-item {
+            padding: 5px 0;
+            color: #fbfbfb;
+            font-size: 13px;
+        }
+        
+        .sample-item::before {
+            content: '[+] ';
+            color: #204ef1;
+        }
+        
+        .variant-family {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(39, 31, 54, 0.3);
+            border: 2px solid #204ef1;
+            transition: all 0.3s ease;
+        }
+        
+        .variant-family:hover {
+            background: rgba(39, 31, 54, 0.5);
+            box-shadow: 0 0 15px rgba(32, 78, 241, 0.5);
+        }
+        
+        .family-header {
+            font-weight: bold;
+            color: #dce5f4;
+            margin-bottom: 10px;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .similarity-score {
+            color: #28b0f3;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+        
+        .ioc-mapping {
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(39, 31, 54, 0.3);
+            border-left: 3px solid #28b0f3;
+        }
+        
+        .ioc-title {
+            font-weight: bold;
+            color: #28b0f3;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .ioc-list { margin-left: 20px; }
+        
+        .ioc-item {
+            padding: 5px 0;
+            color: #fbfbfb;
+            font-size: 12px;
+        }
+        
+        .ioc-item::before {
+            content: '[+] ';
+            color: #28b0f3;
+        }
+        
+        .c2-infrastructure {
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(139, 0, 0, 0.2);
+            border: 1px solid #ff4500;
+            border-left: 3px solid #ff4500;
+        }
+        
+        .c2-title {
+            font-weight: bold;
+            color: #ff6347;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .c2-item {
+            padding: 5px 0;
+            color: #fbfbfb;
+            font-size: 12px;
+            margin-left: 20px;
+        }
+        
+        .c2-item::before {
+            content: '[+] ';
+            color: #ff4500;
+        }
+        
+        .confidence-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            background: rgba(32, 78, 241, 0.3);
+            border: 1px solid #204ef1;
+            font-size: 10px;
+            margin-left: 10px;
+            text-transform: uppercase;
+        }
+        
+        .no-data {
+            text-align: center;
+            padding: 40px;
+            color: #dce5f4;
+            font-size: 14px;
+            background: rgba(39, 31, 54, 0.3);
+            border: 1px dashed #204ef1;
+        }
+        
+        .network-graph {
+            height: 600px;
+            border: 2px solid #204ef1;
+            background: #000000;
+            position: relative;
+            margin-top: 20px;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #000000;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #204ef1;
+            border: 1px solid #271f36;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #dce5f4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CROSS REFERENCE ANALYSIS</h1>
+        
+        <div class="terminal-header">
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-title">Summary Statistics</div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <div class="stats-grid">
+                    <div class="stat">
+                        <span class="stat-value" id="total-files">0</span>
+                        <span class="stat-label">Total Files</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="shared-infra">0</span>
+                        <span class="stat-label">Shared Infrastructure</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="variant-families">0</span>
+                        <span class="stat-label">Variant Families</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="c2-files">0</span>
+                        <span class="stat-label">Files with C2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="terminal-header">
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-title">Shared Infrastructure</div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <div id="infrastructure-container"></div>
+            </div>
+        </div>
+        
+        <div class="terminal-header">
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-title">Variant Families</div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <div id="variants-container"></div>
+            </div>
+        </div>
+        
+        <div class="terminal-header">
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-title">Function to IoC Mappings</div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <div id="mappings-container"></div>
+            </div>
+        </div>
+        
+        <div class="terminal-header">
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-title">High Confidence C2 Infrastructure</div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <div id="c2-container"></div>
+            </div>
+        </div>
+
+        <div class="terminal-header">
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-title">Infrastructure Network Graph</div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <div class="network-graph" id="infra-network"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let crossRefData = null;
+        let infraNetwork = null;
+        
+        async function loadData() {
+            try {
+                crossRefData = await fetch('cross_reference_analysis.json').then(r => r.json());
+                return crossRefData;
+            } catch (error) {
+                console.error('Error loading cross reference data:', error);
+                return null;
+            }
+        }
+        
+        async function init() {
+            const data = await loadData();
+            if (!data) {
+                document.body.innerHTML = '<div class="container"><div class="no-data">Failed to load cross_reference_analysis.json. Need both IR and ASM Analyses.</div></div>';
+                return;
+            }
+            
+            const infraCount = Object.keys(data.infrastructure_graph || {}).length;
+            const variantCount = Object.keys(data.variant_families || {}).length;
+            const mappings = data.function_ioc_mappings || {};
+            const totalFiles = Object.keys(mappings).length;
+            
+            let c2Count = 0;
+            Object.values(mappings).forEach(fileMapping => {
+                Object.values(fileMapping).forEach(funcIocs => {
+                    if (funcIocs.some(ioc => ioc.category && ioc.category.includes('c2'))) {
+                        c2Count++;
+                        return;
+                    }
+                });
+            });
+            
+            document.getElementById('total-files').textContent = totalFiles;
+            document.getElementById('shared-infra').textContent = infraCount;
+            document.getElementById('variant-families').textContent = variantCount;
+            document.getElementById('c2-files').textContent = c2Count;
+            
+            renderInfrastructure(data.infrastructure_graph);
+            renderVariants(data.variant_families);
+            renderMappings(data.function_ioc_mappings);
+            renderC2Infrastructure(data.function_ioc_mappings);
+            renderInfrastructureNetwork(data.infrastructure_graph);
+        }
+        
+        function renderInfrastructure(infraGraph) {
+            const container = document.getElementById('infrastructure-container');
+            
+            if (!infraGraph || Object.keys(infraGraph).length === 0) {
+                container.innerHTML = '<div class="no-data">No Shared Infrastructure Detected</div>';
+                return;
+            }
+            
+            const sorted = Object.entries(infraGraph).sort((a, b) => b[1].length - a[1].length);
+            
+            container.innerHTML = sorted.map(([infraId, samples]) => `
+                <div class="infrastructure-item">
+                    <div class="infra-title">${infraId} (${samples.length} samples)</div>
+                    <div class="sample-list">
+                        ${samples.slice(0, 5).map(s => `<div class="sample-item">${s}</div>`).join('')}
+                        ${samples.length > 5 ? `<div class="sample-item">... and ${samples.length - 5} more</div>` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function renderVariants(variants) {
+            const container = document.getElementById('variants-container');
+            
+            if (!variants || Object.keys(variants).length === 0) {
+                container.innerHTML = '<div class="no-data">No Variant Families Identified</div>';
+                return;
+            }
+            
+            const sorted = Object.entries(variants).sort((a, b) => b[1].length - a[1].length);
+            
+            container.innerHTML = sorted.map(([familyId, samples]) => `
+                <div class="variant-family">
+                    <div class="family-header">${familyId}</div>
+                    <div class="similarity-score">${samples.length} related samples</div>
+                    <div class="sample-list">
+                        ${samples.slice(0, 5).map(s => `<div class="sample-item">${s}</div>`).join('')}
+                        ${samples.length > 5 ? `<div class="sample-item">... and ${samples.length - 5} more</div>` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function renderMappings(mappings) {
+            const container = document.getElementById('mappings-container');
+            
+            if (!mappings || Object.keys(mappings).length === 0) {
+                container.innerHTML = '<div class="no-data">No Cunction to IoC Mappings Detected</div>';
+                return;
+            }
+            
+            const hasData = Object.values(mappings).some(m => Object.keys(m).length > 0);
+            if (!hasData) {
+                container.innerHTML = '<div class="no-data">No IoCs Correlated with Semantic Patterns</div>';
+                return;
+            }
+
+            container.innerHTML = Object.entries(mappings)
+                .filter(([_, funcs]) => Object.keys(funcs).length > 0)
+                .slice(0, 5)
+                .map(([filename, funcs]) => `
+                    <div class="ioc-mapping">
+                        <div class="ioc-title">${filename}</div>
+                        ${Object.entries(funcs).map(([funcType, iocs]) => `
+                            <div style="margin: 10px 0;">
+                                <div style="color: #dce5f4; font-weight: bold; font-size: 12px;">${funcType}: ${iocs.length} IoCs</div>
+                                <div class="ioc-list">
+                                    ${iocs.slice(0, 3).map(ioc => `
+                                        <div class="ioc-item">${ioc.category}: ${ioc.value}
+                                            <span class="confidence-badge">confidence: ${(ioc.confidence * 100).toFixed(0)}%</span>
+                                        </div>
+                                    `).join('')}
+                                    ${iocs.length > 3 ? `<div class="ioc-item">... and ${iocs.length - 3} more</div>` : ''}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `).join('');
+        }
+        
+        function renderC2Infrastructure(mappings) {
+            const container = document.getElementById('c2-container');
+            
+            const c2Files = [];
+            Object.entries(mappings).forEach(([filename, funcs]) => {
+                const c2Iocs = [];
+                Object.values(funcs).forEach(iocs => {
+                    iocs.forEach(ioc => {
+                        if (ioc.category && ioc.category.includes('c2') && ioc.confidence > 0.8) {
+                            c2Iocs.push(ioc);
+                        }
+                    });
+                });
+                if (c2Iocs.length > 0) {
+                    c2Files.push({ filename, c2Iocs });
+                }
+            });
+            
+            if (c2Files.length === 0) {
+                container.innerHTML = '<div class="no-data">No High Confidence C2 Infrastructure Detected</div>';
+                return;
+            }
+            
+            container.innerHTML = c2Files.slice(0, 5).map(({ filename, c2Iocs }) => `
+                <div class="c2-infrastructure">
+                    <div class="c2-title">${filename}</div>
+                    ${c2Iocs.map(ioc => `
+                        <div class="c2-item">${ioc.value} (${ioc.category})
+                            <span class="confidence-badge" style="border-color: #ff4500; background: rgba(255, 69, 0, 0.2);">
+                                ${(ioc.confidence * 100).toFixed(0)}%
+                            </span>
+                        </div>
+                    `).join('')}
+                </div>
+            `).join('') + (c2Files.length > 5 ? `<div class="no-data" style="margin-top: 15px;">... and ${c2Files.length - 5} more files with C2 indicators</div>` : '');
+        }
+        
+        function renderInfrastructureNetwork(infraGraph) {
+            if (!infraGraph || Object.keys(infraGraph).length === 0) {
+                document.getElementById('infra-network').innerHTML = '<div class="no-data">No Network Data Available</div>';
+                return;
+            }
+            
+            const nodes = [];
+            const edges = [];
+            const fileNodes = new Set();
+            
+            Object.entries(infraGraph).forEach(([infraId, samples], idx) => {
+                nodes.push({
+                    id: `infra_${idx}`,
+                    label: infraId.split('_').slice(0, 3).join('_'),
+                    shape: 'diamond',
+                    color: { background: '#ff4500', border: '#ff6347' },
+                    font: { color: '#fbfbfb', size: 10, face: 'Share Tech Mono' },
+                    title: `${infraId}\n${samples.length} samples`
+                });
+                
+                samples.forEach(sample => {
+                    if (!fileNodes.has(sample)) {
+                        nodes.push({
+                            id: `file_${sample}`,
+                            label: sample.length > 20 ? sample.substring(0, 17) + '...' : sample,
+                            shape: 'box',
+                            color: { background: '#204ef1', border: '#dce5f4' },
+                            font: { color: '#fbfbfb', size: 9, face: 'Share Tech Mono' },
+                            title: sample
+                        });
+                        fileNodes.add(sample);
+                    }
+                    
+                    edges.push({
+                        from: `file_${sample}`,
+                        to: `infra_${idx}`,
+                        color: { color: '#28b0f3' },
+                        width: 1
+                    });
+                });
+            });
+            
+            infraNetwork = new vis.Network(
+                document.getElementById('infra-network'),
+                { nodes: new vis.DataSet(nodes), edges: new vis.DataSet(edges) },
+                {
+                    layout: { randomSeed: 42 },
+                    physics: {
+                        barnesHut: { gravitationalConstant: -8000, springLength: 200 },
+                        stabilization: { iterations: 200 }
+                    },
+                    interaction: { 
+                        hover: true,
+                        dragNodes: true,
+                        dragView: true,
+                        zoomView: true
+                    }
+                }
+            );
+
+            infraNetwork.once('stabilizationIterationsDone', function() {
+                infraNetwork.fit();
+            });
+        }
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    </script>
+</body>
+</html>

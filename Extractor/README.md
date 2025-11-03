@@ -1,8 +1,8 @@
 # Extractor
 ## IR Extractor
-ida_ir_progress_extractor.ps1 runs under **Administrator mode in powershell**, it monitors the progress of analysis_files_generator.py.
+ir_progress_extractor.ps1 runs under **Administrator mode in powershell**, it monitors the progress of analysis_files_generator.py.
 
-ida_ir_extractor.py generates 3 files:
+ir_extractor.py generates 3 files:
 - ir.txt: IR for entire file
 - ir_with_idainfo.txt: IR with IDA default information
 - ir_summary.txt: summary for duration time and success rate of generating IR
@@ -16,29 +16,33 @@ f.y.i.
 
 2. Fix Execution Policy Error
 
-If there is an error after executing ida_ir_progress_extractor.ps1, such as:
+If there is an error after executing ir_progress_extractor.ps1, such as:
 
 ```
-ida_ir_progress_extractor.ps1 cannot be loaded because running scripts isdisabled on this system.
+ir_progress_extractor.ps1 cannot be loaded because running scripts isdisabled on this system.
 For more information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
 ```
 
 You can fix it by setting the execution policy `Set-ExecutionPolicy RemoteSigned`. After execution, use `Set-ExecutionPolicy Restricted` to set the policy back to its default value. ([PowerShell says "execution of scripts is disabled on this system."](https://stackoverflow.com/questions/4037939/powershell-says-execution-of-scripts-is-disabled-on-this-system))
 
-3. Warnings in ida_ir_extractor.py
+3. Warnings in ir_extractor.py
 
 The warnings appear because ida_* modules (ida_range, ida_kernwin, ida_hexrays, etc.) are part of IDA Pro's Python API and are only available when the script runs inside IDA Pro.
+
+4. Absolute Path
+
+If ir_progress_extractor.ps1 did not produce ir files as expected, try changing `[string]$ScriptFile = "ir_extractor.py"` to absolute path.
 
 ### How-To
 `pip3 install python-idb`
 
-`.\ida_ir_progress_extractor.ps1 <sample_name>`
+`.\ir_progress_extractor.ps1 <sample_name>`
 
 or
 
 `pip3 install python-idb`
 
-`"C:\Program Files\IDA Professional 9.2\ida.exe" -L"ir_with_idainfo.txt" -A -S"ida_ir_extractor.py" "<sample_name>"`
+`"C:\Program Files\IDA Professional 9.2\ida.exe" -L"ir_with_idainfo.txt" -A -S"ir_extractor.py" "<sample_name>"`
 
 ### IDA Python API
 #### ida_funcs
@@ -147,7 +151,7 @@ microcode_ranges.ranges.push_back(ida_range.range_t(func.start_ea, func.end_ea))
 range_t is a continuous address range from start_ea (included) to end_ea (excluded).
 
 #### Referenced Documents
-ida_ir_extractor.py is based of these documents.
+ir_extractor.py is based of these documents.
 - [-L#### name of the log file](https://docs.hex-rays.com/user-guide/configuration/command-line-switches)
 - [IDAPython/examples/decompiler/vds13.py](https://github.com/HexRaysSA/IDAPython/blob/9.0sp1/examples/decompiler/vds13.py)
 - [ida_funcs](https://python.docs.hex-rays.com/namespaceida__funcs.html)

@@ -1,0 +1,486 @@
+{
+  "summary": {
+    "total_files": 2,
+    "analyzed_files": 2,
+    "num_clusters": 0,
+    "noise_files": 2,
+    "isomorphic_groups": 0
+  },
+  "clusters": {},
+  "noise_files": [
+    "ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt",
+    "24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt"
+  ],
+  "files": [
+    "ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt",
+    "24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt"
+  ],
+  "similarity_matrix": [
+    [
+      1.0,
+      -1.0
+    ],
+    [
+      -1.0,
+      1.0
+    ]
+  ],
+  "features": [
+    [
+      17.0,
+      38.0,
+      3.0,
+      11.0,
+      23.0,
+      17.0,
+      2.235294117647059,
+      251.0,
+      3.0,
+      1.0,
+      0.3684210526315789,
+      0.07894736842105263,
+      0.5526315789473685,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      2.675675675675676,
+      1.0,
+      0.0,
+      1.3333333333333333,
+      37.0,
+      0.07894736842105263,
+      0.3684210526315789,
+      0.5526315789473685
+    ],
+    [
+      17.0,
+      44.0,
+      3.0,
+      11.0,
+      29.0,
+      17.0,
+      2.588235294117647,
+      290.0,
+      3.0,
+      1.0,
+      0.3684210526315789,
+      0.07894736842105263,
+      0.5526315789473685,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      2.5675675675675675,
+      1.0,
+      0.0,
+      1.2666666666666666,
+      37.0,
+      0.07894736842105263,
+      0.3684210526315789,
+      0.5526315789473685
+    ]
+  ],
+  "feature_names": [
+    "num_blocks",
+    "num_edges",
+    "avg_block_size",
+    "max_block_size",
+    "cyclomatic_complexity",
+    "depth",
+    "avg_branching_factor",
+    "loop_count",
+    "register_diversity",
+    "call_diversity",
+    "memory_ops_ratio",
+    "arithmetic_ops_ratio",
+    "control_ops_ratio",
+    "floating_point_ops_ratio",
+    "condition_ops_ratio",
+    "stack_ops_ratio",
+    "data_ops_ratio",
+    "flag_ops_ratio",
+    "special_ops_ratio",
+    "def_use_chain_length",
+    "register_reuse_ratio",
+    "memory_dependency_depth",
+    "live_range_average",
+    "data_flow_complexity",
+    "abstract_alu_ratio",
+    "abstract_mem_ratio",
+    "abstract_ctrl_ratio"
+  ],
+  "function_categories": {
+    "ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt": "complex_algorithm",
+    "24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt": "complex_algorithm"
+  },
+  "semantic_signatures": {
+    "ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt": "mov:0.32,call:0.26,jnz:0.11,add:0.08,jz:0.08,stx:0.05,jbe:0.05,goto:0.05|L251B15C1U0S0K17|R0.18|C_t12s5m0l2x0|G_n17e38d0.14a4.5",
+    "24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt": "mov:0.32,call:0.26,jnz:0.11,add:0.08,jz:0.08,stx:0.05,jbe:0.05,goto:0.05|L290B15C1U0S0K17|R0.18|C_t12s5m0l2x0|G_n17e44d0.16a5.2"
+  },
+  "semantic_hashes": {
+    "ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt": "1003e7a2d3ffae50",
+    "24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt": "60ceb5ad4c30b90c"
+  },
+  "semantic_similarity_matrix": [
+    [
+      1.0,
+      0.8500000000000001
+    ],
+    [
+      0.8500000000000001,
+      1.0
+    ]
+  ],
+  "canonical_similarity_matrix": [
+    [
+      1.0,
+      0.35795454545454547
+    ],
+    [
+      0.35795454545454547,
+      1.0
+    ]
+  ],
+  "canonical_forms": {
+    "ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt": "e60ab4b5cd67a6e57e3a0a02e2b9d8af|N17E38|D(0, 2, 2, 3, 3, 3, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6)",
+    "24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt": "8b4e56fb10c8d229a24c99ef2901f699|N17E44|D(2, 2, 3, 3, 4, 5, 5, 5, 6, 6, 6, 6, 6, 6, 7, 8, 8)"
+  },
+  "isomorphic_groups": {},
+  "frequent_patterns": {
+    "E((0, 1),)|O('N/O', 'N/O')": 2,
+    "E((14, 15),)|O('N/O', 'N/O')": 2,
+    "E((0, 1), (7, 1))|O('N/O', 'N/O', 'N/O')": 2,
+    "E((6, 7),)|O('N/O', 'jnz')": 2,
+    "E((11, 15),)|O('N/O', 'goto')": 2,
+    "E((1, 2), (2, 1), (7, 1))|O('N/O', 'N/O', 'N/O')": 2,
+    "E((12, 13), (13, 12))|O('N/O', 'jbe')": 2,
+    "E((12, 8), (12, 13), (13, 12))|O('N/O', 'jbe', 'jz')": 2,
+    "E((1, 3), (7, 1))|O('N/O', 'N/O', 'N/O')": 2,
+    "E((11, 15), (14, 15))|O('N/O', 'N/O', 'goto')": 2,
+    "E((5, 0),)|O('N/O', 'jnz')": 2,
+    "E((10, 11),)|O('N/O', 'goto')": 2,
+    "E((6, 8), (8, 10))|O('N/O', 'jnz', 'jz')": 2,
+    "E((9, 10), (10, 11))|O('N/O', 'goto', 'jbe')": 2,
+    "E((7, 1),)|O('N/O', 'N/O')": 2,
+    "E((4, 5), (5, 4))|O('N/O', 'jnz')": 2,
+    "E((6, 8), (12, 8))|O('jbe', 'jnz', 'jz')": 2,
+    "E((1, 3), (3, 4))|O('N/O', 'N/O', 'N/O')": 2,
+    "E((9, 10),)|O('N/O', 'jbe')": 2,
+    "E((7, 8),)|O('N/O', 'jz')": 2,
+    "E((7, 8), (12, 8))|O('N/O', 'jbe', 'jz')": 2,
+    "E((10, 14), (14, 15))|O('N/O', 'N/O', 'N/O')": 2,
+    "E((9, 10), (10, 14))|O('N/O', 'N/O', 'jbe')": 2,
+    "E((0, 1), (1, 2), (2, 1))|O('N/O', 'N/O', 'N/O')": 2,
+    "E((7, 9), (9, 7))|O('N/O', 'jbe')": 2,
+    "E((3, 12), (12, 13), (13, 12))|O('N/O', 'N/O', 'jbe')": 2,
+    "E((3, 12),)|O('N/O', 'jbe')": 2,
+    "E((3, 4), (3, 12))|O('N/O', 'N/O', 'jbe')": 2,
+    "E((10, 11), (11, 15))|O('N/O', 'N/O', 'goto')": 2,
+    "E((1, 3),)|O('N/O', 'N/O')": 2,
+    "E((6, 8),)|O('jnz', 'jz')": 2,
+    "E((12, 8),)|O('jbe', 'jz')": 2,
+    "E((6, 7), (6, 8), (7, 8))|O('N/O', 'jnz', 'jz')": 2,
+    "E((10, 14),)|O('N/O', 'N/O')": 2,
+    "E((1, 3), (3, 12))|O('N/O', 'N/O', 'jbe')": 2,
+    "E((8, 9), (12, 8))|O('jbe', 'jbe', 'jz')": 2,
+    "E((8, 9),)|O('jbe', 'jz')": 2,
+    "E((7, 1), (7, 9), (9, 7))|O('N/O', 'N/O', 'jbe')": 2,
+    "E((0, 1), (5, 0))|O('N/O', 'N/O', 'jnz')": 2,
+    "E((8, 9), (8, 10), (9, 10))|O('N/O', 'jbe', 'jz')": 2,
+    "E((10, 11), (10, 14))|O('N/O', 'N/O', 'goto')": 2,
+    "E((1, 2), (2, 1))|O('N/O', 'N/O')": 2,
+    "E((3, 4), (4, 5), (5, 4))|O('N/O', 'N/O', 'jnz')": 2,
+    "E((8, 10),)|O('N/O', 'jz')": 2,
+    "E((3, 4),)|O('N/O', 'N/O')": 2,
+    "E((8, 10), (10, 14))|O('N/O', 'N/O', 'jz')": 2,
+    "E((8, 10), (10, 11))|O('N/O', 'goto', 'jz')": 2,
+    "E((6, 7), (7, 1))|O('N/O', 'N/O', 'jnz')": 2,
+    "E((8, 10), (12, 8))|O('N/O', 'jbe', 'jz')": 2,
+    "E((7, 8), (7, 9), (8, 9), (9, 7))|O('N/O', 'jbe', 'jz')": 2
+  },
+  "file_patterns": {
+    "ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt": [
+      "E((0, 1),)|O('N/O', 'N/O')",
+      "E((14, 15),)|O('N/O', 'N/O')",
+      "E((0, 1), (7, 1))|O('N/O', 'N/O', 'N/O')",
+      "E((6, 7),)|O('N/O', 'jnz')",
+      "E((11, 15),)|O('N/O', 'goto')",
+      "E((1, 2), (2, 1), (7, 1))|O('N/O', 'N/O', 'N/O')",
+      "E((12, 13), (13, 12))|O('N/O', 'jbe')",
+      "E((12, 8), (12, 13), (13, 12))|O('N/O', 'jbe', 'jz')",
+      "E((1, 3), (7, 1))|O('N/O', 'N/O', 'N/O')",
+      "E((11, 15), (14, 15))|O('N/O', 'N/O', 'goto')",
+      "E((5, 0),)|O('N/O', 'jnz')",
+      "E((10, 11),)|O('N/O', 'goto')",
+      "E((6, 8), (8, 10))|O('N/O', 'jnz', 'jz')",
+      "E((9, 10), (10, 11))|O('N/O', 'goto', 'jbe')",
+      "E((7, 1),)|O('N/O', 'N/O')",
+      "E((4, 5), (5, 4))|O('N/O', 'jnz')",
+      "E((6, 8), (12, 8))|O('jbe', 'jnz', 'jz')",
+      "E((1, 3), (3, 4))|O('N/O', 'N/O', 'N/O')",
+      "E((9, 10),)|O('N/O', 'jbe')",
+      "E((7, 8),)|O('N/O', 'jz')",
+      "E((7, 8), (12, 8))|O('N/O', 'jbe', 'jz')",
+      "E((10, 14), (14, 15))|O('N/O', 'N/O', 'N/O')",
+      "E((9, 10), (10, 14))|O('N/O', 'N/O', 'jbe')",
+      "E((0, 1), (1, 2), (2, 1))|O('N/O', 'N/O', 'N/O')",
+      "E((7, 9), (9, 7))|O('N/O', 'jbe')",
+      "E((3, 12), (12, 13), (13, 12))|O('N/O', 'N/O', 'jbe')",
+      "E((3, 12),)|O('N/O', 'jbe')",
+      "E((3, 4), (3, 12))|O('N/O', 'N/O', 'jbe')",
+      "E((10, 11), (11, 15))|O('N/O', 'N/O', 'goto')",
+      "E((1, 3),)|O('N/O', 'N/O')",
+      "E((6, 8),)|O('jnz', 'jz')",
+      "E((12, 8),)|O('jbe', 'jz')",
+      "E((6, 7), (6, 8), (7, 8))|O('N/O', 'jnz', 'jz')",
+      "E((10, 14),)|O('N/O', 'N/O')",
+      "E((1, 3), (3, 12))|O('N/O', 'N/O', 'jbe')",
+      "E((8, 9), (12, 8))|O('jbe', 'jbe', 'jz')",
+      "E((8, 9),)|O('jbe', 'jz')",
+      "E((7, 1), (7, 9), (9, 7))|O('N/O', 'N/O', 'jbe')",
+      "E((0, 1), (5, 0))|O('N/O', 'N/O', 'jnz')",
+      "E((8, 9), (8, 10), (9, 10))|O('N/O', 'jbe', 'jz')",
+      "E((10, 11), (10, 14))|O('N/O', 'N/O', 'goto')",
+      "E((1, 2), (2, 1))|O('N/O', 'N/O')",
+      "E((3, 4), (4, 5), (5, 4))|O('N/O', 'N/O', 'jnz')",
+      "E((8, 10),)|O('N/O', 'jz')",
+      "E((3, 4),)|O('N/O', 'N/O')",
+      "E((8, 10), (10, 14))|O('N/O', 'N/O', 'jz')",
+      "E((8, 10), (10, 11))|O('N/O', 'goto', 'jz')",
+      "E((6, 7), (7, 1))|O('N/O', 'N/O', 'jnz')",
+      "E((8, 10), (12, 8))|O('N/O', 'jbe', 'jz')",
+      "E((7, 8), (7, 9), (8, 9), (9, 7))|O('N/O', 'jbe', 'jz')",
+      "E((0, 1), (1, 3))|O('N/O', 'N/O', 'N/O')"
+    ],
+    "24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt": [
+      "E((0, 1),)|O('N/O', 'N/O')",
+      "E((14, 15),)|O('N/O', 'N/O')",
+      "E((0, 1), (7, 1))|O('N/O', 'N/O', 'N/O')",
+      "E((6, 7),)|O('N/O', 'jnz')",
+      "E((11, 15),)|O('N/O', 'goto')",
+      "E((1, 2), (2, 1), (7, 1))|O('N/O', 'N/O', 'N/O')",
+      "E((12, 13), (13, 12))|O('N/O', 'jbe')",
+      "E((12, 8), (12, 13), (13, 12))|O('N/O', 'jbe', 'jz')",
+      "E((1, 3), (7, 1))|O('N/O', 'N/O', 'N/O')",
+      "E((11, 15), (14, 15))|O('N/O', 'N/O', 'goto')",
+      "E((5, 0),)|O('N/O', 'jnz')",
+      "E((10, 11),)|O('N/O', 'goto')",
+      "E((6, 8), (8, 10))|O('N/O', 'jnz', 'jz')",
+      "E((9, 10), (10, 11))|O('N/O', 'goto', 'jbe')",
+      "E((7, 1),)|O('N/O', 'N/O')",
+      "E((4, 5), (5, 4))|O('N/O', 'jnz')",
+      "E((6, 8), (12, 8))|O('jbe', 'jnz', 'jz')",
+      "E((1, 3), (3, 4))|O('N/O', 'N/O', 'N/O')",
+      "E((9, 10),)|O('N/O', 'jbe')",
+      "E((7, 8),)|O('N/O', 'jz')",
+      "E((7, 8), (12, 8))|O('N/O', 'jbe', 'jz')",
+      "E((10, 14), (14, 15))|O('N/O', 'N/O', 'N/O')",
+      "E((9, 10), (10, 14))|O('N/O', 'N/O', 'jbe')",
+      "E((0, 1), (1, 2), (2, 1))|O('N/O', 'N/O', 'N/O')",
+      "E((7, 9), (9, 7))|O('N/O', 'jbe')",
+      "E((3, 12), (12, 13), (13, 12))|O('N/O', 'N/O', 'jbe')",
+      "E((3, 12),)|O('N/O', 'jbe')",
+      "E((3, 4), (3, 12))|O('N/O', 'N/O', 'jbe')",
+      "E((10, 11), (11, 15))|O('N/O', 'N/O', 'goto')",
+      "E((1, 3),)|O('N/O', 'N/O')",
+      "E((6, 8),)|O('jnz', 'jz')",
+      "E((12, 8),)|O('jbe', 'jz')",
+      "E((6, 7), (6, 8), (7, 8))|O('N/O', 'jnz', 'jz')",
+      "E((10, 14),)|O('N/O', 'N/O')",
+      "E((1, 3), (3, 12))|O('N/O', 'N/O', 'jbe')",
+      "E((8, 9), (12, 8))|O('jbe', 'jbe', 'jz')",
+      "E((8, 9),)|O('jbe', 'jz')",
+      "E((7, 1), (7, 9), (9, 7))|O('N/O', 'N/O', 'jbe')",
+      "E((0, 1), (5, 0))|O('N/O', 'N/O', 'jnz')",
+      "E((8, 9), (8, 10), (9, 10))|O('N/O', 'jbe', 'jz')",
+      "E((10, 11), (10, 14))|O('N/O', 'N/O', 'goto')",
+      "E((1, 2), (2, 1))|O('N/O', 'N/O')",
+      "E((3, 4), (4, 5), (5, 4))|O('N/O', 'N/O', 'jnz')",
+      "E((8, 10),)|O('N/O', 'jz')",
+      "E((3, 4),)|O('N/O', 'N/O')",
+      "E((8, 10), (10, 14))|O('N/O', 'N/O', 'jz')",
+      "E((8, 10), (10, 11))|O('N/O', 'goto', 'jz')",
+      "E((6, 7), (7, 1))|O('N/O', 'N/O', 'jnz')",
+      "E((8, 10), (12, 8))|O('N/O', 'jbe', 'jz')",
+      "E((7, 8), (7, 9), (8, 9), (9, 7))|O('N/O', 'jbe', 'jz')",
+      "E((0, 1), (1, 3))|O('N/O', 'N/O', 'N/O')"
+    ]
+  },
+  "semantic_enrichments": {
+    "ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt": {
+      "semantic_tags": [
+        "uses_aes",
+        "aes_detected",
+        "has_memset",
+        "has_malloc",
+        "has_strcpy"
+      ],
+      "crypto": {
+        "crypto_algorithms": {
+          "aes": {
+            "score": 5,
+            "confidence": "medium",
+            "evidence": [
+              "high_xor_shift_ratio_0.45",
+              "high_register_reuse_1.00"
+            ],
+            "method": "behavioral_profiling",
+            "matching_constants": 0,
+            "opcode_ratio": 0.4473684210526315
+          }
+        },
+        "has_crypto": true,
+        "primary_algorithm": "aes",
+        "algorithm_confidence": "medium"
+      },
+      "stdlib": {
+        "stdlib_functions": {
+          "memset": {
+            "pattern_name": "memory_fill",
+            "indicators": [
+              {
+                "indicator": "loop_with_constant_store",
+                "score": 5,
+                "description": "loop storing constant value to memory"
+              }
+            ],
+            "combined_score": 11,
+            "confidence": "medium"
+          },
+          "malloc": {
+            "pattern_name": "heap_allocation",
+            "indicators": [
+              {
+                "indicator": "allocation_sequence",
+                "score": 6,
+                "description": "call to allocation function followed by initialization"
+              },
+              {
+                "indicator": "size_calculation",
+                "score": 3,
+                "description": "size calculation before allocation"
+              }
+            ],
+            "combined_score": 26,
+            "confidence": "high"
+          },
+          "strcpy": {
+            "pattern_name": "string_copy",
+            "indicators": [
+              {
+                "indicator": "byte_by_byte_copy",
+                "score": 3,
+                "description": "byte by byte copy with null check"
+              }
+            ],
+            "combined_score": 3,
+            "confidence": "medium"
+          }
+        },
+        "has_stdlib": true,
+        "detected_functions": [
+          "memset",
+          "malloc",
+          "strcpy"
+        ]
+      },
+      "combined_score": 45,
+      "method": "behavioral_profiling_with_cfg",
+      "limitations": [
+        "detection based on behavioral patterns, not exhaustive",
+        "may miss obfuscated or custom implementations",
+        "thresholds tuned for standard compiled code"
+      ]
+    },
+    "24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt": {
+      "semantic_tags": [
+        "uses_aes",
+        "aes_detected",
+        "has_memset",
+        "has_malloc",
+        "has_strcpy"
+      ],
+      "crypto": {
+        "crypto_algorithms": {
+          "aes": {
+            "score": 5,
+            "confidence": "medium",
+            "evidence": [
+              "high_xor_shift_ratio_0.45",
+              "high_register_reuse_1.00"
+            ],
+            "method": "behavioral_profiling",
+            "matching_constants": 0,
+            "opcode_ratio": 0.4473684210526315
+          }
+        },
+        "has_crypto": true,
+        "primary_algorithm": "aes",
+        "algorithm_confidence": "medium"
+      },
+      "stdlib": {
+        "stdlib_functions": {
+          "memset": {
+            "pattern_name": "memory_fill",
+            "indicators": [
+              {
+                "indicator": "loop_with_constant_store",
+                "score": 5,
+                "description": "loop storing constant value to memory"
+              }
+            ],
+            "combined_score": 11,
+            "confidence": "medium"
+          },
+          "malloc": {
+            "pattern_name": "heap_allocation",
+            "indicators": [
+              {
+                "indicator": "allocation_sequence",
+                "score": 6,
+                "description": "call to allocation function followed by initialization"
+              },
+              {
+                "indicator": "size_calculation",
+                "score": 3,
+                "description": "size calculation before allocation"
+              }
+            ],
+            "combined_score": 26,
+            "confidence": "high"
+          },
+          "strcpy": {
+            "pattern_name": "string_copy",
+            "indicators": [
+              {
+                "indicator": "byte_by_byte_copy",
+                "score": 3,
+                "description": "byte by byte copy with null check"
+              }
+            ],
+            "combined_score": 3,
+            "confidence": "medium"
+          }
+        },
+        "has_stdlib": true,
+        "detected_functions": [
+          "memset",
+          "malloc",
+          "strcpy"
+        ]
+      },
+      "combined_score": 45,
+      "method": "behavioral_profiling_with_cfg",
+      "limitations": [
+        "detection based on behavioral patterns, not exhaustive",
+        "may miss obfuscated or custom implementations",
+        "thresholds tuned for standard compiled code"
+      ]
+    }
+  }
+}

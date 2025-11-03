@@ -1,0 +1,156 @@
+{
+  "infrastructure_graph": {},
+  "variant_families": {},
+  "function_ioc_mappings": {
+    "ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt": {
+      "memory_operation_function": [
+        {
+          "value": "ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa",
+          "category": "file_hash_sha256",
+          "confidence": 1.0
+        },
+        {
+          "value": "84c82835a5d21bbcf75a61706d8ab549",
+          "category": "file_hash_md5",
+          "confidence": 1.0
+        },
+        {
+          "value": "4022fcaa",
+          "category": "file_hash_crc32",
+          "confidence": 1.0
+        },
+        {
+          "value": "%s\\Intel",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "%s\\ProgramData",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "%s\\\\%s",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "%s\\\\Intel",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "%s\\\\ProgramData",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "/..\\\\",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "Global\\MsWinZonesCacheCounterMutexA",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "Global\\\\MsWinZonesCacheCounterMutexA",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "Software\\\\",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "\\../",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "\\..\\",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "\\\\../",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "\\\\..\\\\",
+          "category": "universal_paths",
+          "confidence": 0.5
+        }
+      ]
+    },
+    "24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt": {
+      "crypto_aes_function": [
+        {
+          "value": "http://www.iuqerfsodp9ifjaposdfjhgo",
+          "category": "c2_url",
+          "confidence": 1.0
+        },
+        {
+          "value": "http://www.iuqerfsodp9ifjaposdfjhgosuri",
+          "category": "c2_url",
+          "confidence": 1.0
+        },
+        {
+          "value": "surijfaewrwergwea.com",
+          "category": "c2_domain",
+          "confidence": 0.9900000000000001
+        }
+      ],
+      "memory_operation_function": [
+        {
+          "value": "24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c",
+          "category": "file_hash_sha256",
+          "confidence": 1.0
+        },
+        {
+          "value": "db349b97c37d22f5ea1d1841e3c89eb4",
+          "category": "file_hash_md5",
+          "confidence": 1.0
+        },
+        {
+          "value": "9fbb1227",
+          "category": "file_hash_crc32",
+          "confidence": 1.0
+        },
+        {
+          "value": "C:\\%s\\%s",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "C:\\%s\\qeriuwjhrf",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "C:\\\\%s\\\\%s",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "C:\\\\%s\\\\qeriuwjhrf",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "\\\\%s\\IPC$",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "\\\\\\\\%s\\\\IPC$",
+          "category": "universal_paths",
+          "confidence": 0.5
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "infrastructure_graph": {
+    "c2_domain_eq.io": [
+      "hello2.txt",
+      "hello1.txt"
+    ],
+    "file_hash_28cae262b22a4a7a9d9a6c7403a79793": [
+      "hello2.txt",
+      "hello1.txt"
+    ],
+    "file_hash_f9aaf2fb9c19e9e83cfd82743720346e92f5ceaf55b4d8edb825fa82f6556407": [
+      "hello2.txt",
+      "hello1.txt"
+    ],
+    "file_hash_d40d3fe5": [
+      "hello2.txt",
+      "hello1.txt"
+    ]
+  },
+  "variant_families": {
+    "variant_family_d863ba63": [
+      "hello2.txt",
+      "hello1.txt"
+    ]
+  },
+  "function_ioc_mappings": {
+    "hello2.txt": {
+      "crypto_aes_function": [
+        {
+          "value": "eq.io",
+          "category": "c2_domain",
+          "confidence": 0.9900000000000001
+        }
+      ],
+      "memory_operation_function": [
+        {
+          "value": "f9aaf2fb9c19e9e83cfd82743720346e92f5ceaf55b4d8edb825fa82f6556407",
+          "category": "file_hash_sha256",
+          "confidence": 1.0
+        },
+        {
+          "value": "28cae262b22a4a7a9d9a6c7403a79793",
+          "category": "file_hash_md5",
+          "confidence": 1.0
+        },
+        {
+          "value": "d40d3fe5",
+          "category": "file_hash_crc32",
+          "confidence": 1.0
+        },
+        {
+          "value": "\"\\n\\tm",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "\"\\nruntime",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "\"\\tgoroutine",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "\"\\tstack",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "\"\\tvalue",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "\\n-----\\n\\n",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "\\n\\tmorebuf",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "\\n\\tsched",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "\\nruntime",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "\\tgoroutine",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "\\tstack",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "stack:\\n",
+          "category": "universal_paths",
+          "confidence": 0.5
+        }
+      ]
+    },
+    "hello1.txt": {
+      "crypto_aes_function": [
+        {
+          "value": "eq.io",
+          "category": "c2_domain",
+          "confidence": 0.9900000000000001
+        }
+      ],
+      "memory_operation_function": [
+        {
+          "value": "f9aaf2fb9c19e9e83cfd82743720346e92f5ceaf55b4d8edb825fa82f6556407",
+          "category": "file_hash_sha256",
+          "confidence": 1.0
+        },
+        {
+          "value": "28cae262b22a4a7a9d9a6c7403a79793",
+          "category": "file_hash_md5",
+          "confidence": 1.0
+        },
+        {
+          "value": "d40d3fe5",
+          "category": "file_hash_crc32",
+          "confidence": 1.0
+        },
+        {
+          "value": "\"\\n\\tm",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "\"\\nruntime",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "\"\\tgoroutine",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "\"\\tstack",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "\"\\tvalue",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "\\n-----\\n\\n",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "\\n\\tmorebuf",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "\\n\\tsched",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "\\nruntime",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "\\tgoroutine",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "\\tstack",
+          "category": "universal_paths",
+          "confidence": 0.5
+        },
+        {
+          "value": "stack:\\n",
+          "category": "universal_paths",
+          "confidence": 0.5
+        }
+      ]
+    }
+  }
+}

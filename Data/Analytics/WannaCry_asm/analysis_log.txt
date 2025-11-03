@@ -1,0 +1,22 @@
+================================================================================
+Session started: 0000-00-00 00:00:00
+Logging to: Data/Analytics/WannaCry_asm/analysis_log.txt
+================================================================================
+loaded 5 lib entries from Sniffer/src/LoadFiles/asm_footprint_sniffer_lib.txt
+  Loaded Regex Pattern: custom_malware_urls
+  Loaded Regex Pattern: custom_c2_domains
+  Loaded Keyword Set: custom_suspicious_keywords (5 items)
+  Loaded Keyword Set: assembly_context_keywords (2 items)
+  loaded 10 simple strings
+loaded custom patterns from Sniffer/src/LoadFiles/custom_pattern.txt
+  created new keyword set 'custom_suspicious_keywords'
+  merged 2 keywords into existing 'assembly_context_keywords'
+JSON results saved to: Data/Analytics/WannaCry_asm/asm_footprint_result.json
+report saved to: Data/Analytics/WannaCry_asm/asm_footprint_sniffer_report.txt
+ASM sniffer completed: Data/Analytics/WannaCry_asm/asm_footprint_result.json
+
+WARNING: cross reference analysis skipped (insufficient data)
+
+================================================================================
+Session ended: 0000-00-00 00:00:00
+================================================================================

@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IR Pattern Analysis</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.26.0/plotly.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.6/standalone/umd/vis-network.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Share+Tech+Mono&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: "Anton", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            background: #000000;
+            color: #204ef1;
+            line-height: 1.6;
+            padding: 20px;
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(32, 78, 241, 0.03) 2px, rgba(32, 78, 241, 0.03) 4px);
+        }
+        
+        .container { max-width: 1600px; margin: 0 auto; }
+        
+        .terminal-header {
+            border: 2px solid #204ef1;
+            border-bottom: none;
+            padding: 10px 20px;
+            background: rgba(39, 31, 54, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #204ef1;
+        }
+        
+        .terminal-title {
+            margin-left: 15px;
+            color: #dce5f4;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .card { 
+            background: rgba(45, 45, 45, 0.95);
+            border: 2px solid #204ef1;
+            margin: 0 0 30px 0;
+            position: relative;
+            box-shadow: 0 0 20px rgba(32, 78, 241, 0.3);
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #204ef1, transparent);
+        }
+        
+        .card-content {
+            padding: 25px;
+        }
+        
+        h1 { 
+            color: #ffffff; 
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 0 0 5px rgba(220, 229, 244, 0.5);
+            border-left: 4px solid #204ef1;
+            padding-left: 20px;
+        }
+        
+        h2 { 
+            color: #dce5f4;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #204ef1;
+        }
+        
+        h2::before {
+            content: '> ';
+            color: #204ef1;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .stat { 
+            background: rgba(39, 31, 54, 0.5);
+            border: 1px solid #204ef1;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 229, 244, 0.1), transparent);
+            animation: scan 3s infinite;
+        }
+        
+        @keyframes scan {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .stat-value { 
+            font-size: 42px; 
+            font-weight: bold; 
+            color: #e7eaeb;
+            text-shadow: 0 0 10px rgba(40, 176, 243, 1);
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label { 
+            color: #dce5f4; 
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .cluster {
+            font-family: "Share Tech Mono";
+            margin: 15px 0; 
+            padding: 15px; 
+            background: rgba(39, 31, 54, 0.3);
+            border-left: 3px solid #204ef1;
+            transition: all 0.3s ease;
+        }
+        
+        .cluster:hover {
+            background: rgba(39, 31, 54, 0.5);
+            border-left-width: 5px;
+        }
+        
+        .cluster-title { 
+            font-weight: bold; 
+            color: #dce5f4;
+            margin-bottom: 10px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .file-list { margin-left: 20px; }
+        
+        .file-item { 
+            padding: 5px 0; 
+            color: #fbfbfb;
+            font-size: 13px;
+        }
+        
+        .file-item::before {
+            content: '[+] ';
+            color: #204ef1;
+        }
+        
+        #cfg-network, #dfg-network { 
+            height: 700px; 
+            border: 1px solid #204ef1;
+            background: #000000;
+            position: relative;
+        }
+        
+        #heatmap, #scatter { 
+            height: 600px; 
+            background: #000000;
+        }
+        
+        .controls { 
+            margin: 15px 0; 
+            display: flex; 
+            align-items: center; 
+            flex-wrap: wrap; 
+            gap: 15px;
+            padding: 15px;
+            background: rgba(39, 31, 54, 0.3);
+            border: 1px solid #204ef1;
+        }
+        
+        label {
+            font-family: "Share Tech Mono";
+            color: #dce5f4;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+        
+        select, input {
+            padding: 10px 15px;
+            border: 1px solid #204ef1;
+            background: rgba(45, 45, 45, 0.8);
+            color: #dce5f4;
+            font-family: "Share Tech Mono";
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        select:hover, input:hover {
+            border-color: #dce5f4;
+            box-shadow: 0 0 10px rgba(32, 78, 241, 0.5);
+        }
+
+        input[type="text"] {
+            min-width: 250px;
+        }
+        
+        .btn { 
+            padding: 10px 25px; 
+            background: linear-gradient(135deg, #204ef1, #271f36);
+            color: #fbfbfb; 
+            border: 1px solid #204ef1;
+            cursor: pointer; 
+            font-size: 12px;
+            font-family: "Share Tech Mono";
+            font-weight: 400;
+            font-style: normal;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(220, 229, 244, 0.2);
+            transition: left 0.3s ease;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn:hover { 
+            box-shadow: 0 0 15px rgba(32, 78, 241, 0.8);
+            border-color: #dce5f4;
+        }
+        
+        .btn-secondary { 
+            background: linear-gradient(135deg, #122f60, #0c1c36);
+        }
+        
+        .info-panel {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(45, 45, 45, 0.98);
+            padding: 20px;
+            border: 2px solid #204ef1;
+            box-shadow: 0 0 30px rgba(32, 78, 241, 0.5);
+            max-width: 400px;
+            max-height: 500px;
+            overflow-y: auto;
+            display: none;
+            z-index: 1000;
+        }
+        
+        .info-panel.visible { display: block; }
+        
+        .info-panel h3 { 
+            margin: 0 0 15px 0; 
+            color: #dce5f4; 
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid #204ef1;
+            padding-bottom: 10px;
+        }
+        
+        .info-item { 
+            margin: 10px 0; 
+            font-size: 13px; 
+            color: #fbfbfb;
+        }
+        
+        .info-label { 
+            font-weight: bold; 
+            color: #204ef1;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+        
+        .code-block { 
+            background: #000000;
+            padding: 12px; 
+            font-family: "Anton", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 11px; 
+            max-height: 200px; 
+            overflow-y: auto;
+            margin-top: 10px;
+            color: #dce5f4;
+            border: 1px solid #204ef1;
+            line-height: 1.4;
+        }
+        
+        .code-block::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .code-block::-webkit-scrollbar-track {
+            background: #000000;
+        }
+        
+        .code-block::-webkit-scrollbar-thumb {
+            background: #204ef1;
+        }
+        
+        .status-bar {
+            padding: 12px 20px;
+            background: rgba(39, 31, 54, 0.3);
+            margin-top: 15px;
+            font-size: 13px;
+            color: #dce5f4;
+            border-left: 3px solid #204ef1;
+            font-family: "Anton", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        
+        .status-bar::before {
+            content: '// ';
+            color: #204ef1;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #000000;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #204ef1;
+            border: 1px solid #271f36;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #dce5f4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>IR Pattern ANALYSIS</h1>
+        
+        <div class="terminal-header">
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-title">System Summary</div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <div class="stats-grid">
+                    <div class="stat">
+                        <span class="stat-value" id="analyzed-files">0</span>
+                        <span class="stat-label">Files Analyzed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="num-clusters">0</span>
+                        <span class="stat-label">IR Groups</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="noise-files">0</span>
+                        <span class="stat-label">Unique Files</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="terminal-header">
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-title">IR Groups</div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <div id="clusters-container"></div>
+            </div>
+        </div>
+
+        <div class="terminal-header">
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-title">Feature Analysis</div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <div class="controls">
+                    <label>X-Axis: </label>
+                    <select id="xaxis"></select>
+                    <label>Y-Axis: </label>
+                    <select id="yaxis"></select>
+                    <button class="btn" onclick="exportScatter()">Export PNG</button>
+                </div>
+                <div id="scatter"></div>
+            </div>
+        </div>
+        
+        <div class="terminal-header">
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-title">Similarity Matrix</div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <div class="controls">
+                    <button class="btn" onclick="exportHeatmap()">Export PNG</button>
+                </div>
+                <div id="heatmap"></div>
+            </div>
+        </div>
+
+        <div class="terminal-header">
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-title">Canonical Similarity Matrix (Isomorphism-Based)</div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <div class="controls">
+                    <button class="btn" onclick="exportCanonicalHeatmap()">Export PNG</button>
+                    <div class="status-bar" style="margin: 0; padding: 8px 15px;">
+                        1.0 = Identical CFG structure | 0.5-0.9 = Partial structural match | 0.0 = Different structure
+                    </div>
+                </div>
+                <div id="canonical-heatmap"></div>
+            </div>
+        </div>
+        
+        <div class="terminal-header">
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-title">Control Flow Graph</div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <div class="controls">
+                    <label>Select File: </label>
+                    <select id="cfg-file-selector"></select>
+                    <button class="btn" onclick="cfgShowAll()">Show All</button>
+                    <button class="btn btn-secondary" onclick="cfgReset()">Reset</button>
+                    <button class="btn" onclick="cfgExpandVisible()">Expand Visible</button>
+                </div>
+                <div class="status-bar" id="cfg-status">Click a node to expand connections. Double click for details.</div>
+                <div id="cfg-network">
+                    <div class="info-panel" id="cfg-info"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="terminal-header">
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-title">Data Flow Graph</div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <div class="controls">
+                    <label>Select File: </label>
+                    <select id="dfg-file-selector"></select>
+                    <button class="btn" onclick="dfgShowAll()">Show All</button>
+                    <button class="btn btn-secondary" onclick="dfgReset()">Reset</button>
+                    <button class="btn" onclick="dfgExpandVisible()">Expand Visible</button>
+                </div>
+                <div class="status-bar" id="dfg-status">Click a node to expand connections. Double click for details.</div>
+                <div id="dfg-network">
+                    <div class="info-panel" id="dfg-info"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let graphData = null;
+        let cfgNetwork = null;
+        let dfgNetwork = null;
+        let currentCFGFile = null;
+        let currentDFGFile = null;
+        let cfgVisibleNodes = new Set();
+        let dfgVisibleNodes = new Set();
+        
+        async function loadData() {
+            try {
+                const results = await fetch('results.json').then(r => r.json());
+                graphData = await fetch('graph_data.json').then(r => r.json());
+                return results;
+            } catch (error) {
+                console.error('Error Loading Data:', error);
+                return null;
+            }
+        }
+        
+        async function init() {
+            const results = await loadData();
+            if (!results || !graphData) {
+                alert('Failed to load data files. Make sure results.json and graph_data.json exist.');
+                return;
+            }
+            
+            document.getElementById('analyzed-files').textContent = results.summary.analyzed_files;
+            document.getElementById('num-clusters').textContent = results.summary.num_clusters;
+            document.getElementById('noise-files').textContent = results.summary.noise_files;
+            
+            const clustersContainer = document.getElementById('clusters-container');
+            if (results.clusters && Object.keys(results.clusters).length > 0) {
+                clustersContainer.innerHTML = Object.entries(results.clusters).map(([name, files]) => `
+                    <div class="cluster">
+                        <div class="cluster-title">${name} (${files.length} files)</div>
+                        <div class="file-list">
+                            ${files.map(f => `<div class="file-item">${f}</div>`).join('')}
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                clustersContainer.innerHTML = '<div class="cluster"><div class="cluster-title">No Distinct Groups Identified</div></div>';
+            }
+            
+            Plotly.newPlot('heatmap', [{
+                z: results.similarity_matrix,
+                x: results.files,
+                y: results.files,
+                type: 'heatmap',
+                colorscale: [
+                    [0, '#FFFACD'],
+                    [0.2, '#FFD700'], 
+                    [0.4, '#FFA500'],
+                    [0.6, '#FF6347'],
+                    [0.8, '#FF4500'],
+                    [1, '#8B0000']
+                ],
+                hoverongaps: false
+            }], {
+                title: { text: '', font: { color: '#dce5f4' } },
+                xaxis: { tickangle: -45, tickfont: { color: '#dce5f4', family: 'Share Tech Mono' }, gridcolor: '#204ef1' },
+                yaxis: { tickangle: 0, tickfont: { color: '#dce5f4', family: 'Share Tech Mono' }, gridcolor: '#204ef1' },
+                paper_bgcolor: '#000000',
+                plot_bgcolor: '#000000'
+            });
+            
+            if (results.canonical_similarity_matrix && results.canonical_similarity_matrix.length > 0) {
+                Plotly.newPlot('canonical-heatmap', [{
+                    z: results.canonical_similarity_matrix,
+                    x: results.files,
+                    y: results.files,
+                    type: 'heatmap',
+                    colorscale: [
+                        [0, '#000428'],
+                        [0.25, '#1a4d7a'],
+                        [0.5, '#28b0f3'],
+                        [0.75, '#dce5f4'],
+                        [1, '#fbfbfb']
+                    ],
+                    hovertemplate: '%{y} vs %{x}<br>Structural Similarity: %{z:.2%}<extra></extra>',
+                    hoverongaps: false
+                }], {
+                    title: { 
+                        text: 'Graph Isomorphism Similarity (WL Hash + Structure)', 
+                        font: { color: '#dce5f4', size: 14, family: 'Share Tech Mono' } 
+                    },
+                    xaxis: { 
+                        tickangle: -45, 
+                        tickfont: { color: '#dce5f4', family: 'Share Tech Mono' }, 
+                        gridcolor: '#204ef1' 
+                    },
+                    yaxis: { 
+                        tickangle: 0, 
+                        tickfont: { color: '#dce5f4', family: 'Share Tech Mono' }, 
+                        gridcolor: '#204ef1' 
+                    },
+                    paper_bgcolor: '#000000',
+                    plot_bgcolor: '#000000'
+                });
+            } else {
+                document.getElementById('canonical-heatmap').innerHTML = 
+                    '<div style="padding: 40px; text-align: center; color: #dce5f4; font-family: Share Tech Mono;">' +
+                    'canonical similarity matrix not available in results.json</div>';
+            }
+            
+            const xSelect = document.getElementById('xaxis');
+            const ySelect = document.getElementById('yaxis');
+            results.feature_names.forEach((name, i) => {
+                xSelect.innerHTML += `<option value="${i}">${name}</option>`;
+                ySelect.innerHTML += `<option value="${i}">${name}</option>`;
+            });
+            ySelect.selectedIndex = 1;
+            
+            function updateScatter() {
+                const xIdx = parseInt(xSelect.value);
+                const yIdx = parseInt(ySelect.value);
+                Plotly.newPlot('scatter', [{
+                    x: results.features.map(f => f[xIdx]),
+                    y: results.features.map(f => f[yIdx]),
+                    mode: 'markers+text',
+                    text: results.files,
+                    textposition: 'top center',
+                    textfont: {size: 9, color: '#dce5f4', family: 'Share Tech Mono'},
+                    marker: { size: 12, color: '#204ef1', line: { color: '#dce5f4', width: 1.5 } }
+                }], {
+                    xaxis: { title: { text: results.feature_names[xIdx], font: { color: '#dce5f4', family: 'Share Tech Mono' } }, tickfont: { color: '#dce5f4', family: 'Share Tech Mono' }, gridcolor: '#204ef1', zeroline: false },
+                    yaxis: { title: { text: results.feature_names[yIdx], font: { color: '#dce5f4', family: 'Share Tech Mono' } }, tickfont: { color: '#dce5f4', family: 'Share Tech Mono' }, gridcolor: '#204ef1', zeroline: false },
+                    paper_bgcolor: '#000000',
+                    plot_bgcolor: '#000000'
+                });
+            }
+            
+            xSelect.addEventListener('change', updateScatter);
+            ySelect.addEventListener('change', updateScatter);
+            updateScatter();
+            
+            const cfgSelector = document.getElementById('cfg-file-selector');
+            const dfgSelector = document.getElementById('dfg-file-selector');
+            
+            Object.keys(graphData).forEach(filename => {
+                cfgSelector.innerHTML += `<option value="${filename}">${filename}</option>`;
+                dfgSelector.innerHTML += `<option value="${filename}">${filename}</option>`;
+            });
+            
+            cfgSelector.addEventListener('change', (e) => loadCFG(e.target.value));
+            dfgSelector.addEventListener('change', (e) => loadDFG(e.target.value));
+            
+            if (Object.keys(graphData).length > 0) {
+                const firstFile = Object.keys(graphData)[0];
+                loadCFG(firstFile);
+                loadDFG(firstFile);
+            }
+        }
+        
+        function loadCFG(filename) {
+            currentCFGFile = filename;
+            const data = graphData[filename];
+            cfgVisibleNodes.clear();
+            data.entry_points.forEach(id => cfgVisibleNodes.add(id));
+            renderCFG();
+            document.getElementById('cfg-status').textContent = 
+                `Showing ${cfgVisibleNodes.size} of ${data.total_blocks} blocks. Click nodes to expand.`;
+        }
+        
+        function renderCFG() {
+            const data = graphData[currentCFGFile];
+            const nodes = [];
+            const edges = [];
+            
+            data.nodes.forEach(node => {
+                if (cfgVisibleNodes.has(node.id)) {
+                    const funcName = node.function_name || 'unknown';
+                    const shortName = funcName.length > 25 ? funcName.substring(0, 22) + '...' : funcName;
+                    
+                    nodes.push({
+                        id: node.id,
+                        label: `${shortName}\nBlock ${node.id} (${node.instruction_count} inst)`,
+                        shape: 'box',
+                        color: { background: '#204ef1', border: '#dce5f4', highlight: { background: '#271f36', border: '#fbfbfb' } },
+                        font: { color: '#fbfbfb', size: 11, face: 'Share Tech Mono' },
+                        title: `${node.function_name}\nBlock ${node.id}\n${node.address_start} - ${node.address_end}`
+                    });
+                    
+                    node.outbounds.forEach(target => {
+                        if (cfgVisibleNodes.has(target)) {
+                            edges.push({ from: node.id, to: target, arrows: 'to', color: { color: '#dce5f4', highlight: '#204ef1' }, width: 1.5 });
+                        }
+                    });
+                }
+            });
+            
+            if (cfgNetwork) cfgNetwork.destroy();
+            
+            cfgNetwork = new vis.Network(
+                document.getElementById('cfg-network'),
+                { nodes: new vis.DataSet(nodes), edges: new vis.DataSet(edges) },
+                {
+                    layout: { hierarchical: { direction: 'UD', sortMethod: 'directed', nodeSpacing: 150 } },
+                    physics: false,
+                    interaction: { hover: true, tooltipDelay: 100 }
+                }
+            );
+            
+            cfgNetwork.on('click', (params) => {
+                if (params.nodes.length > 0) {
+                    expandCFGNode(params.nodes[0]);
+                }
+            });
+            
+            cfgNetwork.on('doubleClick', (params) => {
+                if (params.nodes.length > 0) {
+                    showCFGNodeInfo(params.nodes[0]);
+                }
+            });
+        }
+        
+        function expandCFGNode(nodeId) {
+            const data = graphData[currentCFGFile];
+            const node = data.nodes.find(n => n.id === nodeId);
+            if (!node) return;
+            
+            let added = 0;
+            node.outbounds.forEach(target => {
+                if (!cfgVisibleNodes.has(target)) {
+                    cfgVisibleNodes.add(target);
+                    added++;
+                }
+            });
+            
+            if (added > 0) {
+                renderCFG();
+                document.getElementById('cfg-status').textContent = 
+                    `Added ${added} nodes. Showing ${cfgVisibleNodes.size} of ${data.total_blocks} blocks.`;
+            }
+        }
+        
+        function showCFGNodeInfo(nodeId) {
+            const data = graphData[currentCFGFile];
+            const node = data.nodes.find(n => n.id === nodeId);
+            if (!node) return;
+            
+            const panel = document.getElementById('cfg-info');
+            panel.innerHTML = `
+                <h3>Block ${node.id} Details</h3>
+                <div class="info-item"><span class="info-label">Instructions:</span> ${node.instruction_count}</div>
+                <div class="info-item"><span class="info-label">Address:</span> ${node.address_start} - ${node.address_end}</div>
+                <div class="info-item"><span class="info-label">Outbounds:</span> ${node.outbounds.length}</div>
+                <div class="info-item"><span class="info-label">Inbounds:</span> ${node.inbounds.length}</div>
+                ${node.function_calls.length > 0 ? `<div class="info-item"><span class="info-label">Calls:</span> ${node.function_calls.join(', ')}</div>` : ''}
+                <div class="code-block">${node.instructions.join('\n') || 'No Instructions Available'}</div>
+            `;
+            panel.classList.add('visible');
+            setTimeout(() => panel.classList.remove('visible'), 5000);
+        }
+        
+        function cfgShowAll() {
+            const data = graphData[currentCFGFile];
+            data.nodes.forEach(node => cfgVisibleNodes.add(node.id));
+            renderCFG();
+            document.getElementById('cfg-status').textContent = `Showing all ${data.total_blocks} blocks.`;
+        }
+        
+        function cfgReset() {
+            loadCFG(currentCFGFile);
+        }
+        
+        function cfgExpandVisible() {
+            const data = graphData[currentCFGFile];
+            const toAdd = new Set();
+            data.nodes.forEach(node => {
+                if (cfgVisibleNodes.has(node.id)) {
+                    node.outbounds.forEach(target => toAdd.add(target));
+                }
+            });
+            toAdd.forEach(id => cfgVisibleNodes.add(id));
+            renderCFG();
+            document.getElementById('cfg-status').textContent = 
+                `Showing ${cfgVisibleNodes.size} of ${data.total_blocks} blocks.`;
+        }
+        
+        function loadDFG(filename) {
+            currentDFGFile = filename;
+            const data = graphData[filename];
+            dfgVisibleNodes.clear();
+            data.entry_points.forEach(id => dfgVisibleNodes.add(id));
+            renderDFG();
+            document.getElementById('dfg-status').textContent = 
+                `Showing ${dfgVisibleNodes.size} of ${data.total_blocks} blocks. Click nodes to expand.`;
+        }
+        
+        function renderDFG() {
+            const data = graphData[currentDFGFile];
+            const nodes = [];
+            const edges = [];
+            const offset = data.total_blocks;
+            
+            data.nodes.forEach(node => {
+                if (dfgVisibleNodes.has(node.id)) {
+                    const funcName = node.function_name || 'unknown';
+                    const shortName = funcName.length > 25 ? funcName.substring(0, 22) + '...' : funcName;
+                    
+                    nodes.push({
+                        id: offset + node.id,
+                        label: `${shortName}\nBlock ${node.id} (${node.instruction_count} inst)`,
+                        shape: 'box',
+                        color: { background: '#204ef1', border: '#dce5f4', highlight: { background: '#271f36', border: '#fbfbfb' } },
+                        font: { color: '#fbfbfb', size: 11, face: 'Share Tech Mono' },
+                        title: `${node.function_name}\nBlock ${node.id}\n${node.address_start} - ${node.address_end}`
+                    });
+                }
+            });
+
+            if (data.dfg_edges) {
+                data.dfg_edges.forEach(edge => {
+                    if (dfgVisibleNodes.has(edge.from) && dfgVisibleNodes.has(edge.to)) {
+                        edges.push({
+                            from: offset + edge.from,
+                            to: offset + edge.to,
+                            arrows: 'to',
+                            label: edge.register,
+                            color: { color: '#28b0f3', highlight: '#fbfbfb' },
+                            width: 2,
+                            font: { color: '#dce5f4', size: 9 }
+                        });
+                    }
+                });
+            }
+            
+            if (dfgNetwork) dfgNetwork.destroy();
+            
+            dfgNetwork = new vis.Network(
+                document.getElementById('dfg-network'),
+                { nodes: new vis.DataSet(nodes), edges: new vis.DataSet(edges) },
+                {
+                    layout: { hierarchical: { direction: 'LR', sortMethod: 'directed' } },
+                    physics: false,
+                    interaction: { hover: true }
+                }
+            );
+            
+            dfgNetwork.on('click', (params) => {
+                if (params.nodes.length > 0) {
+                    const actualId = params.nodes[0] - offset;
+                    expandDFGNode(actualId);
+                }
+            });
+            
+            dfgNetwork.on('doubleClick', (params) => {
+                if (params.nodes.length > 0) {
+                    const actualId = params.nodes[0] - offset;
+                    showDFGNodeInfo(actualId);
+                }
+            });
+        }
+        
+        function expandDFGNode(nodeId) {
+            const data = graphData[currentDFGFile];
+            const node = data.nodes.find(n => n.id === nodeId);
+            if (!node) return;
+            
+            let added = 0;
+            node.outbounds.forEach(target => {
+                if (!dfgVisibleNodes.has(target)) {
+                    dfgVisibleNodes.add(target);
+                    added++;
+                }
+            });
+            
+            if (added > 0) {
+                renderDFG();
+                document.getElementById('dfg-status').textContent = 
+                    `Added ${added} nodes. Showing ${dfgVisibleNodes.size} of ${data.total_blocks} blocks.`;
+            }
+        }
+        
+        function showDFGNodeInfo(nodeId) {
+            const data = graphData[currentDFGFile];
+            const node = data.nodes.find(n => n.id === nodeId);
+            if (!node) return;
+            
+            const panel = document.getElementById('dfg-info');
+            panel.innerHTML = `
+                <h3>Data Flow Block ${node.id}</h3>
+                <div class="info-item"><span class="info-label">Instructions:</span> ${node.instruction_count}</div>
+                <div class="info-item"><span class="info-label">Registers Used:</span> ${node.registers_used.join(', ') || 'None'}</div>
+                <div class="info-item"><span class="info-label">Registers Defined:</span> ${node.registers_defined.join(', ') || 'None'}</div>
+                <div class="info-item"><span class="info-label">Def-Use Chains:</span> ${Object.keys(node.def_use_distances || {}).length}</div>
+                <div class="code-block">${node.instructions.join('\n') || 'No Instructions'}</div>
+            `;
+            panel.classList.add('visible');
+            setTimeout(() => panel.classList.remove('visible'), 5000);
+        }
+        
+        function dfgShowAll() {
+            const data = graphData[currentDFGFile];
+            data.nodes.forEach(node => dfgVisibleNodes.add(node.id));
+            renderDFG();
+            document.getElementById('dfg-status').textContent = `Showing all ${data.total_blocks} blocks.`;
+        }
+        
+        function dfgReset() {
+            loadDFG(currentDFGFile);
+        }
+        
+        function dfgExpandVisible() {
+            const data = graphData[currentDFGFile];
+            const toAdd = new Set();
+            data.nodes.forEach(node => {
+                if (dfgVisibleNodes.has(node.id)) {
+                    node.outbounds.forEach(target => toAdd.add(target));
+                }
+            });
+            toAdd.forEach(id => dfgVisibleNodes.add(id));
+            renderDFG();
+            document.getElementById('dfg-status').textContent = 
+                `Showing ${dfgVisibleNodes.size} of ${data.total_blocks} blocks.`;
+        }
+        
+        function exportHeatmap() {
+            Plotly.downloadImage('heatmap', { format: 'png', width: 1920, height: 1080, filename: 'similarity_heatmap' });
+        }
+
+        function exportCanonicalHeatmap() {
+            Plotly.downloadImage('canonical-heatmap', { format: 'png', width: 1920, height: 1080, filename: 'canonical_similarity_heatmap' });
+        }
+        
+        function exportScatter() {
+            Plotly.downloadImage('scatter', { format: 'png', width: 1920, height: 1080, filename: 'feature_scatter' });
+        }
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    </script>
+</body>
+</html>

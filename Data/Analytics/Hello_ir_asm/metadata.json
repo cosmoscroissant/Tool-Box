@@ -1,0 +1,35 @@
+{
+  "config": {
+    "thorough_mode": false,
+    "max_blocks": 2000,
+    "dbscan_eps": [
+      0.3,
+      0.5,
+      0.7,
+      1.0,
+      1.5
+    ],
+    "similarity_threshold": 0.7
+  },
+  "input": {
+    "total_files": 2,
+    "analyzed_files": 2,
+    "file_list": [
+      "hello2.txt",
+      "hello1.txt"
+    ]
+  },
+  "output": {
+    "num_clusters": 1,
+    "noise_files": 0,
+    "cluster_sizes": [
+      2
+    ]
+  },
+  "environment": {
+    "python_version": "3.13.5 (v3.13.5:6cb20a219a8, Jun 11 2025, 12:23:45) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "numpy_version": "2.3.3"
+  },
+  "tags": [],
+  "notes": ""
+}

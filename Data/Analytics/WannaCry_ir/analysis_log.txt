@@ -1,0 +1,137 @@
+================================================================================
+Session started: 0000-00-00 00:00:00
+Logging to: Data/Analytics/WannaCry_ir/analysis_log.txt
+================================================================================
+============================================================
+IR STRUCTURAL SIMILARITY ANALYZER
+Purpose: analyze and cluster IDA microcode by structural patterns
+Features: CFG/DFG analysis with 25 structural features
+============================================================
+
+Scanning Files From: Data/WannaCry
+found 2 files
+
+
+Processing file: ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt
+full dataflow analysis on 17 blocks
+Parse Microcode Complete: 17 blocks
+CFG built: 17 nodes
+Features Extracted: 27 features
+ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt: 17 blocks (complex_algorithm)
+Tags: uses_aes, aes_detected, has_memset, has_malloc, has_strcpy
+
+Processing file: 24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt
+full dataflow analysis on 17 blocks
+Parse Microcode Complete: 17 blocks
+CFG built: 17 nodes
+Features Extracted: 27 features
+24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt: 17 blocks (complex_algorithm)
+Tags: uses_aes, aes_detected, has_memset, has_malloc, has_strcpy
+
+Feature Extraction Complete:
+  - valid_files: 2
+  - all_blocks: 2
+  - feature_matrix shape: (2, 27)
+
+Extracting Canonical Graph Forms
+  [1/2] processing ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt (17 blocks)
+  [2/2] processing 24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt (17 blocks)
+SUCCESS: extracted 2 canonical forms
+
+Computing Isomorphic Groups for 2 Files
+found 0 isomorphic groups
+SUCCESS: found 0 groups
+
+Clustering Similar Structures
+Trying 5 Different DBSCAN Epsilon Values
+  [1/5] testing eps=0.3
+    found 2 clusters
+  [2/5] testing eps=0.5
+    found 2 clusters
+  [3/5] testing eps=0.7
+    found 2 clusters
+  [4/5] testing eps=1.0
+    found 2 clusters
+  [5/5] testing eps=1.5
+    found 2 clusters
+best clustering: 0 clusters
+
+Mining Frequent Subgraph Patterns
+processing 2 files
+  [1/2] ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt (17 blocks)
+  extracted 124 subgraphs
+  [2/2] 24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt (17 blocks)
+  extracted 156 subgraphs
+  collected 229 total unique patterns
+Found 51 Frequent Patterns (appearing in 2+ files)
+
+Matching Patterns to Files
+matching 51 patterns to files
+  ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt: 51 patterns matched
+  24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt: 51 patterns matched
+
+Computing Semantic Similarity Matrix (2x2 = 4 comparisons)
+  processed 0/2 files (1/1 comparisons, 100.0%)
+  processed 1/2 files (1/1 comparisons, 100.0%)
+
+Computing Structural Similarity from Canonical Forms
+computing canonical similarity matrix (2x2 comparisons)
+  processed 0/2 files (1/1 comparisons, 100.0%)
+  processed 1/2 files (1/1 comparisons, 100.0%)
+
+
+
+============================================================
+IR STRUCTURAL ANALYSIS RESULTS
+============================================================
+Total Files Scanned: 2
+Successfully Analyzed: 2
+Structural Clusters: 0
+Unique/Unmatched Files: 2
+
+Semantic Analysis:
+  Files with Crypto: 2
+  Files with Stdlib Patterns: 2
+
+Cryptographic Algorithms Detected:
+  AES: 2 samples
+
+============================================================
+Results Directory: Data/Analytics/WannaCry_ir
+Starting Web Visualizer
+============================================================
+
+
+High Semantic Similarity Pairs (>80%):
+ ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt ↔ 24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt: 85.0%
+
+============================================================
+SIMILARITY METRICS COMPARISON
+============================================================
+
+Semantically Similar but Structurally Different Pairs:
+ ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt ↔ 24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt
+ Semantic: 85.0% | Structural: 35.8% | Feature: -100.0%
+
+Frequent Code Patterns:
+  Found 50 patterns across multiple functions
+  1. Pattern: E((0, 1),)|O('N/O', 'N/O')
+     Appears in 2 functions
+  2. Pattern: E((14, 15),)|O('N/O', 'N/O')
+     Appears in 2 functions
+  3. Pattern: E((0, 1), (7, 1))|O('N/O', 'N/O', 'N/O')
+     Appears in 2 functions
+  4. Pattern: E((6, 7),)|O('N/O', 'jnz')
+     Appears in 2 functions
+  5. Pattern: E((11, 15),)|O('N/O', 'goto')
+     Appears in 2 functions
+
+Pattern-based Similarity:
+  ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt ↔ 24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt: 51/51 patterns (100%)
+
+IR analysis completed: Data/Analytics/WannaCry_ir
+WARNING: cross reference analysis skipped (insufficient data)
+
+================================================================================
+Session ended: 0000-00-00 00:00:00
+================================================================================

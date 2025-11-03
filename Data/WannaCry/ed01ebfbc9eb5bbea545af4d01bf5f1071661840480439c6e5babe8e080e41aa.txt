@@ -1,0 +1,117 @@
+--- IR FOR start (0x004077BA) ---
+The decompiler assumes that the segment '.idata' is read-only because of its NAME.
+All data references to the segment will be replaced by constant values.
+This may lead to drastic changes in the decompiler output.
+If the segment is not read-only, please change the segment NAME.
+
+In general, the decompiler checks the segment permissions, class, and name
+to determine if it is read-only.
+ -> OK
+4077BA: using guessed type _DWORD start();
+4081AC: using guessed type int _getmainargs(void);
+40F944: using guessed type int dword_40F944;
+40F948: using guessed type int dword_40F948;
+40F94C: using guessed type int dword_40F94C;
+40F950: using guessed type int dword_40F950;
+40F954: using guessed type int dword_40F954;
+0. 0 ; STKD=0 MINREF=28/END=88 ARGS: OFF=8C/MINREF=18C/END=18C/SHADOW=0
+0. 0 ; SAVEDREGS: ebp.4
+0. 0 ; 1WAY-BLOCK 0 FAKE OUTBOUNDS: 1 [START=4077BA END=4077BA] MINREFS: STK=88/ARG=18C, MAXBSP: 0
+0. 0 ; DEF: (esi.4,ds.2,RET,arg+0.C)
+0. 0
+1. 0 ; 2WAY-BLOCK 1 INBOUNDS: 0 OUTBOUNDS: 2 3 [START=4077BA END=407831] MINREFS: STK=88/ARG=18C, MAXBSP: 88
+1. 0 ; USE: ds.2,RET,(GLBLOW,GLBHIGH)
+1. 0 ; DEF: sp+80..,40F94C.C,(cf.1,zf.1,sf.1,of.1,pf.1,rax.8,ecx.4,fps.2,fl.1,c0.1,c2.1,c3.1,df.1,if.1,GLBLOW,sp+28..80,RET,10018C..40F94C,40F958..)
+1. 0 mov    #0.4, %0x80.4           ; 4077E2 u=           d=sp+80.4
+1. 1 mov    #2.4, %__saved_registers.4 ; 4077E5 u=           d=sp+84..
+1. 2 call   $__set_app_type <cdecl:"_crt_app_type Type" %__return_address.4>.0 ; 4077E7 u=RET,(GLBLOW,GLBHIGH) d=(cf.1,zf.1,sf.1,of.1,pf.1,rax.8,ecx.4,fps.2,fl.1,c0.1,c2.1,c3.1,df.1,if.1,GLBLOW,RET,GLBHIGH)
+1. 3 mov    #0xFFFFFFFF.4, $dword_40F94C.4 ; 4077EE u=           d=40F94C.4
+1. 4 mov    #0xFFFFFFFF.4, $dword_40F950.4 ; 4077F5 u=           d=40F950.4
+1. 5 stx    $dword_40F948.4, ds.2, call $__p__fmode<cdecl:> => "int *" .4 ; 407808 u=ds.2,40F948.4,(GLBLOW,10018C..40F948,40F94C..) d=(cf.1,zf.1,sf.1,of.1,pf.1,rax.8,ecx.4,fps.2,fl.1,c0.1,c2.1,c3.1,df.1,if.1,GLBLOW,sp+28..,GLBHIGH)
+1. 6 stx    $dword_40F944.4, ds.2, call $__p__commode<cdecl:> => "int *" .4 ; 407816 u=ds.2,40F944.4,(GLBLOW,10018C..40F944,40F948..) d=(cf.1,zf.1,sf.1,of.1,pf.1,rax.8,ecx.4,fps.2,fl.1,c0.1,c2.1,c3.1,df.1,if.1,GLBLOW,sp+28..,GLBHIGH)
+1. 7 mov    $_adjust_fdiv.4{3}, $dword_40F954.4{3} ; 40781F u=           d=40F954.4
+1. 8 call   $unk_40793F <> => int .0 ; 407824 u=(GLBLOW,GLBHIGH) d=(cf.1,zf.1,sf.1,of.1,pf.1,rax.8,ecx.4,fps.2,fl.1,c0.1,c2.1,c3.1,df.1,if.1,GLBLOW,GLBHIGH)
+1. 9 jnz    $dword_40F870.4, #0.4, @3 ; 40782F u=40F870.4
+1. 9
+2. 0 ; 1WAY-BLOCK 2 INBOUNDS: 1 OUTBOUNDS: 3 [START=407831 END=40783D] MINREFS: STK=88/ARG=18C, MAXBSP: 88
+2. 0 ; USE: RET,(GLBLOW,GLBHIGH)
+2. 0 ; DEF: sp+84..,(cf.1,zf.1,sf.1,of.1,pf.1,rax.8,ecx.4,fps.2,fl.1,c0.1,c2.1,c3.1,df.1,if.1,GLBLOW,RET,GLBHIGH)
+2. 0 mov    &($unk_40793C).4, %__saved_registers.4 ; 407831 u=           d=sp+84..
+2. 1 call   $__setusermatherr <cdecl:"_UserMathErrorFunctionPointer UserMathErrorFunction" %__return_address.4>.0 ; 407836 u=RET,(GLBLOW,GLBHIGH) d=(cf.1,zf.1,sf.1,of.1,pf.1,rax.8,ecx.4,fps.2,fl.1,c0.1,c2.1,c3.1,df.1,if.1,GLBLOW,RET,GLBHIGH)
+2. 1
+3. 0 ; 2WAY-BLOCK 3 INBOUNDS: 1 2 OUTBOUNDS: 4 12 [START=40783D END=407896] MINREFS: STK=88/ARG=18C, MAXBSP: 88
+3. 0 ; USE: ds.2,(GLBLOW,sp+28..,GLBHIGH)
+3. 0 ; DEF: esi.4,sp+84..,(cf.1,zf.1,sf.1,of.1,pf.1,rax.8,ecx.4,fps.2,fl.1,c0.1,c2.1,c3.1,df.1,if.1,GLBLOW,GLBHIGH)
+3. 0 ; DNU: esi.4
+3. 0 call   $unk_40792A <> => int .0 ; 40783D u=(GLBLOW,GLBHIGH) d=(cf.1,zf.1,sf.1,of.1,pf.1,rax.8,ecx.4,fps.2,fl.1,c0.1,c2.1,c3.1,df.1,if.1,GLBLOW,GLBHIGH)
+3. 1 call   $unk_407924 <> => int .0 ; 40784C u=(GLBLOW,GLBHIGH) d=(cf.1,zf.1,sf.1,of.1,pf.1,rax.8,ecx.4,fps.2,fl.1,c0.1,c2.1,c3.1,df.1,if.1,GLBLOW,GLBHIGH)
+3. 2 call   $__getmainargs <> => int .0 ; 40786F u=(GLBLOW,GLBHIGH) d=(cf.1,zf.1,sf.1,of.1,pf.1,rax.8,ecx.4,fps.2,fl.1,c0.1,c2.1,c3.1,df.1,if.1,GLBLOW,GLBHIGH)
+3. 3 mov    &($unk_40E000).4, %__saved_registers.4 ; 40787A u=           d=sp+84..
+3. 4 call   $unk_407924 <> => int .0 ; 40787F u=(GLBLOW,GLBHIGH) d=(cf.1,zf.1,sf.1,of.1,pf.1,rax.8,ecx.4,fps.2,fl.1,c0.1,c2.1,c3.1,df.1,if.1,GLBLOW,GLBHIGH)
+3. 5 mov    $_acmdln.4{6}, esi.4{6} ; 40788C u=           d=esi.4
+3. 6 jnz    [ds.2:$_acmdln.4{6}].1, #0x22.1, @12 ; 407894 u=ds.2,(GLBLOW,sp+28..,GLBHIGH)
+3. 6
+4. 0 ; 2WAY-BLOCK 4 INBOUNDS: 3 5 OUTBOUNDS: 5 6 [START=407896 END=4078A0] MINREFS: STK=88/ARG=18C, MAXBSP: 88
+4. 0 ; USE: esi.4,ds.2,(GLBLOW,sp+28..,GLBHIGH)
+4. 0 ; DEF: esi.4
+4. 0 add    esi.4, #1.4, esi.4{7}   ; 407896 u=esi.4      d=esi.4
+4. 1 jz     [ds.2{8}:esi.4{7}].1, #0.1, @6 ; 40789E u=esi.4,ds.2,(GLBLOW,sp+28..,GLBHIGH)
+4. 1
+5. 0 ; 2WAY-BLOCK 5 INBOUNDS: 4 OUTBOUNDS: 6 4 [START=4078A0 END=4078A4] MINREFS: STK=88/ARG=18C, MAXBSP: 88
+5. 0 ; USE: esi.4,ds.2,(GLBLOW,sp+28..,GLBHIGH)
+5. 0 jnz    [ds.2{8}:esi.4{7}].1, #0x22.1, @4 ; 4078A2 u=esi.4,ds.2,(GLBLOW,sp+28..,GLBHIGH)
+5. 0
+6. 0 ; 2WAY-BLOCK 6 INBOUNDS: 4 5 OUTBOUNDS: 7 8 [START=4078A4 END=4078A9] MINREFS: STK=88/ARG=18C, MAXBSP: 88
+6. 0 ; USE: esi.4,ds.2,(GLBLOW,sp+28..,GLBHIGH)
+6. 0 jnz    [ds.2:esi.4{7}].1, #0x22.1, @8 ; 4078A7 u=esi.4,ds.2,(GLBLOW,sp+28..,GLBHIGH)
+6. 0
+7. 0 ; 1WAY-BLOCK 7 INBOUNDS: 6 9 OUTBOUNDS: 8 [START=4078A9 END=4078AD] MINREFS: STK=88/ARG=18C, MAXBSP: 88
+7. 0 ; USE: esi.4
+7. 0 ; DEF: esi.4
+7. 0 ; DNU: esi.4
+7. 0 add    esi.4, #1.4, esi.4{10}  ; 4078A9 u=esi.4      d=esi.4
+7. 0
+8. 0 ; 2WAY-BLOCK 8 INBOUNDS: 6 7 12 OUTBOUNDS: 9 10 [START=4078AD END=4078B3] MINREFS: STK=88/ARG=18C, MAXBSP: 88
+8. 0 ; USE: esi.4,ds.2,(GLBLOW,sp+28..,GLBHIGH)
+8. 0 jz     [ds.2{11}:esi.4{12}].1, #0.1, @10 ; 4078B1 u=esi.4,ds.2,(GLBLOW,sp+28..,GLBHIGH)
+8. 0
+9. 0 ; 2WAY-BLOCK 9 INBOUNDS: 8 OUTBOUNDS: 10 7 [START=4078B3 END=4078B7] MINREFS: STK=88/ARG=18C, MAXBSP: 88
+9. 0 ; USE: esi.4,ds.2,(GLBLOW,sp+28..,GLBHIGH)
+9. 0 jbe    [ds.2{11}:esi.4{12}].1, #0x20.1, @7 ; 4078B5 u=esi.4,ds.2,(GLBLOW,sp+28..,GLBHIGH)
+9. 0
+10. 0 ; 2WAY-BLOCK 10 INBOUNDS: 8 9 OUTBOUNDS: 11 14 [START=4078B7 END=4078CA] MINREFS: STK=28/ARG=18C, MAXBSP: 88
+10. 0 ; USE: RET,(GLBLOW,sp+54.1,GLBHIGH)
+10. 0 ; DEF: sp+54.4,sp+84..,(cf.1,zf.1,sf.1,of.1,pf.1,rax.8,ecx.4,fps.2,fl.1,c0.1,c2.1,c3.1,df.1,if.1,GLBLOW,sp+28..54,sp+58..84,RET,GLBHIGH)
+10. 0 mov    #0.4, %0x54.4           ; 4078B7 u=           d=sp+54.4
+10. 1 mov    &(%0x28).4, %__saved_registers.4 ; 4078BD u=           d=sp+84..
+10. 2 call   $GetStartupInfoA <std:"LPSTARTUPINFOA lpStartupInfo" %__return_address.4>.0 ; 4078BE u=RET,(GLBLOW,GLBHIGH) d=(cf.1,zf.1,sf.1,of.1,pf.1,rax.8,ecx.4,fps.2,fl.1,c0.1,c2.1,c3.1,df.1,if.1,GLBLOW,sp+28..,RET,GLBHIGH)
+10. 3 jz     (%0x54.1 & #1.1), #0.1, @14 ; 4078C8 u=sp+54.1
+10. 3
+11. 0 ; 1WAY-BLOCK 11 INBOUNDS: 10 OUTBOUNDS: 15 [START=4078CA END=4078D0] MINREFS: STK=28/ARG=18C, MAXBSP: 88
+11. 0 goto   @15                     ; 4078CE u=
+11. 0
+12. 0 ; 2WAY-BLOCK 12 INBOUNDS: 3 13 OUTBOUNDS: 13 8 [START=4078D0 END=4078D5] MINREFS: STK=88/ARG=18C, MAXBSP: 88
+12. 0 ; USE: esi.4,ds.2,(GLBLOW,sp+28..,GLBHIGH)
+12. 0 jbe    [ds.2:esi.4].1, #0x20.1, @8 ; 4078D3 u=esi.4,ds.2,(GLBLOW,sp+28..,GLBHIGH)
+12. 0
+13. 0 ; 1WAY-BLOCK 13 INBOUNDS: 12 OUTBOUNDS: 12 [START=4078D5 END=4078DB] MINREFS: STK=88/ARG=18C, MAXBSP: 88
+13. 0 ; USE: esi.4
+13. 0 ; DEF: esi.4
+13. 0 ; DNU: esi.4
+13. 0 add    esi.4, #1.4, esi.4{14}  ; 4078D5 u=esi.4      d=esi.4
+13. 1 goto   @12                     ; 4078D9 u=
+13. 1
+14. 0 ; 1WAY-BLOCK 14 INBOUNDS: 10 OUTBOUNDS: 15 [START=4078DB END=4078DE] MINREFS: STK=28/ARG=18C, MAXBSP: 88
+14. 0 ; DEF: sp+84..
+14. 0 mov    #0xA.4, %__saved_registers.4 ; 4078DB u=           d=sp+84..
+14. 0
+15. 0 ; 0WAY-BLOCK 15 INBOUNDS: 11 14 [START=4078DE END=4078F8] MINREFS: STK=28/ARG=18C, MAXBSP: 88
+15. 0 ; USE: RET,arg+0.C,(GLBLOW,GLBHIGH)
+15. 0 ; DEF: sp+84..,(cf.1,zf.1,sf.1,of.1,pf.1,rax.8,ecx.4,fps.2,fl.1,c0.1,c2.1,c3.1,df.1,if.1,GLBLOW,sp+28..84,RET,arg+0.C,GLBHIGH)
+15. 0 call   $GetModuleHandleA <std:"LPCSTR lpModuleName" %__return_address.4> => HMODULE .0 ; 4078E2 u=RET,(GLBLOW,GLBHIGH) d=(cf.1,zf.1,sf.1,of.1,pf.1,rax.8,ecx.4,fps.2,fl.1,c0.1,c2.1,c3.1,df.1,if.1,GLBLOW,sp+28..,RET,GLBHIGH)
+15. 1 mov    call $"_WinMain@16"<std:"HINSTANCE hInstance" %__return_address.4,"HINSTANCE hPrevInstance" %0x8C.4,"LPSTR lpCmdLine" %0x90.4,"int nShowCmd" %0x94.4> => int .4, %__saved_registers.4{17} ; 4078F1 u=RET,arg+0.C,(GLBLOW,GLBHIGH) d=sp+84..,(cf.1,zf.1,sf.1,of.1,pf.1,rax.8,ecx.4,fps.2,fl.1,c0.1,c2.1,c3.1,df.1,if.1,GLBLOW,sp+28..84,RET,arg+0.C,GLBHIGH)
+15. 2 call   $exit <cdecl:"int Code" %__return_address.4>.0 ; 4078F2 was_noret_icall u=RET,(GLBLOW,GLBHIGH) d=(cf.1,zf.1,sf.1,of.1,pf.1,rax.8,ecx.4,fps.2,fl.1,c0.1,c2.1,c3.1,df.1,if.1,GLBLOW,sp+28..,RET,GLBHIGH)
+15. 2
+16. 0 ; STOP-BLOCK 16 FAKE [START=FFFFFFFF END=FFFFFFFF] MINREFS: STK=88/ARG=18C, MAXBSP: 0
+16. 0
+--- END

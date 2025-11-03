@@ -1,0 +1,146 @@
+================================================================================
+Session started: 0000-00-00 00:00:00
+Logging to: Data/Analytics/Hello_ir/analysis_log.txt
+================================================================================
+============================================================
+IR STRUCTURAL SIMILARITY ANALYZER
+Purpose: analyze and cluster IDA microcode by structural patterns
+Features: CFG/DFG analysis with 25 structural features
+============================================================
+
+Scanning Files From: Data/Hello-Test-Data
+found 2 files
+
+
+Processing file: hello2.txt
+Stratified Sampling: 1998/28273 blocks
+Parse Microcode Complete: 28273 blocks
+CFG built: 311 nodes
+Features Extracted: 27 features
+hello2.txt: 28273 blocks (complex_algorithm)
+Tags: uses_aes, aes_detected, has_memset, has_strcpy, has_memcpy, has_strlen, has_malloc
+
+Processing file: hello1.txt
+Stratified Sampling: 1998/28273 blocks
+Parse Microcode Complete: 28273 blocks
+CFG built: 311 nodes
+Features Extracted: 27 features
+hello1.txt: 28273 blocks (complex_algorithm)
+Tags: uses_aes, aes_detected, has_memset, has_strcpy, has_memcpy, has_strlen, has_malloc
+
+Feature Extraction Complete:
+  - valid_files: 2
+  - all_blocks: 2
+  - feature_matrix shape: (2, 27)
+
+Extracting Canonical Graph Forms
+  [1/2] processing hello2.txt (28273 blocks)
+  [2/2] processing hello1.txt (28273 blocks)
+SUCCESS: extracted 2 canonical forms
+
+Computing Isomorphic Groups for 2 Files
+found 1 isomorphic groups
+SUCCESS: found 1 groups
+
+Clustering Similar Structures
+Trying 5 Different DBSCAN Epsilon Values
+  [1/5] testing eps=0.3
+    found 2 clusters
+  [2/5] testing eps=0.5
+    found 2 clusters
+  [3/5] testing eps=0.7
+    found 2 clusters
+  [4/5] testing eps=1.0
+    found 1 clusters
+  [5/5] testing eps=1.5
+    found 1 clusters
+best clustering: 1 clusters
+
+Mining Frequent Subgraph Patterns
+processing 2 files
+  [1/2] hello2.txt (28273 blocks)
+  extracted 1356 subgraphs
+  [2/2] hello1.txt (28273 blocks)
+  extracted 1356 subgraphs
+  collected 1356 total unique patterns
+Found 1356 Frequent Patterns (appearing in 2+ files)
+
+Matching Patterns to Files
+matching 1356 patterns to files
+  hello2.txt: 1356 patterns matched
+  hello1.txt: 1356 patterns matched
+
+Computing Semantic Similarity Matrix (2x2 = 4 comparisons)
+  processed 0/2 files (1/1 comparisons, 100.0%)
+  processed 1/2 files (1/1 comparisons, 100.0%)
+
+Computing Structural Similarity from Canonical Forms
+computing canonical similarity matrix (2x2 comparisons)
+  processed 0/2 files (1/1 comparisons, 100.0%)
+  processed 1/2 files (1/1 comparisons, 100.0%)
+
+
+
+============================================================
+IR STRUCTURAL ANALYSIS RESULTS
+============================================================
+Total Files Scanned: 2
+Successfully Analyzed: 2
+Structural Clusters: 1
+Unique/Unmatched Files: 0
+
+Semantic Analysis:
+  Files with Crypto: 2
+  Files with Stdlib Patterns: 2
+
+Cryptographic Algorithms Detected:
+  AES: 2 samples
+
+Cluster_1 (2 files):
+  • hello2.txt
+  • hello1.txt
+
+============================================================
+Results Directory: Data/Analytics/Hello_ir
+Starting Web Visualizer
+============================================================
+
+
+High Semantic Similarity Pairs (>80%):
+ hello2.txt ↔ hello1.txt: 100.0%
+
+Isomorphic Function Groups (identical CFG structure):
+  iso_group_1: 2 files
+    • hello2.txt
+    • hello1.txt
+
+============================================================
+SIMILARITY METRICS COMPARISON
+============================================================
+
+Structurally Similar but Feature Different Pairs:
+ hello2.txt ↔ hello1.txt
+ Structural: 100.0% | Feature: 0.0% | Semantic: 100.0%
+
+Frequent Code Patterns:
+  Found 50 patterns across multiple functions
+  1. Pattern: E((0, 0), (0, 1), (1, 0), (1, 1), (1, 93), (93, 0), (93, 1))|O('N/O', 'N/O', 'N/O')
+     Appears in 2 functions
+  2. Pattern: E((0, 0), (0, 1), (1, 0), (1, 1), (261, 0))|O('N/O', 'N/O', 'N/O')
+     Appears in 2 functions
+  3. Pattern: E((0, 0), (0, 18), (0, 128), (18, 0), (18, 18), (18, 128), (128, 0), (128, 18))|O('N/O', 'N/O', 'goto')
+     Appears in 2 functions
+  4. Pattern: E((2, 2), (2, 38), (38, 2), (38, 38))|O('N/O',)
+     Appears in 2 functions
+  5. Pattern: E((18, 18), (18, 99))|O('N/O', 'N/O')
+     Appears in 2 functions
+
+Pattern-based Similarity:
+  hello2.txt ↔ hello1.txt: 1356/1356 patterns (100%)
+
+IR analysis completed: Data/Analytics/Hello_ir
+WARNING: cross reference analysis skipped (insufficient data)
+
+================================================================================
+Session ended: 0000-00-00 00:00:00
+================================================================================

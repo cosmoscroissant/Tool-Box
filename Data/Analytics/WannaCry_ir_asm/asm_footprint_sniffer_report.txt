@@ -1,0 +1,190 @@
+================================================================================
+Sniffer Report
+================================================================================
+
+SUMMARY
+----------------------------------------
+Total Files Processed: 2
+Files with IoCs: 2
+Files with Hashes: 2
+Files with Errors: 0
+
+IoC CATEGORIES
+----------------------------------------
+Protocol URLs: 2
+URLs: 2
+Domains: 1
+Universal Paths: 19
+Files: 22
+Suspicious String (email, name/password, etc.): 10
+Bitcoin Wallet Addresses: 28
+Windows Commands: 5
+Command Line Strings: 2
+Format String Commands: 2
+Custom String Matches: 15
+Indicator Based Strings: 5
+
+DETAILED RESULTS
+================================================================================
+File: Data/WannaCry/ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.asm
+------------------------------------------------------------
+File Hashes:
+SHA256: ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa
+MD5: 84c82835a5d21bbcf75a61706d8ab549
+CRC32: 4022fcaa
+
+Universal Paths:
+%s\Intel
+%s\ProgramData
+%s\\%s
+%s\\Intel
+%s\\ProgramData
+/..\\
+Global\MsWinZonesCacheCounterMutexA
+Global\\MsWinZonesCacheCounterMutexA
+Software\\
+\../
+\..\
+\\../
+\\..\\
+
+Files:
+ADVAPI32.dll
+KERNEL32.dll
+MSVCP60.dll
+MSVCRT.dll
+OLEAUT32.dll
+SHELL32.dll
+USER32.dll
+WS2_32.dll
+advapi32.dll
+cmd.exe
+kernel32.dll
+tasksche.exe
+
+Suspicious String (email, name/password, etc.):
+UAE@XZ
+WNcry@2ol7
+YAPAXI@Z
+YAXPAX@Z
+_WinMain@16
+
+Bitcoin Wallet Addresses:
+115p7UMMngoj1pMvkpHijcRdfJNXj6LrLn
+12t9YDPgwueZ9NyMgw519p7AA8isjr6SMw
+13AM4VW2dhxYgXeQepoHkHSQuy6NgaEb94
+
+Windows Commands:
+attrib +h
+attrib +h .',0
+cmd.exe /c "%s"',0
+cmd.exe /c \"%s\
+icacls . /grant Everyone:F /T /C /Q
+
+Custom String Matches:
+CHAR aTWnry[]
+Str2 db 'c.wnry',0
+WANACRY!
+WanaCrypt0r
+aTWnry db
+aTWnry db 't.wnry',0
+aWanacry db
+aWanacry db 'WANACRY!',0
+c.wnry
+push    offset Source   ; "WanaCrypt0r"
+push    offset Str2     ; "c.wnry"
+push    offset aTWnry   ; "t.wnry"
+push    offset aWanacry ; "WANACRY!"
+t.wnry
+text "UTF-16LE", 'WanaCrypt0r',0
+
+Indicator Based Strings:
+attrib +h .
+kernel32.dll
+tasksche.exe
+
+
+File: Data/WannaCry/24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.asm
+------------------------------------------------------------
+File Hashes:
+SHA256: 24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c
+MD5: db349b97c37d22f5ea1d1841e3c89eb4
+CRC32: 9fbb1227
+
+Protocol URLs:
+http://www.iuqerfsodp9ifjaposdfjhgo
+http://www.iuqerfsodp9ifjaposdfjhgosuri
+
+URLs:
+http://www.iuqerfsodp9ifjaposdfjhgo
+http://www.iuqerfsodp9ifjaposdfjhgosuri
+
+Domains:
+surijfaewrwergwea.com
+
+Universal Paths:
+C:\%s\%s
+C:\%s\qeriuwjhrf
+C:\\%s\\%s
+C:\\%s\\qeriuwjhrf
+\\%s\IPC$
+\\\\%s\\IPC$
+
+Files:
+32.dll
+ADVAPI32.dll
+KERNEL32.dll
+MSVCP60.dll
+MSVCRT.dll
+WININET.dll
+WS2_32.dll
+iphlpapi.dll
+surijfaewrwergwea.com
+tasksche.exe
+
+Suspicious String (email, name/password, etc.):
+0_Lockit@std
+1_Lockit@std
+QAE@XZ
+YAPAXI@Z
+_WinMain@16
+
+Bitcoin Wallet Addresses:
+11fB8idliLHC2l1nYd2tklRf04bSMxBlcZa
+19HE4ctdxuhxCXMh2oQfHkYe2cxb1Y3Q6uH
+1D5hn82L2KejU4OnLaNrMFiGieF4C53LX7M
+1E1TMadDs0nlbPlGBftJmUsG7mvQfgv4XYX
+1IiqBm2TMu6vR8ISFbSJMgLtedMtOpDMjvX
+1LVWtUkgqM0cPkq7k6KEwW7ued
+1MdKiBVBsf10KiFSGBxBEBSIUGcwj7NWJmE
+1O8h7UMITpVrhQvkEMcrDODxVi6
+1Oe4sfNcUHLpDtHW05OCUj7HyIV1cOr2a
+1QLIx87qMRxXTwTDP690T6BmRPwbnDjLrdc
+1Y4dYgvVmE9JSmet0QqeSEB5gFqS8ae8I
+1cT5EzU5oIR7Sj5jVO7miqlawsIW33Wxlqh
+1n6CQZn5FObY8LvAFP7wJQNGxh4wIin9TF9
+1oJGT5WeYPevOCpQJUGBZavDgjC
+34VNQ2uQRSspH9b4QaNlc3QHOSu0ZyWgl
+3CXM7P0q8SIiNebTjCmERyc8gaTh7IiN8g2
+3D2nRt9wLJmA44P8hcsWfuNL7SRflVzXQHc
+3GN5G5hzthnw2zIj0irwsbGLd3o
+3LB0Yi5Wjp0t2It2PyrnnzZsgKGv
+3Q3bKY4mQGAT5ptJdS4cPnRuhyaUgGdABBu
+3ftxH95kTkKdGtEbMfbdMxurHPTBKTm5MG6
+3g08sJ5IIvrDPUg9UDxblaYNQjYb2zirFVO
+3hIycfQUnnzWBhAHD95r8ITOsP1f
+3yNhHJhcnGqyI1nFFSiHLzRfbzT5nDJWj20
+3z9XR9rS0gpX9YYbuxOvXgcEhj8A4G
+
+Command Line Strings:
+C:\%s\qeriuwjhrf
+C:\\%s\\qeriuwjhrf
+
+Format String Commands:
+%s -m security
+'%s -m security',0
+
+Indicator Based Strings:
+Microsoft Security Center (2.0) Service
+mssecsvc2.0
+

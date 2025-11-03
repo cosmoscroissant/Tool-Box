@@ -1,0 +1,1936 @@
+{
+  "ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt": {
+    "nodes": [
+      {
+        "id": 0,
+        "original_id": 0,
+        "label": "start\nBlock_0",
+        "function_name": "start",
+        "size": 1,
+        "instructions": [
+          ""
+        ],
+        "instruction_count": 1,
+        "inbounds": [],
+        "outbounds": [
+          1,
+          1
+        ],
+        "registers_used": [],
+        "registers_defined": [
+          "esi"
+        ],
+        "function_calls": [],
+        "address_start": "0x4077ba",
+        "address_end": "0x4077ba",
+        "def_use_distances": {
+          "esi": [
+            [
+              4,
+              3
+            ],
+            [
+              12,
+              3
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              13,
+              4
+            ],
+            [
+              8,
+              4
+            ],
+            [
+              7,
+              5
+            ],
+            [
+              9,
+              5
+            ]
+          ]
+        }
+      },
+      {
+        "id": 1,
+        "original_id": 1,
+        "label": "start\nBlock_1",
+        "function_name": "start",
+        "size": 11,
+        "instructions": [
+          "",
+          "mov    #0.4, %0x80.4",
+          "mov    #2.4, %__saved_registers.4",
+          "call   $__set_app_type <cdecl:\"_crt_app_type Type\" %__return_address.4>.0",
+          "mov    #0xFFFFFFFF.4, $dword_40F94C.4",
+          "mov    #0xFFFFFFFF.4, $dword_40F950.4",
+          "stx    $dword_40F948.4, ds.2, call $__p__fmode<cdecl:> => \"int *\" .4",
+          "stx    $dword_40F944.4, ds.2, call $__p__commode<cdecl:> => \"int *\" .4",
+          "mov    $_adjust_fdiv.4{3}, $dword_40F954.4{3}",
+          "call   $unk_40793F <> => int .0"
+        ],
+        "instruction_count": 11,
+        "inbounds": [
+          0,
+          2,
+          3
+        ],
+        "outbounds": [
+          2,
+          3
+        ],
+        "registers_used": [],
+        "registers_defined": [
+          "rax",
+          "ecx"
+        ],
+        "function_calls": [],
+        "address_start": "0x4077ba",
+        "address_end": "0x407831",
+        "def_use_distances": {}
+      },
+      {
+        "id": 2,
+        "original_id": 2,
+        "label": "start\nBlock_2",
+        "function_name": "start",
+        "size": 3,
+        "instructions": [
+          "",
+          "mov    &($unk_40793C).4, %__saved_registers.4",
+          "call   $__setusermatherr <cdecl:\"_UserMathErrorFunctionPointer UserMathErrorFunction\" %__return_address.4>.0"
+        ],
+        "instruction_count": 3,
+        "inbounds": [
+          1,
+          3
+        ],
+        "outbounds": [
+          3,
+          1
+        ],
+        "registers_used": [],
+        "registers_defined": [
+          "rax",
+          "ecx"
+        ],
+        "function_calls": [],
+        "address_start": "0x407831",
+        "address_end": "0x40783d",
+        "def_use_distances": {}
+      },
+      {
+        "id": 3,
+        "original_id": 3,
+        "label": "start\nBlock_3",
+        "function_name": "start",
+        "size": 9,
+        "instructions": [
+          "",
+          "",
+          "call   $unk_40792A <> => int .0",
+          "call   $unk_407924 <> => int .0",
+          "call   $__getmainargs <> => int .0",
+          "mov    &($unk_40E000).4, %__saved_registers.4",
+          "call   $unk_407924 <> => int .0",
+          "mov    $_acmdln.4{6}, esi.4{6}",
+          "jnz    [ds.2:$_acmdln.4{6}].1, #0x22.1, @12"
+        ],
+        "instruction_count": 9,
+        "inbounds": [
+          1,
+          2,
+          4,
+          12
+        ],
+        "outbounds": [
+          4,
+          12
+        ],
+        "registers_used": [],
+        "registers_defined": [
+          "rax",
+          "ecx",
+          "esi"
+        ],
+        "function_calls": [],
+        "address_start": "0x40783d",
+        "address_end": "0x407896",
+        "def_use_distances": {
+          "esi": [
+            [
+              4,
+              1
+            ],
+            [
+              12,
+              1
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              6,
+              2
+            ],
+            [
+              13,
+              2
+            ],
+            [
+              8,
+              2
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              9,
+              3
+            ]
+          ]
+        }
+      },
+      {
+        "id": 4,
+        "original_id": 4,
+        "label": "start\nBlock_4",
+        "function_name": "start",
+        "size": 3,
+        "instructions": [
+          "",
+          "add    esi.4, #1.4, esi.4{7}",
+          "jz     [ds.2{8}:esi.4{7}].1, #0.1, @6"
+        ],
+        "instruction_count": 3,
+        "inbounds": [
+          3,
+          5,
+          5,
+          6,
+          0
+        ],
+        "outbounds": [
+          5,
+          6,
+          0
+        ],
+        "registers_used": [
+          "esi"
+        ],
+        "registers_defined": [
+          "esi"
+        ],
+        "function_calls": [],
+        "address_start": "0x407896",
+        "address_end": "0x4078a0",
+        "def_use_distances": {
+          "esi": [
+            [
+              5,
+              1
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              8,
+              2
+            ],
+            [
+              9,
+              2
+            ],
+            [
+              12,
+              4
+            ],
+            [
+              13,
+              5
+            ]
+          ]
+        }
+      },
+      {
+        "id": 5,
+        "original_id": 5,
+        "label": "start\nBlock_5",
+        "function_name": "start",
+        "size": 1,
+        "instructions": [
+          "jnz    [ds.2{8}:esi.4{7}].1, #0x22.1, @4"
+        ],
+        "instruction_count": 1,
+        "inbounds": [
+          4,
+          6,
+          4,
+          0,
+          4
+        ],
+        "outbounds": [
+          6,
+          4,
+          0,
+          4
+        ],
+        "registers_used": [
+          "esi"
+        ],
+        "registers_defined": [],
+        "function_calls": [],
+        "address_start": "0x4078a0",
+        "address_end": "0x4078a4",
+        "def_use_distances": {}
+      },
+      {
+        "id": 6,
+        "original_id": 6,
+        "label": "start\nBlock_6",
+        "function_name": "start",
+        "size": 1,
+        "instructions": [
+          "jnz    [ds.2:esi.4{7}].1, #0x22.1, @8"
+        ],
+        "instruction_count": 1,
+        "inbounds": [
+          4,
+          5,
+          7,
+          8,
+          4,
+          9
+        ],
+        "outbounds": [
+          7,
+          8,
+          4,
+          9
+        ],
+        "registers_used": [
+          "esi"
+        ],
+        "registers_defined": [],
+        "function_calls": [],
+        "address_start": "0x4078a4",
+        "address_end": "0x4078a9",
+        "def_use_distances": {}
+      },
+      {
+        "id": 7,
+        "original_id": 7,
+        "label": "start\nBlock_7",
+        "function_name": "start",
+        "size": 3,
+        "instructions": [
+          "",
+          "",
+          "add    esi.4, #1.4, esi.4{10}"
+        ],
+        "instruction_count": 3,
+        "inbounds": [
+          6,
+          9,
+          8,
+          9
+        ],
+        "outbounds": [
+          8,
+          9,
+          1
+        ],
+        "registers_used": [
+          "esi"
+        ],
+        "registers_defined": [
+          "esi"
+        ],
+        "function_calls": [],
+        "address_start": "0x4078a9",
+        "address_end": "0x4078ad",
+        "def_use_distances": {
+          "esi": [
+            [
+              8,
+              1
+            ],
+            [
+              9,
+              1
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              12,
+              3
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              13,
+              4
+            ]
+          ]
+        }
+      },
+      {
+        "id": 8,
+        "original_id": 8,
+        "label": "start\nBlock_8",
+        "function_name": "start",
+        "size": 1,
+        "instructions": [
+          "jz     [ds.2{11}:esi.4{12}].1, #0.1, @10"
+        ],
+        "instruction_count": 1,
+        "inbounds": [
+          6,
+          7,
+          12,
+          9,
+          10,
+          3
+        ],
+        "outbounds": [
+          9,
+          10,
+          3
+        ],
+        "registers_used": [
+          "esi"
+        ],
+        "registers_defined": [],
+        "function_calls": [],
+        "address_start": "0x4078ad",
+        "address_end": "0x4078b3",
+        "def_use_distances": {}
+      },
+      {
+        "id": 9,
+        "original_id": 9,
+        "label": "start\nBlock_9",
+        "function_name": "start",
+        "size": 1,
+        "instructions": [
+          "jbe    [ds.2{11}:esi.4{12}].1, #0x20.1, @7"
+        ],
+        "instruction_count": 1,
+        "inbounds": [
+          8,
+          10,
+          7,
+          3,
+          7
+        ],
+        "outbounds": [
+          10,
+          7,
+          3,
+          7
+        ],
+        "registers_used": [
+          "esi"
+        ],
+        "registers_defined": [],
+        "function_calls": [],
+        "address_start": "0x4078b3",
+        "address_end": "0x4078b7",
+        "def_use_distances": {}
+      },
+      {
+        "id": 10,
+        "original_id": 10,
+        "label": "start\nBlock_10",
+        "function_name": "start",
+        "size": 5,
+        "instructions": [
+          "",
+          "mov    #0.4, %0x54.4",
+          "mov    &(%0x28).4, %__saved_registers.4",
+          "call   $GetStartupInfoA <std:\"LPSTARTUPINFOA lpStartupInfo\" %__return_address.4>.0",
+          "jz     (%0x54.1 & #1.1), #0.1, @14"
+        ],
+        "instruction_count": 5,
+        "inbounds": [
+          8,
+          9,
+          11,
+          14,
+          7
+        ],
+        "outbounds": [
+          11,
+          14,
+          7
+        ],
+        "registers_used": [],
+        "registers_defined": [
+          "rax",
+          "ecx"
+        ],
+        "function_calls": [],
+        "address_start": "0x4078b7",
+        "address_end": "0x4078ca",
+        "def_use_distances": {}
+      },
+      {
+        "id": 11,
+        "original_id": 11,
+        "label": "start\nBlock_11",
+        "function_name": "start",
+        "size": 1,
+        "instructions": [
+          "goto   @15"
+        ],
+        "instruction_count": 1,
+        "inbounds": [
+          10,
+          15,
+          0
+        ],
+        "outbounds": [
+          15,
+          0
+        ],
+        "registers_used": [],
+        "registers_defined": [],
+        "function_calls": [],
+        "address_start": "0x4078ca",
+        "address_end": "0x4078d0",
+        "def_use_distances": {}
+      },
+      {
+        "id": 12,
+        "original_id": 12,
+        "label": "start\nBlock_12",
+        "function_name": "start",
+        "size": 1,
+        "instructions": [
+          "jbe    [ds.2:esi.4].1, #0x20.1, @8"
+        ],
+        "instruction_count": 1,
+        "inbounds": [
+          3,
+          13,
+          13,
+          8,
+          0,
+          5
+        ],
+        "outbounds": [
+          13,
+          8,
+          0,
+          5
+        ],
+        "registers_used": [
+          "esi"
+        ],
+        "registers_defined": [],
+        "function_calls": [],
+        "address_start": "0x4078d0",
+        "address_end": "0x4078d5",
+        "def_use_distances": {}
+      },
+      {
+        "id": 13,
+        "original_id": 13,
+        "label": "start\nBlock_13",
+        "function_name": "start",
+        "size": 4,
+        "instructions": [
+          "",
+          "",
+          "add    esi.4, #1.4, esi.4{14}",
+          "goto   @12"
+        ],
+        "instruction_count": 4,
+        "inbounds": [
+          12,
+          12,
+          5
+        ],
+        "outbounds": [
+          12,
+          5
+        ],
+        "registers_used": [
+          "esi"
+        ],
+        "registers_defined": [
+          "esi"
+        ],
+        "function_calls": [],
+        "address_start": "0x4078d5",
+        "address_end": "0x4078db",
+        "def_use_distances": {
+          "esi": [
+            [
+              12,
+              1
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              8,
+              2
+            ],
+            [
+              6,
+              2
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              9,
+              3
+            ],
+            [
+              7,
+              3
+            ]
+          ]
+        }
+      },
+      {
+        "id": 14,
+        "original_id": 14,
+        "label": "start\nBlock_14",
+        "function_name": "start",
+        "size": 2,
+        "instructions": [
+          "",
+          "mov    #0xA.4, %__saved_registers.4"
+        ],
+        "instruction_count": 2,
+        "inbounds": [
+          10,
+          15
+        ],
+        "outbounds": [
+          15
+        ],
+        "registers_used": [],
+        "registers_defined": [],
+        "function_calls": [],
+        "address_start": "0x4078db",
+        "address_end": "0x4078de",
+        "def_use_distances": {}
+      },
+      {
+        "id": 15,
+        "original_id": 15,
+        "label": "start\nBlock_15",
+        "function_name": "start",
+        "size": 4,
+        "instructions": [
+          "",
+          "call   $GetModuleHandleA <std:\"LPCSTR lpModuleName\" %__return_address.4> => HMODULE .0",
+          "mov    call $\"_WinMain@16\"<std:\"HINSTANCE hInstance\" %__return_address.4,\"HINSTANCE hPrevInstance\" %0x8C.4,\"LPSTR lpCmdLine\" %0x90.4,\"int nShowCmd\" %0x94.4> => int .4, %__saved_registers.4{17}",
+          "call   $exit <cdecl:\"int Code\" %__return_address.4>.0"
+        ],
+        "instruction_count": 4,
+        "inbounds": [
+          11,
+          14,
+          8
+        ],
+        "outbounds": [],
+        "registers_used": [],
+        "registers_defined": [
+          "rax",
+          "ecx"
+        ],
+        "function_calls": [
+          "_WinMain@16"
+        ],
+        "address_start": "0x4078de",
+        "address_end": "0x4078f8",
+        "def_use_distances": {}
+      },
+      {
+        "id": 16,
+        "original_id": 16,
+        "label": "start\nBlock_16",
+        "function_name": "start",
+        "size": 0,
+        "instructions": [],
+        "instruction_count": 0,
+        "inbounds": [],
+        "outbounds": [],
+        "registers_used": [],
+        "registers_defined": [],
+        "function_calls": [],
+        "address_start": "0xffffffff",
+        "address_end": "0xffffffff",
+        "def_use_distances": {}
+      }
+    ],
+    "total_blocks": 17,
+    "entry_points": [
+      0
+    ],
+    "dfg_edges": [
+      {
+        "from": 0,
+        "to": 4,
+        "type": "register",
+        "register": "esi",
+        "distance": 3
+      },
+      {
+        "from": 0,
+        "to": 12,
+        "type": "register",
+        "register": "esi",
+        "distance": 3
+      },
+      {
+        "from": 0,
+        "to": 5,
+        "type": "register",
+        "register": "esi",
+        "distance": 4
+      },
+      {
+        "from": 0,
+        "to": 6,
+        "type": "register",
+        "register": "esi",
+        "distance": 4
+      },
+      {
+        "from": 0,
+        "to": 13,
+        "type": "register",
+        "register": "esi",
+        "distance": 4
+      },
+      {
+        "from": 0,
+        "to": 8,
+        "type": "register",
+        "register": "esi",
+        "distance": 4
+      },
+      {
+        "from": 0,
+        "to": 7,
+        "type": "register",
+        "register": "esi",
+        "distance": 5
+      },
+      {
+        "from": 0,
+        "to": 9,
+        "type": "register",
+        "register": "esi",
+        "distance": 5
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "register",
+        "register": "esi",
+        "distance": 1
+      },
+      {
+        "from": 3,
+        "to": 12,
+        "type": "register",
+        "register": "esi",
+        "distance": 1
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "register",
+        "register": "esi",
+        "distance": 2
+      },
+      {
+        "from": 3,
+        "to": 6,
+        "type": "register",
+        "register": "esi",
+        "distance": 2
+      },
+      {
+        "from": 3,
+        "to": 13,
+        "type": "register",
+        "register": "esi",
+        "distance": 2
+      },
+      {
+        "from": 3,
+        "to": 8,
+        "type": "register",
+        "register": "esi",
+        "distance": 2
+      },
+      {
+        "from": 3,
+        "to": 7,
+        "type": "register",
+        "register": "esi",
+        "distance": 3
+      },
+      {
+        "from": 3,
+        "to": 9,
+        "type": "register",
+        "register": "esi",
+        "distance": 3
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "register",
+        "register": "esi",
+        "distance": 1
+      },
+      {
+        "from": 4,
+        "to": 6,
+        "type": "register",
+        "register": "esi",
+        "distance": 1
+      },
+      {
+        "from": 4,
+        "to": 7,
+        "type": "register",
+        "register": "esi",
+        "distance": 2
+      },
+      {
+        "from": 4,
+        "to": 8,
+        "type": "register",
+        "register": "esi",
+        "distance": 2
+      },
+      {
+        "from": 4,
+        "to": 9,
+        "type": "register",
+        "register": "esi",
+        "distance": 2
+      },
+      {
+        "from": 4,
+        "to": 12,
+        "type": "register",
+        "register": "esi",
+        "distance": 4
+      },
+      {
+        "from": 4,
+        "to": 13,
+        "type": "register",
+        "register": "esi",
+        "distance": 5
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "register",
+        "register": "esi",
+        "distance": 1
+      },
+      {
+        "from": 7,
+        "to": 9,
+        "type": "register",
+        "register": "esi",
+        "distance": 1
+      },
+      {
+        "from": 7,
+        "to": 4,
+        "type": "register",
+        "register": "esi",
+        "distance": 3
+      },
+      {
+        "from": 7,
+        "to": 12,
+        "type": "register",
+        "register": "esi",
+        "distance": 3
+      },
+      {
+        "from": 7,
+        "to": 5,
+        "type": "register",
+        "register": "esi",
+        "distance": 4
+      },
+      {
+        "from": 7,
+        "to": 6,
+        "type": "register",
+        "register": "esi",
+        "distance": 4
+      },
+      {
+        "from": 7,
+        "to": 13,
+        "type": "register",
+        "register": "esi",
+        "distance": 4
+      },
+      {
+        "from": 13,
+        "to": 12,
+        "type": "register",
+        "register": "esi",
+        "distance": 1
+      },
+      {
+        "from": 13,
+        "to": 5,
+        "type": "register",
+        "register": "esi",
+        "distance": 1
+      },
+      {
+        "from": 13,
+        "to": 8,
+        "type": "register",
+        "register": "esi",
+        "distance": 2
+      },
+      {
+        "from": 13,
+        "to": 6,
+        "type": "register",
+        "register": "esi",
+        "distance": 2
+      },
+      {
+        "from": 13,
+        "to": 4,
+        "type": "register",
+        "register": "esi",
+        "distance": 2
+      },
+      {
+        "from": 13,
+        "to": 9,
+        "type": "register",
+        "register": "esi",
+        "distance": 3
+      },
+      {
+        "from": 13,
+        "to": 7,
+        "type": "register",
+        "register": "esi",
+        "distance": 3
+      }
+    ]
+  },
+  "24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt": {
+    "nodes": [
+      {
+        "id": 0,
+        "original_id": 0,
+        "label": "start\nBlock_0",
+        "function_name": "start",
+        "size": 1,
+        "instructions": [
+          ""
+        ],
+        "instruction_count": 1,
+        "inbounds": [],
+        "outbounds": [
+          1,
+          16,
+          16,
+          1
+        ],
+        "registers_used": [],
+        "registers_defined": [
+          "esi"
+        ],
+        "function_calls": [],
+        "address_start": "0x409a16",
+        "address_end": "0x409a16",
+        "def_use_distances": {
+          "esi": [
+            [
+              8,
+              2
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              12,
+              3
+            ],
+            [
+              9,
+              3
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              13,
+              4
+            ],
+            [
+              7,
+              4
+            ]
+          ]
+        }
+      },
+      {
+        "id": 1,
+        "original_id": 1,
+        "label": "start\nBlock_1",
+        "function_name": "start",
+        "size": 11,
+        "instructions": [
+          "",
+          "mov    #0.4, %0x80.4",
+          "mov    #2.4, %__saved_registers.4",
+          "call   $__set_app_type <cdecl:\"_crt_app_type Type\" %__return_address.4>.0",
+          "mov    #0xFFFFFFFF.4, $dword_70F894.4",
+          "mov    #0xFFFFFFFF.4, $dword_70F898.4",
+          "stx    $dword_70F88C.4, ds.2, call $__p__fmode<cdecl:> => \"int *\" .4",
+          "stx    $dword_70F888.4, ds.2, call $__p__commode<cdecl:> => \"int *\" .4",
+          "mov    $_adjust_fdiv.4{3}, $dword_70F890.4{3}",
+          "call   $unk_409BA1 <> => int .0"
+        ],
+        "instruction_count": 11,
+        "inbounds": [
+          0,
+          2,
+          3,
+          16,
+          8
+        ],
+        "outbounds": [
+          2,
+          3,
+          16,
+          8
+        ],
+        "registers_used": [],
+        "registers_defined": [
+          "rax",
+          "ecx"
+        ],
+        "function_calls": [],
+        "address_start": "0x409a16",
+        "address_end": "0x409a8d",
+        "def_use_distances": {}
+      },
+      {
+        "id": 2,
+        "original_id": 2,
+        "label": "start\nBlock_2",
+        "function_name": "start",
+        "size": 3,
+        "instructions": [
+          "",
+          "mov    &($unk_409B9E).4, %__saved_registers.4",
+          "call   $__setusermatherr <cdecl:\"_UserMathErrorFunctionPointer UserMathErrorFunction\" %__return_address.4>.0"
+        ],
+        "instruction_count": 3,
+        "inbounds": [
+          1,
+          3,
+          8
+        ],
+        "outbounds": [
+          3,
+          8,
+          1
+        ],
+        "registers_used": [],
+        "registers_defined": [
+          "rax",
+          "ecx"
+        ],
+        "function_calls": [],
+        "address_start": "0x409a8d",
+        "address_end": "0x409a99",
+        "def_use_distances": {}
+      },
+      {
+        "id": 3,
+        "original_id": 3,
+        "label": "start\nBlock_3",
+        "function_name": "start",
+        "size": 9,
+        "instructions": [
+          "",
+          "",
+          "call   $unk_409B8C <> => int .0",
+          "call   $unk_409B86 <> => int .0",
+          "call   $__getmainargs <> => int .0",
+          "mov    &($unk_40B000).4, %__saved_registers.4",
+          "call   $unk_409B86 <> => int .0",
+          "mov    $_acmdln.4{6}, esi.4{6}",
+          "jnz    [ds.2:$_acmdln.4{6}].1, #0x22.1, @12"
+        ],
+        "instruction_count": 9,
+        "inbounds": [
+          1,
+          2,
+          4,
+          12,
+          2
+        ],
+        "outbounds": [
+          4,
+          12,
+          2
+        ],
+        "registers_used": [],
+        "registers_defined": [
+          "rax",
+          "ecx",
+          "esi"
+        ],
+        "function_calls": [],
+        "address_start": "0x409a99",
+        "address_end": "0x409af2",
+        "def_use_distances": {
+          "esi": [
+            [
+              4,
+              1
+            ],
+            [
+              12,
+              1
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              6,
+              2
+            ],
+            [
+              13,
+              2
+            ],
+            [
+              8,
+              2
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              9,
+              3
+            ]
+          ]
+        }
+      },
+      {
+        "id": 4,
+        "original_id": 4,
+        "label": "start\nBlock_4",
+        "function_name": "start",
+        "size": 3,
+        "instructions": [
+          "",
+          "add    esi.4, #1.4, esi.4{7}",
+          "jz     [ds.2{8}:esi.4{7}].1, #0.1, @6"
+        ],
+        "instruction_count": 3,
+        "inbounds": [
+          3,
+          5,
+          5,
+          6,
+          2
+        ],
+        "outbounds": [
+          5,
+          6,
+          2
+        ],
+        "registers_used": [
+          "esi"
+        ],
+        "registers_defined": [
+          "esi"
+        ],
+        "function_calls": [],
+        "address_start": "0x409af2",
+        "address_end": "0x409afc",
+        "def_use_distances": {
+          "esi": [
+            [
+              5,
+              1
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              8,
+              2
+            ],
+            [
+              9,
+              3
+            ],
+            [
+              12,
+              3
+            ],
+            [
+              13,
+              4
+            ]
+          ]
+        }
+      },
+      {
+        "id": 5,
+        "original_id": 5,
+        "label": "start\nBlock_5",
+        "function_name": "start",
+        "size": 1,
+        "instructions": [
+          "jnz    [ds.2{8}:esi.4{7}].1, #0x22.1, @4"
+        ],
+        "instruction_count": 1,
+        "inbounds": [
+          4,
+          6,
+          4,
+          0
+        ],
+        "outbounds": [
+          6,
+          4,
+          0
+        ],
+        "registers_used": [
+          "esi"
+        ],
+        "registers_defined": [],
+        "function_calls": [],
+        "address_start": "0x409afc",
+        "address_end": "0x409b00",
+        "def_use_distances": {}
+      },
+      {
+        "id": 6,
+        "original_id": 6,
+        "label": "start\nBlock_6",
+        "function_name": "start",
+        "size": 1,
+        "instructions": [
+          "jnz    [ds.2:esi.4{7}].1, #0x22.1, @8"
+        ],
+        "instruction_count": 1,
+        "inbounds": [
+          4,
+          5,
+          7,
+          8,
+          0,
+          5
+        ],
+        "outbounds": [
+          7,
+          8,
+          0,
+          5
+        ],
+        "registers_used": [
+          "esi"
+        ],
+        "registers_defined": [],
+        "function_calls": [],
+        "address_start": "0x409b00",
+        "address_end": "0x409b05",
+        "def_use_distances": {}
+      },
+      {
+        "id": 7,
+        "original_id": 7,
+        "label": "start\nBlock_7",
+        "function_name": "start",
+        "size": 3,
+        "instructions": [
+          "",
+          "",
+          "add    esi.4, #1.4, esi.4{10}"
+        ],
+        "instruction_count": 3,
+        "inbounds": [
+          6,
+          9,
+          8,
+          5,
+          9
+        ],
+        "outbounds": [
+          8,
+          5,
+          9,
+          1
+        ],
+        "registers_used": [
+          "esi"
+        ],
+        "registers_defined": [
+          "esi"
+        ],
+        "function_calls": [],
+        "address_start": "0x409b05",
+        "address_end": "0x409b09",
+        "def_use_distances": {
+          "esi": [
+            [
+              8,
+              1
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              9,
+              1
+            ],
+            [
+              6,
+              2
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              13,
+              2
+            ],
+            [
+              12,
+              3
+            ]
+          ]
+        }
+      },
+      {
+        "id": 8,
+        "original_id": 8,
+        "label": "start\nBlock_8",
+        "function_name": "start",
+        "size": 1,
+        "instructions": [
+          "jz     [ds.2{11}:esi.4{12}].1, #0.1, @10"
+        ],
+        "instruction_count": 1,
+        "inbounds": [
+          6,
+          7,
+          12,
+          9,
+          10,
+          9,
+          0
+        ],
+        "outbounds": [
+          9,
+          10,
+          9,
+          0
+        ],
+        "registers_used": [
+          "esi"
+        ],
+        "registers_defined": [],
+        "function_calls": [],
+        "address_start": "0x409b09",
+        "address_end": "0x409b0f",
+        "def_use_distances": {}
+      },
+      {
+        "id": 9,
+        "original_id": 9,
+        "label": "start\nBlock_9",
+        "function_name": "start",
+        "size": 1,
+        "instructions": [
+          "jbe    [ds.2{11}:esi.4{12}].1, #0x20.1, @7"
+        ],
+        "instruction_count": 1,
+        "inbounds": [
+          8,
+          10,
+          7,
+          0,
+          13
+        ],
+        "outbounds": [
+          10,
+          7,
+          0,
+          13
+        ],
+        "registers_used": [
+          "esi"
+        ],
+        "registers_defined": [],
+        "function_calls": [],
+        "address_start": "0x409b0f",
+        "address_end": "0x409b13",
+        "def_use_distances": {}
+      },
+      {
+        "id": 10,
+        "original_id": 10,
+        "label": "start\nBlock_10",
+        "function_name": "start",
+        "size": 5,
+        "instructions": [
+          "",
+          "mov    #0.4, %0x54.4",
+          "mov    &(%0x28).4, %__saved_registers.4",
+          "call   $GetStartupInfoA <std:\"LPSTARTUPINFOA lpStartupInfo\" %__return_address.4>.0",
+          "jz     (%0x54.1 & #1.1), #0.1, @14"
+        ],
+        "instruction_count": 5,
+        "inbounds": [
+          8,
+          9,
+          11,
+          14,
+          13
+        ],
+        "outbounds": [
+          11,
+          14,
+          13
+        ],
+        "registers_used": [],
+        "registers_defined": [
+          "rax",
+          "ecx"
+        ],
+        "function_calls": [],
+        "address_start": "0x409b13",
+        "address_end": "0x409b26",
+        "def_use_distances": {}
+      },
+      {
+        "id": 11,
+        "original_id": 11,
+        "label": "start\nBlock_11",
+        "function_name": "start",
+        "size": 1,
+        "instructions": [
+          "goto   @15"
+        ],
+        "instruction_count": 1,
+        "inbounds": [
+          10,
+          15,
+          2
+        ],
+        "outbounds": [
+          15,
+          2
+        ],
+        "registers_used": [],
+        "registers_defined": [],
+        "function_calls": [],
+        "address_start": "0x409b26",
+        "address_end": "0x409b2c",
+        "def_use_distances": {}
+      },
+      {
+        "id": 12,
+        "original_id": 12,
+        "label": "start\nBlock_12",
+        "function_name": "start",
+        "size": 1,
+        "instructions": [
+          "jbe    [ds.2:esi.4].1, #0x20.1, @8"
+        ],
+        "instruction_count": 1,
+        "inbounds": [
+          3,
+          13,
+          13,
+          8,
+          2
+        ],
+        "outbounds": [
+          13,
+          8,
+          2
+        ],
+        "registers_used": [
+          "esi"
+        ],
+        "registers_defined": [],
+        "function_calls": [],
+        "address_start": "0x409b2c",
+        "address_end": "0x409b31",
+        "def_use_distances": {}
+      },
+      {
+        "id": 13,
+        "original_id": 13,
+        "label": "start\nBlock_13",
+        "function_name": "start",
+        "size": 4,
+        "instructions": [
+          "",
+          "",
+          "add    esi.4, #1.4, esi.4{14}",
+          "goto   @12"
+        ],
+        "instruction_count": 4,
+        "inbounds": [
+          12,
+          12
+        ],
+        "outbounds": [
+          12
+        ],
+        "registers_used": [
+          "esi"
+        ],
+        "registers_defined": [
+          "esi"
+        ],
+        "function_calls": [],
+        "address_start": "0x409b31",
+        "address_end": "0x409b37",
+        "def_use_distances": {
+          "esi": [
+            [
+              12,
+              1
+            ],
+            [
+              8,
+              2
+            ],
+            [
+              9,
+              3
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              5
+            ]
+          ]
+        }
+      },
+      {
+        "id": 14,
+        "original_id": 14,
+        "label": "start\nBlock_14",
+        "function_name": "start",
+        "size": 2,
+        "instructions": [
+          "",
+          "mov    #0xA.4, %__saved_registers.4"
+        ],
+        "instruction_count": 2,
+        "inbounds": [
+          10,
+          15,
+          3
+        ],
+        "outbounds": [
+          15,
+          3
+        ],
+        "registers_used": [],
+        "registers_defined": [],
+        "function_calls": [],
+        "address_start": "0x409b37",
+        "address_end": "0x409b3a",
+        "def_use_distances": {}
+      },
+      {
+        "id": 15,
+        "original_id": 15,
+        "label": "start\nBlock_15",
+        "function_name": "start",
+        "size": 4,
+        "instructions": [
+          "",
+          "call   $GetModuleHandleA <std:\"LPCSTR lpModuleName\" %__return_address.4> => HMODULE .0",
+          "mov    call $\"_WinMain@16\"<std:\"HINSTANCE hInstance\" %__return_address.4,\"HINSTANCE hPrevInstance\" %0x8C.4,\"LPSTR lpCmdLine\" %0x90.4,\"int nShowCmd\" %0x94.4> => int .4, %__saved_registers.4{17}",
+          "call   $exit <cdecl:\"int Code\" %__return_address.4>.0"
+        ],
+        "instruction_count": 4,
+        "inbounds": [
+          11,
+          14,
+          3
+        ],
+        "outbounds": [],
+        "registers_used": [],
+        "registers_defined": [
+          "rax",
+          "ecx"
+        ],
+        "function_calls": [
+          "_WinMain@16"
+        ],
+        "address_start": "0x409b3a",
+        "address_end": "0x409b54",
+        "def_use_distances": {}
+      },
+      {
+        "id": 16,
+        "original_id": 16,
+        "label": "start\nBlock_16",
+        "function_name": "start",
+        "size": 0,
+        "instructions": [],
+        "instruction_count": 0,
+        "inbounds": [],
+        "outbounds": [],
+        "registers_used": [],
+        "registers_defined": [],
+        "function_calls": [],
+        "address_start": "0xffffffff",
+        "address_end": "0xffffffff",
+        "def_use_distances": {}
+      }
+    ],
+    "total_blocks": 17,
+    "entry_points": [
+      0
+    ],
+    "dfg_edges": [
+      {
+        "from": 0,
+        "to": 8,
+        "type": "register",
+        "register": "esi",
+        "distance": 2
+      },
+      {
+        "from": 0,
+        "to": 4,
+        "type": "register",
+        "register": "esi",
+        "distance": 3
+      },
+      {
+        "from": 0,
+        "to": 12,
+        "type": "register",
+        "register": "esi",
+        "distance": 3
+      },
+      {
+        "from": 0,
+        "to": 9,
+        "type": "register",
+        "register": "esi",
+        "distance": 3
+      },
+      {
+        "from": 0,
+        "to": 5,
+        "type": "register",
+        "register": "esi",
+        "distance": 4
+      },
+      {
+        "from": 0,
+        "to": 6,
+        "type": "register",
+        "register": "esi",
+        "distance": 4
+      },
+      {
+        "from": 0,
+        "to": 13,
+        "type": "register",
+        "register": "esi",
+        "distance": 4
+      },
+      {
+        "from": 0,
+        "to": 7,
+        "type": "register",
+        "register": "esi",
+        "distance": 4
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "register",
+        "register": "esi",
+        "distance": 1
+      },
+      {
+        "from": 3,
+        "to": 12,
+        "type": "register",
+        "register": "esi",
+        "distance": 1
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "register",
+        "register": "esi",
+        "distance": 2
+      },
+      {
+        "from": 3,
+        "to": 6,
+        "type": "register",
+        "register": "esi",
+        "distance": 2
+      },
+      {
+        "from": 3,
+        "to": 13,
+        "type": "register",
+        "register": "esi",
+        "distance": 2
+      },
+      {
+        "from": 3,
+        "to": 8,
+        "type": "register",
+        "register": "esi",
+        "distance": 2
+      },
+      {
+        "from": 3,
+        "to": 7,
+        "type": "register",
+        "register": "esi",
+        "distance": 3
+      },
+      {
+        "from": 3,
+        "to": 9,
+        "type": "register",
+        "register": "esi",
+        "distance": 3
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "register",
+        "register": "esi",
+        "distance": 1
+      },
+      {
+        "from": 4,
+        "to": 6,
+        "type": "register",
+        "register": "esi",
+        "distance": 1
+      },
+      {
+        "from": 4,
+        "to": 7,
+        "type": "register",
+        "register": "esi",
+        "distance": 2
+      },
+      {
+        "from": 4,
+        "to": 8,
+        "type": "register",
+        "register": "esi",
+        "distance": 2
+      },
+      {
+        "from": 4,
+        "to": 9,
+        "type": "register",
+        "register": "esi",
+        "distance": 3
+      },
+      {
+        "from": 4,
+        "to": 12,
+        "type": "register",
+        "register": "esi",
+        "distance": 3
+      },
+      {
+        "from": 4,
+        "to": 13,
+        "type": "register",
+        "register": "esi",
+        "distance": 4
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "register",
+        "register": "esi",
+        "distance": 1
+      },
+      {
+        "from": 7,
+        "to": 5,
+        "type": "register",
+        "register": "esi",
+        "distance": 1
+      },
+      {
+        "from": 7,
+        "to": 9,
+        "type": "register",
+        "register": "esi",
+        "distance": 1
+      },
+      {
+        "from": 7,
+        "to": 6,
+        "type": "register",
+        "register": "esi",
+        "distance": 2
+      },
+      {
+        "from": 7,
+        "to": 4,
+        "type": "register",
+        "register": "esi",
+        "distance": 2
+      },
+      {
+        "from": 7,
+        "to": 13,
+        "type": "register",
+        "register": "esi",
+        "distance": 2
+      },
+      {
+        "from": 7,
+        "to": 12,
+        "type": "register",
+        "register": "esi",
+        "distance": 3
+      },
+      {
+        "from": 13,
+        "to": 12,
+        "type": "register",
+        "register": "esi",
+        "distance": 1
+      },
+      {
+        "from": 13,
+        "to": 8,
+        "type": "register",
+        "register": "esi",
+        "distance": 2
+      },
+      {
+        "from": 13,
+        "to": 9,
+        "type": "register",
+        "register": "esi",
+        "distance": 3
+      },
+      {
+        "from": 13,
+        "to": 7,
+        "type": "register",
+        "register": "esi",
+        "distance": 4
+      },
+      {
+        "from": 13,
+        "to": 4,
+        "type": "register",
+        "register": "esi",
+        "distance": 4
+      },
+      {
+        "from": 13,
+        "to": 5,
+        "type": "register",
+        "register": "esi",
+        "distance": 5
+      },
+      {
+        "from": 13,
+        "to": 6,
+        "type": "register",
+        "register": "esi",
+        "distance": 5
+      }
+    ]
+  }
+}

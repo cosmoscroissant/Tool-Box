@@ -1,0 +1,30 @@
+# Custom Patterns File
+# Supports three formats:
+
+# 1. Regex Patterns (will be added to IOC patterns)
+'custom_malware_urls': re.compile(r'\b(?:malicious|evil|bad)site\.com/[^\s]+', re.IGNORECASE),
+'custom_c2_domains': re.compile(r'\b[a-z0-9]{10,}\.(?:tk|ml|ga)\b', re.IGNORECASE),
+
+# 2. Keyword Sets (will merge with or create new sets)
+custom_suspicious_keywords = {
+    'bypass',
+    'obfuscate',
+    'unhook',
+    'inject',
+    'malicious',
+}
+
+assembly_context_keywords = {
+    'additional_keyword1', 'additional_keyword2'
+}
+
+# 3. Simple Strings (flexible matching)
+## Without Quotes: matches *string* (anywhere, case-insensitive)
+wnry
+wanacry
+
+## With Quotes: exact match
+"exact match only"
+
+## With Quotes and Spaces: exact match requiring surrounding spaces
+" must have spaces "

@@ -1,0 +1,14 @@
+{
+  "summary": {
+    "total_files": 0,
+    "analyzed_files": 0,
+    "num_clusters": 0,
+    "noise_files": 0
+  },
+  "clusters": {},
+  "noise_files": [],
+  "files": [],
+  "similarity_matrix": [],
+  "features": [],
+  "feature_names": []
+}
