@@ -29,4 +29,4 @@ python3 main.py --asm 'Data/Test-Data/'
 ## Data
 Hello is a Go program that prints "hello", hello1 and hello2 are identical.
 
-WannaCry are two different 2017 WannaCry files, wannacry.exe (24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c) and tasksche.exe (24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c).
+WannaCry are two different 2017 WannaCry files, wannacry.exe (24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c) and tasksche.exe (ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa).
