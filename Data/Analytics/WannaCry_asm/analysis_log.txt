@@ -12,6 +12,7 @@ loaded custom patterns from Sniffer/src/LoadFiles/custom_pattern.txt
   created new keyword set 'custom_suspicious_keywords'
   merged 2 keywords into existing 'assembly_context_keywords'
 JSON results saved to: Data/Analytics/WannaCry_asm/asm_footprint_result.json
+YARA rule saved to: Data/Analytics/WannaCry_asm/asm_footprint_rule.yar
 report saved to: Data/Analytics/WannaCry_asm/asm_footprint_sniffer_report.txt
 ASM sniffer completed: Data/Analytics/WannaCry_asm/asm_footprint_result.json
 

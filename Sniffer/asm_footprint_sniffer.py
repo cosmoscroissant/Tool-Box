@@ -10,6 +10,7 @@ from src.Constant.asm_constants import *
 from src.LoadFiles.asm_load_files import *
 from src.Extractor.asm_extractor import *
 from src.Validator.asm_validator import *
+from src.Generator.asm_yara_generator import *
 
 class IoCScanner:    
     def __init__(self):
@@ -318,6 +319,14 @@ def main():
     
     json_output = Path(args.output).parent / 'asm_footprint_result.json' if args.output else Path('asm_footprint_result.json')
     scanner.save_results_json(results, json_output)
+
+    yara_output = Path(args.output).parent / 'asm_footprint_rule.yar' if args.output else Path('asm_footprint_rule.yar')
+    try:
+        yara_rule = ASMGenerator.generate_yara_rule(results)
+        yara_output.write_text(yara_rule)
+        print(f"YARA rule saved to: {yara_output}")
+    except Exception as e:
+        print(f"Error Saving YARA Rule: {e}")
     
     if args.output:
         try:

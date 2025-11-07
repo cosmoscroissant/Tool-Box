@@ -248,3 +248,6 @@ assembly_noise_patterns = [
 
 # hard coded number, might change later
 MAXChars = 50
+MAX_STRING_LENGTH = 300
+MIN_STRING_LENGTH = 4
+MAX_STRINGS_PER_CATEGORY = 50

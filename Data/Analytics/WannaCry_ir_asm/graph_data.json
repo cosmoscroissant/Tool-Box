@@ -159,8 +159,8 @@
         "registers_used": [],
         "registers_defined": [
           "rax",
-          "ecx",
-          "esi"
+          "esi",
+          "ecx"
         ],
         "function_calls": [],
         "address_start": "0x40783d",
@@ -1131,8 +1131,8 @@
         "registers_used": [],
         "registers_defined": [
           "rax",
-          "ecx",
-          "esi"
+          "esi",
+          "ecx"
         ],
         "function_calls": [],
         "address_start": "0x409a99",
