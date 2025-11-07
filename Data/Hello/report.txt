@@ -5,11 +5,11 @@ Sniffer Report - 1000-10-02 10:10:10
 SUMMARY
 ----------------------------------------
 Total Files Processed: 1
-Files with IoCs: 1
+Files with IOCs: 1
 Files with Hashes: 1
 Files with Errors: 0
 
-IoC CATEGORIES
+IOC CATEGORIES
 ----------------------------------------
 Domains: 1
 Files: 2

@@ -251,7 +251,7 @@ class ASMGenerator:
                 all_iocs[category].extend(iocs)
         
         if not all_iocs:
-            return "/* no IoCs found in analysis results */"
+            return "/* no IOCs found in analysis results */"
         
         # rule name (max 128 chars, alphanumeric and underscore)
         timestamp = datetime.now().strftime("%Y%m%d")
@@ -315,7 +315,7 @@ class ASMGenerator:
             " * Generated: " + datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             " * ",
             f" * Auto-Generated from Analysis of {len(results)} Sample(s)",
-            f" * Total IoCs: {total_iocs} across {len(category_stats)} categories",
+            f" * Total IOCs: {total_iocs} across {len(category_stats)} categories",
             " * ",
             " * Categories:",
         ]

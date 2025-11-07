@@ -5,11 +5,11 @@ Sniffer Report
 SUMMARY
 ----------------------------------------
 Total Files Processed: 2
-Files with IoCs: 2
+Files with IOCs: 2
 Files with Hashes: 2
 Files with Errors: 0
 
-IoC CATEGORIES
+IOC CATEGORIES
 ----------------------------------------
 Domains: 2
 Universal Paths: 24

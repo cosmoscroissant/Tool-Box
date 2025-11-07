@@ -7,7 +7,7 @@
 hello.exe represents the samples downloaded by "Downloader". IDA_Files/ represents the files you downloaded from IDA. 0 is pseudo-C of sample's entry point.
 
 ## How-To
-main.py will open a local Python server that presents visualization for IR analysis results and ASM footprint (IoC) results. Use same file names for .asm file and ir file, for example hello.asm and hello.txt.
+main.py will open a local Python server that presents visualization for IR analysis results and ASM footprint (IOC) results. Use same file names for .asm file and ir file, for example hello.asm and hello.txt.
 
 ```
 1. view existing results

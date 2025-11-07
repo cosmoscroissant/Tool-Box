@@ -415,11 +415,11 @@
                     </div>
                     <div class="stat">
                         <span class="stat-value" id="files-with-iocs">0</span>
-                        <span class="stat-label">Files with IoCs</span>
+                        <span class="stat-label">Files with IOCs</span>
                     </div>
                     <div class="stat">
                         <span class="stat-value" id="total-iocs">0</span>
-                        <span class="stat-label">Total IoCs Found</span>
+                        <span class="stat-label">Total IOCs Found</span>
                     </div>
                     <div class="stat">
                         <span class="stat-value" id="files-with-hashes">0</span>
@@ -433,7 +433,7 @@
             <div class="terminal-dot"></div>
             <div class="terminal-dot"></div>
             <div class="terminal-dot"></div>
-            <div class="terminal-title">IoC Distribution</div>
+            <div class="terminal-title">IOC Distribution</div>
         </div>
         <div class="card">
             <div class="card-content">
@@ -471,7 +471,7 @@
             <div class="card-content">
                 <div class="controls">
                     <label>Filter: </label>
-                    <input type="text" id="search-filter" placeholder="search files or IoCs...">
+                    <input type="text" id="search-filter" placeholder="search files or IOCs...">
                     <label>Category: </label>
                     <select id="category-filter">
                         <option value="">All Categories</option>
@@ -600,7 +600,7 @@
                 data: {
                     labels: labels,
                     datasets: [{
-                        label: 'IoC Count',
+                        label: 'IOC Count',
                         data: data,
                         backgroundColor: 'rgba(32, 78, 241, 0.6)',
                         borderColor: '#204ef1',
@@ -720,7 +720,7 @@
                     badgeClass = 'error';
                 } else if (result.iocs) {
                     const iocCount = Object.values(result.iocs).reduce((sum, list) => sum + list.length, 0);
-                    badgeText = `${iocCount} IoCs`;
+                    badgeText = `${iocCount} IOCs`;
                 }
                 
                 fileDiv.innerHTML = `
@@ -769,7 +769,7 @@
                 });
             }
             
-            return html || '<div class="empty-state">No IoCs found in this file.</div>';
+            return html || '<div class="empty-state">No IOCs found in this file.</div>';
         }
         
         function matchesFilter(result, filterText, filterCategory) {

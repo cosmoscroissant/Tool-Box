@@ -3,7 +3,7 @@
  * Generated: 0000-00-00 00:00:00
  * 
  * Auto-Generated from Analysis of 2 Sample(s)
- * Total IoCs: 113 across 12 categories
+ * Total IOCs: 113 across 12 categories
  * 
  * Categories:
  *   bitcoin_wallets: 28

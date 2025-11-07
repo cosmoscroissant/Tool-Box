@@ -12,7 +12,7 @@ from src.Extractor.asm_extractor import *
 from src.Validator.asm_validator import *
 from src.Generator.asm_yara_generator import *
 
-class IoCScanner:    
+class IOCScanner:    
     def __init__(self):
         loader = LoadFiles()
         self.lib = loader.load_lib()
@@ -237,14 +237,14 @@ class IoCScanner:
             "SUMMARY",
             "-" * 40,
             f"Total Files Processed: {total_files}",
-            f"Files with IoCs: {files_with_iocs}",
+            f"Files with IOCs: {files_with_iocs}",
             f"Files with Hashes: {files_with_hashes}",
             f"Files with Errors: {files_with_errors}",
             ""
         ]
         
         if category_counts:
-            report.extend(["IoC CATEGORIES", "-" * 40])
+            report.extend(["IOC CATEGORIES", "-" * 40])
             for category in IOC_CATEGORY_ORDER:
                 if category in category_counts:
                     report.append(f"{CATEGORY_NAMES[category]}: {category_counts[category]}")
@@ -297,7 +297,7 @@ def main():
         print(f"ERROR: Path '{args.path}' does not exist", file=sys.stderr)
         sys.exit(1)
     
-    scanner = IoCScanner()
+    scanner = IOCScanner()
     
     if path.is_file():
         if path.suffix.lower() != '.asm':
@@ -312,7 +312,7 @@ def main():
         sys.exit(1)
     
     if not results:
-        print("no IoCs found in the scanned files")
+        print("no IOCs found in the scanned files")
         return
     
     report = scanner.generate_report(results, args.format)

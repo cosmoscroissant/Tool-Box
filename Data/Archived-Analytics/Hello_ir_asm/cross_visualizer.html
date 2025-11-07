@@ -367,7 +367,7 @@
             <div class="terminal-dot"></div>
             <div class="terminal-dot"></div>
             <div class="terminal-dot"></div>
-            <div class="terminal-title">Function to IoC Mappings</div>
+            <div class="terminal-title">Function to IOC Mappings</div>
         </div>
         <div class="card">
             <div class="card-content">
@@ -495,13 +495,13 @@
             const container = document.getElementById('mappings-container');
             
             if (!mappings || Object.keys(mappings).length === 0) {
-                container.innerHTML = '<div class="no-data">No Cunction to IoC Mappings Detected</div>';
+                container.innerHTML = '<div class="no-data">No Cunction to IOC Mappings Detected</div>';
                 return;
             }
             
             const hasData = Object.values(mappings).some(m => Object.keys(m).length > 0);
             if (!hasData) {
-                container.innerHTML = '<div class="no-data">No IoCs Correlated with Semantic Patterns</div>';
+                container.innerHTML = '<div class="no-data">No IOCs Correlated with Semantic Patterns</div>';
                 return;
             }
 
@@ -513,7 +513,7 @@
                         <div class="ioc-title">${filename}</div>
                         ${Object.entries(funcs).map(([funcType, iocs]) => `
                             <div style="margin: 10px 0;">
-                                <div style="color: #dce5f4; font-weight: bold; font-size: 12px;">${funcType}: ${iocs.length} IoCs</div>
+                                <div style="color: #dce5f4; font-weight: bold; font-size: 12px;">${funcType}: ${iocs.length} IOCs</div>
                                 <div class="ioc-list">
                                     ${iocs.slice(0, 3).map(ioc => `
                                         <div class="ioc-item">${ioc.category}: ${ioc.value}

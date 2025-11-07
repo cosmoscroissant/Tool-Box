@@ -167,21 +167,21 @@ Shared Infrastructure: None detected
 Identified Variant Families: None detected
   (No samples meet the 75% similarity threshold across multiple factors)
 
-Function to IoC Mappings (showing first 3 files):
+Function to IOC Mappings (showing first 3 files):
 
   ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.txt:
-    memory_operation_function: 16 IoCs
+    memory_operation_function: 16 IOCs
       • file_hash_sha256: ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa
       • file_hash_md5: 84c82835a5d21bbcf75a61706d8ab549
       • file_hash_crc32: 4022fcaa
        and 13 more
 
   24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.txt:
-    crypto_aes_function: 3 IoCs
+    crypto_aes_function: 3 IOCs
       • c2_url: http://www.iuqerfsodp9ifjaposdfjhgo
       • c2_url: http://www.iuqerfsodp9ifjaposdfjhgosuri
       • c2_domain: surijfaewrwergwea.com
-    memory_operation_function: 9 IoCs
+    memory_operation_function: 9 IOCs
       • file_hash_sha256: 24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c
       • file_hash_md5: db349b97c37d22f5ea1d1841e3c89eb4
       • file_hash_crc32: 9fbb1227
@@ -196,7 +196,7 @@ High Confidence C2 Infrastructure (1 files):
 ------------------------------------------------------------
 Summary Statistics:
   Total Files Analyzed: 2
-  Files with IoCs: 2
+  Files with IOCs: 2
   Shared Infrastructure Indicators: 0
   Variant Families Identified: 0
   Files with C2 Indicators: 1

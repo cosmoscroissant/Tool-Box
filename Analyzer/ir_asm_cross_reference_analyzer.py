@@ -8,7 +8,7 @@ from dataclasses import dataclass, field
 from .src.BasicBlock.ir_block import *
 
 @dataclass
-class IoC:
+class IOC:
     value: str
     category: str
     confidence: float = 1.0
@@ -20,7 +20,7 @@ class FunctionSignature:
     function_name: str
     semantic_tags: List[str] = field(default_factory=list)
     crypto_algo: str = ""
-    iocs_used: List[IoC] = field(default_factory=list)
+    iocs_used: List[IOC] = field(default_factory=list)
     infrastructure: Set[str] = field(default_factory=set)
     related_functions: Set[str] = field(default_factory=set)
 
@@ -74,7 +74,7 @@ class CrossReferenceModule:
             print(f"ERROR: Failed to parse ASM results: {e}")
             return False
         
-    def extract_iocs_from_asm(self, filename: str) -> List[IoC]:
+    def extract_iocs_from_asm(self, filename: str) -> List[IOC]:
         iocs = []
         
         if filename not in self.asm_results:
@@ -84,7 +84,7 @@ class CrossReferenceModule:
         
         if 'file_hashes' in asm_entry:
             for hash_type, hash_value in asm_entry['file_hashes'].items():
-                iocs.append(IoC(
+                iocs.append(IOC(
                     value=hash_value,
                     category=f'file_hash_{hash_type}',
                     confidence=1.0,
@@ -107,7 +107,7 @@ class CrossReferenceModule:
             for category, ioc_list in asm_entry['iocs'].items():
                 mapped_category = ioc_categories.get(category, category)
                 for ioc_value in ioc_list:
-                    iocs.append(IoC(
+                    iocs.append(IOC(
                         value=ioc_value,
                         category=mapped_category,
                         confidence=self._confidence_for_category(mapped_category),
@@ -130,7 +130,7 @@ class CrossReferenceModule:
         }
         return confidence_map.get(category, 0.5)
 
-    def match_iocs_to_functions(self, filename: str) -> Dict[str, List[IoC]]:
+    def match_iocs_to_functions(self, filename: str) -> Dict[str, List[IOC]]:
         matches = defaultdict(list)
         
         if 'semantic_enrichments' not in self.ir_results:
@@ -353,19 +353,19 @@ class CrossReferenceModule:
                     break
         
         if has_mappings:
-            print(f"\nFunction to IoC Mappings (showing first 3 files):")
+            print(f"\nFunction to IOC Mappings (showing first 3 files):")
             for filename, matches in mapping_preview:
                 print(f"\n  {filename}:")
                 for func_type, iocs in matches.items():
                     if iocs:
-                        print(f"    {func_type}: {len(iocs)} IoCs")
+                        print(f"    {func_type}: {len(iocs)} IOCs")
                         for ioc in iocs[:3]:
                             print(f"      • {ioc.category}: {ioc.value}")
                         if len(iocs) > 3:
                             print(f"       and {len(iocs) - 3} more")
         else:
-            print(f"\nFunction to IoC Mappings: None detected")
-            print("  (could not correlate semantic patterns with IoC data)")
+            print(f"\nFunction to IOC Mappings: None detected")
+            print("  (could not correlate semantic patterns with IOC data)")
         
         c2_infrastructure = []
         for filename in self.ir_results.get('files', []):
@@ -389,7 +389,7 @@ class CrossReferenceModule:
         print(f"\n" + "-" * 60)
         print("Summary Statistics:")
         print(f"  Total Files Analyzed: {len(self.ir_results.get('files', []))}")
-        print(f"  Files with IoCs: {sum(1 for f in self.ir_results.get('files', []) if self.extract_iocs_from_asm(f))}")
+        print(f"  Files with IOCs: {sum(1 for f in self.ir_results.get('files', []) if self.extract_iocs_from_asm(f))}")
         print(f"  Shared Infrastructure Indicators: {len(infra_graph)}")
         print(f"  Variant Families Identified: {len(variants)}")
         print(f"  Files with C2 Indicators: {len(c2_infrastructure)}")
@@ -464,7 +464,7 @@ class CrossReferenceModule:
         if asm_ok:
             data_completeness.append(f"ASM: {len(self.asm_results)} files")
         else:
-            print("\nWARNING: ASM IoC results not found, infrastructure correlation will be limited")
+            print("\nWARNING: ASM IOC results not found, infrastructure correlation will be limited")
         
         print(f"\nData loaded:")
         for item in data_completeness:

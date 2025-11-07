@@ -1,6 +1,6 @@
 # Sniffer
 ## ASM Footprint
-asm_footprint_sniffer.py generates report containing hashes of the files and IoCs.
+asm_footprint_sniffer.py generates report containing hashes of the files and IOCs.
 - hashes: IDA generate hashes
 - protocols_full: well formed URLs
 - urls: malformed or partial URLs
