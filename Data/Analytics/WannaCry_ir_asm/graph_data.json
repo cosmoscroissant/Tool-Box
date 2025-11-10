@@ -90,8 +90,8 @@
         ],
         "registers_used": [],
         "registers_defined": [
-          "rax",
-          "ecx"
+          "ecx",
+          "rax"
         ],
         "function_calls": [],
         "address_start": "0x4077ba",
@@ -120,8 +120,8 @@
         ],
         "registers_used": [],
         "registers_defined": [
-          "rax",
-          "ecx"
+          "ecx",
+          "rax"
         ],
         "function_calls": [],
         "address_start": "0x407831",
@@ -158,9 +158,9 @@
         ],
         "registers_used": [],
         "registers_defined": [
-          "rax",
           "esi",
-          "ecx"
+          "ecx",
+          "rax"
         ],
         "function_calls": [],
         "address_start": "0x40783d",
@@ -490,8 +490,8 @@
         ],
         "registers_used": [],
         "registers_defined": [
-          "rax",
-          "ecx"
+          "ecx",
+          "rax"
         ],
         "function_calls": [],
         "address_start": "0x4078b7",
@@ -667,8 +667,8 @@
         "outbounds": [],
         "registers_used": [],
         "registers_defined": [
-          "rax",
-          "ecx"
+          "ecx",
+          "rax"
         ],
         "function_calls": [
           "_WinMain@16"
@@ -1058,8 +1058,8 @@
         ],
         "registers_used": [],
         "registers_defined": [
-          "rax",
-          "ecx"
+          "ecx",
+          "rax"
         ],
         "function_calls": [],
         "address_start": "0x409a16",
@@ -1090,8 +1090,8 @@
         ],
         "registers_used": [],
         "registers_defined": [
-          "rax",
-          "ecx"
+          "ecx",
+          "rax"
         ],
         "function_calls": [],
         "address_start": "0x409a8d",
@@ -1130,9 +1130,9 @@
         ],
         "registers_used": [],
         "registers_defined": [
-          "rax",
           "esi",
-          "ecx"
+          "ecx",
+          "rax"
         ],
         "function_calls": [],
         "address_start": "0x409a99",
@@ -1464,8 +1464,8 @@
         ],
         "registers_used": [],
         "registers_defined": [
-          "rax",
-          "ecx"
+          "ecx",
+          "rax"
         ],
         "function_calls": [],
         "address_start": "0x409b13",
@@ -1639,8 +1639,8 @@
         "outbounds": [],
         "registers_used": [],
         "registers_defined": [
-          "rax",
-          "ecx"
+          "ecx",
+          "rax"
         ],
         "function_calls": [
           "_WinMain@16"

@@ -16,6 +16,7 @@ from datetime import datetime
 
 from Logger.stdout_logger import *
 from Analyzer.ir_asm_cross_reference_analyzer import CrossReferenceModule
+from IOC.constants import *
 
 PORT = 8080
 
@@ -40,6 +41,13 @@ def copy_html_templates(run_dir: Path):
         print(f"copied cross reference visualizer template")
     else:
         print(f"WARNING: cross reference visualizer template not found at {cross_ref_template}")
+    
+    ioc_template = Path(__file__).parent / 'Analyzer/IOC_visualizer.html'
+    if ioc_template.exists():
+        shutil.copy(ioc_template, run_dir / 'IOC_visualizer.html')
+        print(f"copied IOC comparison visualizer template")
+    else:
+        print(f"WARNING: IOC comparison visualizer template not found at {ioc_template}")
     
     master_template = Path(__file__).parent / 'index_master.html'
     if master_template.exists():
@@ -224,6 +232,58 @@ def run_asm_sniffer(asm_path: Path, output_dir: Path, recursive: bool = True) ->
         print(f"ERROR: Unexpected error: {e}")
         return False
 
+def run_ioc_comparison(output_dir: Path) -> bool:
+    print(f"\n{'='*80}")
+    print("RUNNING IOC COMPARISON ANALYSIS")
+    print(f"{'='*80}\n")
+    
+    ioc_text = IOC_Path
+    asm_json = output_dir / 'asm_footprint_result.json'
+    
+    if not asm_json.exists():
+        print("WARNING: asm_footprint_result.json not found, skipping IOC comparison")
+        return False
+    
+    import os
+    script_path = Path(__file__).parent / 'Analyzer' / 'IOC_analyzer.py'
+    cmd = ['python3', '-u', str(script_path), str(ioc_text), str(asm_json), '-o', str(output_dir)]
+    
+    try:
+        process = subprocess.Popen(
+            cmd,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            bufsize=1,
+            universal_newlines=True,
+            env={**os.environ, 'PYTHONUNBUFFERED': '1'}
+        )
+        
+        for line in process.stdout:
+            print(line, end='')
+        
+        process.wait()
+        
+        if process.returncode != 0:
+            print(f"WARNING: IOC comparison encountered errors (code {process.returncode})")
+            return False
+        
+        json_files = list(output_dir.glob('*_vs_*.json'))
+        if json_files:
+            print(f"IOC comparison completed: {len(json_files)} result file(s) created\n")
+            return True
+        else:
+            print("WARNING: no IOC comparison JSON files created")
+            return False
+            
+    except FileNotFoundError:
+        print("ERROR: Analyzer/IOC_analyzer.py not found")
+        print("Make sure the IOC analyzer script is in the Analyzer/ directory!")
+        return False
+    except Exception as e:
+        print(f"ERROR: unexpected error:\n{e}")
+        return False
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--results', type=str, help='path to existing analysis results directory')
@@ -323,6 +383,19 @@ def main():
             success = run_asm_sniffer(asm_path, output_dir, not args.no_recursive)
             if success:
                 analysis_success = True
+                ioc_success = run_ioc_comparison(output_dir)
+                if ioc_success:
+                    json_files = list(output_dir.glob('*_vs_*.json'))
+                    main_json_files = [f for f in json_files if '_top5.json' not in f.name]
+                    
+                    if main_json_files:
+                        shutil.copy(main_json_files[0], output_dir / 'ioc_comparison_report.json')
+                        print(f"IOC comparison report created: ioc_comparison_report.json")
+                    
+                    top5_files = list(output_dir.glob('*_vs_*_top5.json'))
+                    if top5_files:
+                        shutil.copy(top5_files[0], output_dir / 'ioc_comparison_top5.json')
+                        print(f"IOC top 5 report created: ioc_comparison_top5.json")
         
         if analysis_success:
             print(f"\n{'='*80}")

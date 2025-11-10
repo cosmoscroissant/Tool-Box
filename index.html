@@ -99,11 +99,15 @@
         <button class="tab" onclick="switchTab('cross', event)">
             Cross Reference Analysis
         </button>
+        <button class="tab" onclick="switchTab('ioc', event)">
+            IOC Comparison Analysis
+        </button>
     </div>
     
     <iframe id="ir-frame" class="content-frame active" src="Data/Analytics/WannaCry_ir_asm/ir_visualizer.html"></iframe>
     <iframe id="asm-frame" class="content-frame" src="Data/Analytics/WannaCry_ir_asm/asm_visualizer.html"></iframe>
     <iframe id="cross-frame" class="content-frame" src="Data/Analytics/WannaCry_ir_asm/cross_visualizer.html"></iframe>
+    <iframe id="ioc-frame" class="content-frame" src="Data/Analytics/WannaCry_ir_asm/IOC_visualizer.html"></iframe>
     
     <script>
         const lastTab = localStorage.getItem('activeTab') || 'ir';
@@ -127,7 +131,8 @@
                     const tabText = tab.textContent.toLowerCase();
                     if ((lastTab === 'asm' && tabText.includes('asm')) ||
                         (lastTab === 'ir' && tabText.includes('ir')) ||
-                        (lastTab === 'cross' && tabText.includes('cross'))) {
+                        (lastTab === 'cross' && tabText.includes('cross')) ||
+                        (lastTab === 'ioc' && tabText.includes('ioc'))) {
                         tab.click();
                     }
                 });

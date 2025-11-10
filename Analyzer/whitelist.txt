@@ -1,0 +1,2 @@
+=== WHITELIST ===
+shell32

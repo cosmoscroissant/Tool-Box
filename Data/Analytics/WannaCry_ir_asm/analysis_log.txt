@@ -8,7 +8,7 @@ Purpose: analyze and cluster IDA microcode by structural patterns
 Features: CFG/DFG analysis with 25 structural features
 ============================================================
 
-Scanning Files From: Data/WannaCry
+Scanning Files From: Data/Sample/WannaCry
 found 2 files
 
 
@@ -115,15 +115,15 @@ Semantically Similar but Structurally Different Pairs:
 
 Frequent Code Patterns:
   Found 50 patterns across multiple functions
-  1. Pattern: E((0, 1), (1, 3))|O('N/O', 'N/O', 'N/O')
+  1. Pattern: E((8, 9), (12, 8))|O('jbe', 'jbe', 'jz')
      Appears in 2 functions
-  2. Pattern: E((3, 12),)|O('N/O', 'jbe')
+  2. Pattern: E((1, 3), (3, 4))|O('N/O', 'N/O', 'N/O')
      Appears in 2 functions
-  3. Pattern: E((1, 3), (7, 1))|O('N/O', 'N/O', 'N/O')
+  3. Pattern: E((3, 4), (3, 12))|O('N/O', 'N/O', 'jbe')
      Appears in 2 functions
-  4. Pattern: E((0, 1), (5, 0))|O('N/O', 'N/O', 'jnz')
+  4. Pattern: E((14, 15),)|O('N/O', 'N/O')
      Appears in 2 functions
-  5. Pattern: E((5, 0),)|O('N/O', 'jnz')
+  5. Pattern: E((6, 7), (7, 1))|O('N/O', 'N/O', 'jnz')
      Appears in 2 functions
 
 Pattern-based Similarity:
@@ -144,6 +144,23 @@ YARA rule saved to: Data/Analytics/WannaCry_ir_asm/asm_footprint_rule.yar
 report saved to: Data/Analytics/WannaCry_ir_asm/asm_footprint_sniffer_report.txt
 ASM sniffer completed: Data/Analytics/WannaCry_ir_asm/asm_footprint_result.json
 
+RUNNING IOC COMPARISON ANALYSIS
+Loaded 1 whitelist item(s).
+Found 1 text file(s).
+
+Found 1 JSON file(s).
+processing asm_footprint_result.json (87 unique IOCs including hashes)
+  vs malware_ioc.txt: 219 hash(es), 401 unique IOC(s), 424 match(es) [39 whitelisted]
+
+Successfully compared 1 file pair(s)!
+
+HTML Viewer Copied to: Data/Analytics/WannaCry_ir_asm/IOC_visualizer.html
+
+All Reports Saved to: Data/Analytics/WannaCry_ir_asm
+IOC comparison completed: 2 result file(s) created
+
+IOC comparison report created: ioc_comparison_report.json
+IOC top 5 report created: ioc_comparison_top5.json
 ============================================================
 CROSS REFERENCE ANALYSIS
 ============================================================

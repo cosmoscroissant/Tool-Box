@@ -16,6 +16,23 @@ YARA rule saved to: Data/Analytics/WannaCry_asm/asm_footprint_rule.yar
 report saved to: Data/Analytics/WannaCry_asm/asm_footprint_sniffer_report.txt
 ASM sniffer completed: Data/Analytics/WannaCry_asm/asm_footprint_result.json
 
+RUNNING IOC COMPARISON ANALYSIS
+Loaded 1 whitelist item(s).
+Found 1 text file(s).
+
+Found 1 JSON file(s).
+processing asm_footprint_result.json (87 unique IOCs including hashes)
+  vs malware_ioc.txt: 219 hash(es), 401 unique IOC(s), 424 match(es) [39 whitelisted]
+
+Successfully compared 1 file pair(s)!
+
+HTML Viewer Copied to: Data/Analytics/WannaCry_asm/IOC_visualizer.html
+
+All Reports Saved to: Data/Analytics/WannaCry_asm
+IOC comparison completed: 2 result file(s) created
+
+IOC comparison report created: ioc_comparison_report.json
+IOC top 5 report created: ioc_comparison_top5.json
 WARNING: cross reference analysis skipped (insufficient data)
 
 ================================================================================

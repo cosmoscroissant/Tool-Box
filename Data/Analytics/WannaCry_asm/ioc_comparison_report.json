@@ -1,0 +1,1397 @@
+{
+  "json_file": "asm_footprint_result.json",
+  "text_file": "malware_ioc.txt",
+  "total_hashes": 219,
+  "total_ioc_groups": 401,
+  "total_indicators": 424,
+  "whitelisted_total_indicators": 39,
+  "hash_statistics": [
+    {
+      "hash": "e039b160b23db31475cb0d145abccbd97953d045442a3b80a5e95bcff80ab913",
+      "ioc_count": 5
+    },
+    {
+      "hash": "a22b9193e29d49924f9948810266ca406280584a123a8dad4f3a6e413df4cc79",
+      "ioc_count": 5
+    },
+    {
+      "hash": "b89c79d9961077867d372a407ec29d9be517c4771aa19e3edfff4c86977ae78c",
+      "ioc_count": 5
+    },
+    {
+      "hash": "4ed4be9ff7f5e10bf25b2ed3b9fde9413fa175360ff9ed181004180b6d3089c2",
+      "ioc_count": 4
+    },
+    {
+      "hash": "3f1e6ac5cad8eefdc08868c14208edd9716cc5bba33944e69dcfb720e84450b2",
+      "ioc_count": 4
+    }
+  ],
+  "ioc_matches": {
+    "advapi32": {
+      "e039b160b23db31475cb0d145abccbd97953d045442a3b80a5e95bcff80ab913": [
+        "C:\\Windows\\system32\\advapi32.dll"
+      ],
+      "a22b9193e29d49924f9948810266ca406280584a123a8dad4f3a6e413df4cc79": [
+        "ADVAPI32.dll"
+      ],
+      "b89c79d9961077867d372a407ec29d9be517c4771aa19e3edfff4c86977ae78c": [
+        "ADVAPI32.dll",
+        "Advapi32"
+      ],
+      "4ed4be9ff7f5e10bf25b2ed3b9fde9413fa175360ff9ed181004180b6d3089c2": [
+        "ADVAPI32.dll"
+      ],
+      "3f1e6ac5cad8eefdc08868c14208edd9716cc5bba33944e69dcfb720e84450b2": [
+        "ADVAPI32.dll"
+      ],
+      "a0e3bf39e7ca7b63783829e0092aa91c8d7b0dd6af77bffc5a2c1db99b0145ff": [
+        "ADVAPI32.dll"
+      ],
+      "14a4775c9246979d382436a9398d89ec12ffbf3e6f496d3374591651a34ae978": [
+        "ADVAPI32.dll"
+      ],
+      "e2d0749177245a9b8e3e0b72b75fec31ffb51c8dbad73f7a4def83f7efa8f9ee": [
+        "ADVAPI32.dll"
+      ],
+      "c8200125c4be406d246d2cdfcf180ff9a2c66e6bfb70b033da111b37e4469038": [
+        "ADVAPI32.dll"
+      ],
+      "817c9e48a6c79149ad9b83b9e59df6b230a8ae3ebea454a631073120e28a5afa": [
+        "ADVAPI32.dll"
+      ],
+      "60856545528facfeac2df0ab0f929cc08edf9e43b6d38dc295783c5c620c1d32": [
+        "ADVAPI32.dll"
+      ],
+      "7ca56b545a3fdc32815d8e2ead195c64f87a1b74913e47123635be2695aae0d0": [
+        "ADVAPI32.dll"
+      ],
+      "18d1b17afd851d6cc961c448e75424cd9eb8592377ffc486791c93066e1edb30": [
+        "ADVAPI32.dll"
+      ],
+      "91e2eb283d24c4c66556817310f54438145a9496b82d320a53a232ffe3b20dbc": [
+        "ADVAPI32.dll"
+      ],
+      "1a9968f8a01c80ff46528724b195b78b1375233b8d2b54e72173dfbc5b53591d": [
+        "ADVAPI32.dll"
+      ],
+      "fe1549d4341bd462d4717be24649342c61305ce3a13f2ab8dbda55608e90ae8f": [
+        "ADVAPI32.dll"
+      ],
+      "dae47ed76de2cef73a060c73c57311c4e770a072ba9947f8c8f64b83455cd839": [
+        "ADVAPI32.dll"
+      ],
+      "e02085128fe77cc14a1c83fcbc0982849eb32a9eec6093a02295068ba787721f": [
+        "ADVAPI32.dll"
+      ],
+      "61e57f90e4118b0722c05f36d918e39bfd5bf2b5035e18c5f6dececd78b3c0f4": [
+        "ADVAPI32.dll"
+      ],
+      "f6a5e71a41393987ddc7cb40b0ff30adc06c7cd1d84f2e0eb9a994ee02d1c946": [
+        "ADVAPI32.dll"
+      ],
+      "43bd68e711f8bddb7732c5ccf931dd5e6717cfe12eaa722e793498535180f381": [
+        "ADVAPI32.dll"
+      ],
+      "6ec571fe90a4d0fc7e63cb02529bee8f26a904306039f6374c6f12ad9c4e3f59": [
+        "ADVAPI32.dll"
+      ],
+      "0570bc7b9034a587a096b167f69f8109a307589f555b9a04189d490be2e9b277": [
+        "ADVAPI32.dll"
+      ],
+      "1f2e9fba5f7f3cebf52dedd3d877608c4c1b7f224dd0baf636d698ec55fd2a9a": [
+        "ADVAPI32.dll"
+      ],
+      "87e18522b452b80955511a0bd99ac363987e6afbf49d2ff0b6fddd9fd9f23451": [
+        "ADVAPI32.dll"
+      ],
+      "12539d9f604442286a828f95f1b433777f75f04ad7d1960f4017a02691ac6d8b": [
+        "ADVAPI32.dll"
+      ],
+      "5fab7474d9e799aaff5747f0f86421d3ca64a8e972608a91c9703d47fc896b9e": [
+        "ADVAPI32.dll"
+      ],
+      "ebace3859d9dacd7fcfe23d6a654cba15653f3ee2255fe423ca8f396bc900557": [
+        "ADVAPI32.dll"
+      ],
+      "8f63ffad50cd53e31ab59c5a373ef15c1a84d9a287275906306063196ffb1a81": [
+        "ADVAPI32.dll"
+      ],
+      "98447959bc426815cd0e00d43b056db928120de428a381509a28d6ef6441e646": [
+        "ADVAPI32.dll"
+      ],
+      "45d2d8a44cbefa236671484ba8e4358a863b8d2a379ead7b4087f288f74795d3": [
+        "ADVAPI32.dll"
+      ],
+      "f27eface1095f08996fe9a12d7239651cea30973fda69fb61167c7c0449e4999": [
+        "ADVAPI32.dll"
+      ],
+      "f4b055d2c9ce2eeffb3c1d436084d6c1609a518a2fa179f5b1af0a212f403cb8": [
+        "C:\\Windows\\SysWOW64\\ADVAPI32.dll"
+      ],
+      "65a44df3f521f11fef1138c8fb32ad16749f12830025eeea925f9fb19f32edf1": [
+        "ADVAPI32.dll",
+        "C:\\Windows\\system32\\ADVAPI32.DLL"
+      ],
+      "396619b3f50f9f0de1a6ddcf012729e02939927c2234a56c8509e659e3f92b7a": [
+        "ADVAPI32.dll"
+      ],
+      "c43513d2681650724fc66a982b39206cdd12903df66d0841173922b7a8a96dc8": [
+        "ADVAPI32.dll"
+      ],
+      "a54a5145b1937763429507d95706374232b43305b9dd45bcf61be71f5272ae2c": [
+        "ADVAPI32.dll"
+      ],
+      "c412a56c63b22a98184c89f2867be3e983dea36ba2261782f0bfb0f8123dbb20": [
+        "advapi32.dll"
+      ],
+      "91f46c99cfc6ccfa1bd2a609eb9a26eea6a7eb53213557a33a1a29e88b74eb91": [
+        "ADVAPI32.dll",
+        "C:\\Windows\\system32\\advapi32.dll"
+      ],
+      "03c19fb4d363e8bf9df50e73ec5d79689e53e4a36350d549047fef9b1ab895f7": [
+        "ADVAPI32.dll"
+      ],
+      "846da4692d1aec9eee7a2dd7940a5a623248ed9dbbdba5c8b02a525d456500de": [
+        "ADVAPI32.dll"
+      ],
+      "d9ffa79a863f8518f891a5bc1996bae42732af31e66086fc6ebbf8a77dcc7fb8": [
+        "ADVAPI32.dll"
+      ],
+      "46c78c943d630ca4be4125adb0ce134bde0dc4c10b0e0c02a6adeab5c6c973d3": [
+        "ADVAPI32.dll"
+      ],
+      "2b5c4c688a4483834d70bf809dd5b5b9ddf9b0e73ae7d782144e5a6aaf3654ab": [
+        "ADVAPI32.dll"
+      ],
+      "9f31fb28eeb49b15674ab7aceaa1898c5858ad4756d67b2022a383de62358224": [
+        "ADVAPI32.dll"
+      ],
+      "198bf6577428b0321b14e68c7828c095c482d89bc79d7232e50fcf2c5c586685": [
+        "ADVAPI32.dll"
+      ],
+      "2c557babd57e0d116a0762adbfc687823b630fac5cf0a937368728779106a4a4": [
+        "ADVAPI32.dll"
+      ],
+      "a0ea6eecac6d70a16f384d19facfde69647ab7a106b49ab3fcaa928f20a7c428": [
+        "ADVAPI32.dll"
+      ],
+      "38532fb24f8b0afc8cf389d8664be0db2c683f99abe9db16dcebf7338b1ec868": [
+        "ADVAPI32.dll"
+      ],
+      "5a90b6d7ae54c3a28b4b99d4b5be22d24cc010d8882dcfb54a1e375affd55013": [
+        "ADVAPI32.dll"
+      ],
+      "e0ca1796fcdcc56c30c4ecfb79fbabe4767ce5d2ccc7c6148510d86237f07bd0": [
+        "ADVAPI32.dll"
+      ],
+      "23af1a7f7307b004c2a3bb52e8881eb5e9b5e3eeabd962c9f59519b3e35c8dcb": [
+        "ADVAPI32.dll"
+      ],
+      "75fe6a9cbd23c4226fe350682c18f268161a761f3ac040adaf6befb425a01fe8": [
+        "ADVAPI32.dll"
+      ],
+      "497c498a9ab3442b4fbb8956676463d229b31feb5bac09850e2d17e36e2fc3cb": [
+        "ADVAPI32.dll"
+      ],
+      "c72bf5953cecf191982fff023ee08b9194c96f9595e206e31c803c165c786673": [
+        "ADVAPI32.dll"
+      ],
+      "df1d2e68c6b20a8d67151e574a24a1b43861ed9429db849554db25e185de944c": [
+        "ADVAPI32.dll"
+      ],
+      "ad539464d6f9017240bc4980196b77c977aa21b4abd49a41d2968ab3f8d2416d": [
+        "ADVAPI32.dll"
+      ],
+      "186a60a08d0ef164cccd28135509906947a0623ae41bc794dcaf544764fc13e7": [
+        "ADVAPI32.dll"
+      ],
+      "5434be09787ea5b5a1b9208826faa9d60f51a95eb8a86114412325a1224477ef": [
+        "ADVAPI32.dll"
+      ],
+      "b838b19bbd05e89ba575c720d390190a7c5f322cb3a2a757d8546d6154f68542": [
+        "ADVAPI32.dll"
+      ],
+      "c8340ca66910c9912a7f2dd8e1a98fb84c6ac27d9fb53ec1f1e3f0c3b3583c52": [
+        "ADVAPI32.dll"
+      ],
+      "15bed2172f0dbdcff5dc2eb7bb9f188c74385a1b86d3c0ceefb1c5b73e76826b": [
+        "ADVAPI32.dll"
+      ],
+      "a00e7cbf48afb7085e7e257a03e75313c22344057672f48f390f65e8f5b53ebd": [
+        "ADVAPI32.dll"
+      ],
+      "3705bb84503d887dd66e29d6978d2037cf6bb057ffbace684cacf11d03562fdf": [
+        "ADVAPI32.dll"
+      ],
+      "449db3226f6214b5601e88253fe31b5311f29c8793b00cb02cc253af5d9df663": [
+        "ADVAPI32.dll"
+      ],
+      "6777b2cc2a6a770e728061b0eac9ecbccf630c7105381fdbb1e94db1af4cb5a9": [
+        "advapi32.dll"
+      ],
+      "e1cc03be96361a5e907102bf06512c310ec4b18e522aa6776fe6cfa6adfe01f7": [
+        "ADVAPI32.dll"
+      ],
+      "71b31d85d6865d2a12f88b2916ae88a350c4664c2c2e57c33a2b482c5392d190": [
+        "ADVAPI32.dll"
+      ],
+      "b72329385c89b14aff7f98834918d32e47e4470648013efa4cf9c76eb3115282": [
+        "ADVAPI32.dll"
+      ],
+      "cd00b173d39a42f7bba11e8adcc5579b15e45f46763bd696cb7d52af402eaf17": [
+        "ADVAPI32.dll"
+      ],
+      "fd72a2e715bcec2d268e2fec90a288c4574f86cb6490487bb70c0218d3448aca": [
+        "ADVAPI32.dll"
+      ],
+      "7dc4c4071ea563d74a1825ff5b1245d6ac67d210fd43f7230b14d9d912b40b02": [
+        "ADVAPI32.dll"
+      ],
+      "d004dfc5003c6b3f1378acc80b8d603aac39cdc7fdaf3608f44e3ee8fa86c186": [
+        "ADVAPI32.dll"
+      ],
+      "688c6cde8d744a5ae47e88fdc61a8aec9a296c5cfadbf88ec9137cab4952a2ee": [
+        "ADVAPI32.dll"
+      ],
+      "a8a1cc77eb97a1300829bb4656fe3bcfd71838234ca6d3f089bd912834963db5": [
+        "ADVAPI32.dll"
+      ],
+      "22aba24b7b7cc1d5df423edf2f9abe9bd2bc73a9cbb45eeed2c8970a125551eb": [
+        "ADVAPI32.dll"
+      ],
+      "82ab09c56b6e776dd8ec1d86fb3fec5373e28c31b7554c89f88b7a4eed47df56": [
+        "ADVAPI32.dll"
+      ],
+      "0dfb02874ceb74fd0f4ec0c55b7de38837bb06d2cbef739a50e3385c83138ac9": [
+        "advapi32.dll"
+      ],
+      "d280726b5a11d9174e0db635548a91261a4d81300d037fc24dccd9d96b882f2f": [
+        "ADVAPI32.dll",
+        "AdvApi32.dll",
+        "Advapi32.dll"
+      ],
+      "5ec1433dfe80f6a8ee3887e02049c62dadb52a8bfa86e15d77b8f15657135462": [
+        "ADVAPI32.dll"
+      ],
+      "19e5b60db4ae60c7d619277f29b60058adcaf610939e910aa05d2bfe5a9e8718": [
+        "ADVAPI32.dll"
+      ],
+      "47636471c07ba6878d1aef93e2567be625dc51b170e233bfb65ca984af60e4a7": [
+        "advapi32"
+      ],
+      "76312f4531eba2aacd7483e1f3abb550469f4919a3d944d2fa85e4afbbf4ff99": [
+        "ADVAPI32.dll"
+      ],
+      "d0663a4e04a8752f59584049c90079cd1d2ceb569b0ccf9386a4f049c6d74aa7": [
+        "ADVAPI32.dll",
+        "C:\\Windows\\system32\\advapi32.dll"
+      ],
+      "1508d3b5040f2bb3143ee1d8dfc36336f76233fb6a45d94652d1aafd05c0d67a": [
+        "ADVAPI32.dll"
+      ],
+      "bad9184ccd76b5011a647caf687bbbb08daf9a8dbbad4e76e67f043b41fee31f": [
+        "ADVAPI32.dll"
+      ],
+      "45039d0d2b26e328ddd385124075d000b29b2357e0f63aaeafcbb1a91c018d7b": [
+        "ADVAPI32.dll"
+      ],
+      "754efe9ae4dfe9bb6aa0a0f75b8125df70dc68cd4f2b4962b335a8b1e220843e": [
+        "ADVAPI32.dll"
+      ],
+      "807a6b45137347132855377137c377424db00d6bdc953d44d7bd1a0e5cc30cb0": [
+        "ADVAPI32.dll"
+      ],
+      "514289064d726ce744c5d5db84882dcba128df43b5e335796554855f37aad487": [
+        "ADVAPI32.dll"
+      ],
+      "aa3383d54770623293f993e52d4c3535dd633d506eb234f1234e0dbd181bc0fd": [
+        "ADVAPI32.dll"
+      ],
+      "90f1bcf4c8480de03dd34aebe1ae7cc739ccc6fe261ec5183eef32abc8fdd472": [
+        "ADVAPI32.dll"
+      ],
+      "eb866e3248c1fcb6268112fea789078d7be0c8af59e75e6234797a14b764e5be": [
+        "ADVAPI32.DLL"
+      ],
+      "956f071a2dfb67dd1debdf77f3691a20d2ab10dc8f9b39413cbb49837377085a": [
+        "ADVAPI32.dll"
+      ],
+      "b2b9e06249eca4b3378f0fcc6b2dbf3fe279f8d2e803f053a406c1de4145623d": [
+        "ADVAPI32.dll"
+      ],
+      "c8ebdb9d8aed9667ad6cca1bf8a89e644a974047745aae45cad16129a18ee1cb": [
+        "ADVAPI32.dll"
+      ],
+      "083704a6b120b6476f93bc0cef95aedeee3cef7a0fe4db8870b2ec0ee1591711": [
+        "ADVAPI32.dll"
+      ],
+      "1de62fc2c8151c81e25c289d4f0af10fbda001006d5393efcf9119e665b0bf3f": [
+        "ADVAPI32.dll"
+      ],
+      "67c246bd892818aba5a8bbb62ae0997dc13cacc0ef878ef93a9cdc8193f5632f": [
+        "ADVAPI32.dll"
+      ],
+      "945b6ff42203c0222596ea79758c38032b98b0d4291e11090162ea8dd435f128": [
+        "ADVAPI32.dll"
+      ],
+      "330728bbf870ee19d45d0f762307bcc74b20cbc8eef12f96c30efd2ec7352fcf": [
+        "ADVAPI32.dll"
+      ],
+      "c53daa0c20df007bd497f0f777eb29573a3faeb62fbf3334ceff0e0b768f919c": [
+        "ADVAPI32.dll"
+      ],
+      "c795630381020101514337ee247d71932315ab5ccca50195aabad1c9a3bdbc76": [
+        "ADVAPI32.dll"
+      ],
+      "2ef383d196c3cdb53d01c36815c221a9880c7c67037afead58473618ffa0c4be": [
+        "ADVAPI32.dll"
+      ],
+      "3921d1dfcb478f251693422dc19ccda36de82bb1e4cad37f66a87471aa796811": [
+        "ADVAPI32.dll"
+      ],
+      "3580f6878bf0ddb708d90880f26c1c9bb434d1e9dd0068c2718df8aa76f448c9": [
+        "ADVAPI32.dll"
+      ],
+      "29f60e3ef1a319c691c8b79ca3c14c3f27e3a370a1deceb4e1217ae8510940f2": [
+        "ADVAPI32.dll"
+      ],
+      "faa9752a19e3964bb3499a9944631913b32fae9fd3c057a8998ec4364f8b5f65": [
+        "ADVAPI32.dll"
+      ],
+      "07ee6c04d93d0ac2f3897fe8c0e1ec329737c9a82bf30f679262153fdaaaa55d": [
+        "ADVAPI32.dll"
+      ],
+      "2d81eb647ca5f0bf1a764afd703ff74dcd44371db7fe9cea0a2068bf1b61b43e": [
+        "advapi32.dll"
+      ],
+      "72aaa9dc8af4932b385c6c40ba8f8aa074c65ead54ade2709e1c9a9a481be3c2": [
+        "ADVAPI32.dll"
+      ],
+      "0d65a2e09948b0fd4f7289080507ef0ff9754bd8a82085b61adefd67f06f40dc": [
+        "ADVAPI32.dll"
+      ],
+      "8f493955a9d0f94188acc3fdd7ffe7a1911c61292bed85da2348583bfa5da1d7": [
+        "ADVAPI32.dll"
+      ],
+      "89005f89b771cf71f1462df48370387ca73cb6177876daef0014cb350ca7da1f": [
+        "ADVAPI32.dll"
+      ],
+      "5d6a5fd85618e7ce2cc3bc598e62e6740e29bab0d8effda2b79c952cab447a5e": [
+        "ADVAPI32.dll"
+      ],
+      "9bf34a7d6a0c9fffa626dd2d6511da5cfb85bbd7eca510e3468af56362e68b90": [
+        "ADVAPI32.dll"
+      ],
+      "514ba3921b07c3911c7b17fab91ff6b73b027efe44d9566c043364602b09381f": [
+        "ADVAPI32.dll"
+      ],
+      "33d83615b1e0fea17aa084f392a98ca24a79e3e3cd27c7e60e871a5a8ac4e99a": [
+        "ADVAPI32.dll"
+      ],
+      "6c2c01ee5cd00905816ba9f13a01cb7dd86264ca99d3fd9df776113f55865237": [
+        "ADVAPI32.dll"
+      ],
+      "a92cf0a9a40db59b40a6f153fb5185cf0a772f76144237d110bb8955cc2ea402": [
+        "ADVAPI32.dll"
+      ],
+      "b2c4fb650e469f998bbda6f0b46b2370897a2d44899c19fd5280797dcb8f287c": [
+        "ADVAPI32.dll",
+        "AdvApi32.dll"
+      ],
+      "aacac6f017273933187b9f13510f9e3eaa5825f30a38f898873e6a6bb20057d3": [
+        "ADVAPI32.dll"
+      ],
+      "1a560c740f786c6541ba974843ad8254437324b18c4ff1db7caed903932289eb": [
+        "ADVAPI32.dll"
+      ],
+      "9cdd1ac994658ea161b7e458577d36e2ac1281321fbedaa8357bfd420592e13d": [
+        "ADVAPI32.dll"
+      ],
+      "63bea608a49e7c06bb06ad6e90dfeb801897cf367a3fab7aeb21aedf79d301c6": [
+        "ADVAPI32.dll"
+      ],
+      "5c7eb5ad05d8865af2740254018b5d32483aa6b1ce936623d3e9cd55b9fe9cc5": [
+        "ADVAPI32.dll"
+      ],
+      "6ca6c29bcae4a881b0cb30375f0e0a6bc7ba8e1baf561b5cb21bec394dcfad5b": [
+        "ADVAPI32.dll"
+      ],
+      "abb56a92e69552e8f4260d2d13465aef632ba7d173e0a27c8f8ea2b5192e4fb8": [
+        "ADVAPI32.dll"
+      ],
+      "7473e46bbce874a49ee055af12f672637d2d1a8ef83aada290461bc6c0ef2bad": [
+        "ADVAPI32.dll"
+      ],
+      "4843435ed197ba72634bafc118df791a48d4d9ce9a57e60206d358a77dc33921": [
+        "ADVAPI32.dll"
+      ],
+      "06116d255d2f6cc88f8268ac87b43390e66274d1a931a957a8cd2494b6e565a1": [
+        "ADVAPI32.dll"
+      ],
+      "059683761b8f6b846306682acac6c91699be752203561648786bb4c9a79153d4": [
+        "ADVAPI32.dll"
+      ],
+      "1c46a82f5f7a7d6a44e9e691f02c346d3f5412df3849f1cd8990069580f5a27c": [
+        "ADVAPI32.dll"
+      ],
+      "64b262898cbdf096ddcdff6b293c9372c3dfcf0e3680523ae99db4beeef7f6f7": [
+        "ADVAPI32.dll"
+      ],
+      "fb35db82d8f2c275def946aea8f46dee972ab4ddfb259318fc065fd4a269ce03": [
+        "ADVAPI32.dll"
+      ],
+      "8313aa91258669d6bbb52c42ea2e3ffabf81119b27eb3ad5e6b872b88fd6a114": [
+        "ADVAPI32.dll"
+      ],
+      "1e4f8f8a4b70f15b197df796953113f8c78d990b2af9c765ae304611414cee50": [
+        "ADVAPI32.dll"
+      ],
+      "ed24dd491e1d0754fa42839fac7d8cf13c49c8faee4936ddc05d0873a2fc3d59": [
+        "ADVAPI32.dll"
+      ],
+      "1dd82f01934e6db8686b5dc030cd041c501df35ef420179ef8a1a70542430bb0": [
+        "ADVAPI32.dll"
+      ],
+      "89659679a6f1e88e3e4c4fdcd4ef6440c20eb6b22da689c053fd9e7f99c290ff": [
+        "ADVAPI32.dll",
+        "AdvApi32.dll"
+      ],
+      "d2c37690d6c4fc2cfa348ce7f7837433c55315b96b4c9f767a32ad7fa9233246": [
+        "ADVAPI32.dll"
+      ],
+      "9e40f82ab15cb72f2631bde037c6f88896f0bd33f63565178d6af0ff9e977d5b": [
+        "ADVAPI32.dll"
+      ],
+      "6775f62bbbf5424a955cf27d1d295960b052240912ce42116b8f6f248e74e16d": [
+        "ADVAPI32.dll"
+      ],
+      "87760c78f93b5d0be49a703f92f7b39bb0dfe3811ddca9a909fa63fdb2bcb0f4": [
+        "ADVAPI32.dll",
+        "advapi32"
+      ],
+      "07366815e8d87519242d28143f07ca6cf8ccc7ad61c13574e4f6ff621104d9e5": [
+        "ADVAPI32"
+      ],
+      "b71442410ad6d3a3ba4115633df6d5feeff3a76a3458405a8c1c8eebd056e1b4": [
+        "ADVAPI32.dll"
+      ],
+      "101c94ccc609e07651799d031f85b9864709229eb89ff5317d61b44014893f37": [
+        "ADVAPI32.dll"
+      ],
+      "f9c093f408a2c0c66116bb47f466a01fea73b06751962fb89b7c88be123b6a78": [
+        "ADVAPI32.dll"
+      ],
+      "e3b326d42d52e69f5cc130b56e69596ebb56568fb375d9c15450fa89c8df76b5": [
+        "ADVAPI32.dll"
+      ],
+      "7b81417e971973ebeaddc4648c2dcc16b201063ea8801ee0a8e84edf46fbc83a": [
+        "ADVAPI32.dll"
+      ],
+      "b4f0e9ac34f49473c53788b90767183307620bea9ff882635218cf4b16be1ae6": [
+        "ADVAPI32.dll"
+      ],
+      "5dcb5bf9301829767aa868833f04f640052c900499454d3b75948f394508f5f8": [
+        "ADVAPI32.dll"
+      ],
+      "1a26cb9c75196298d9bba98c0b888ce785a4ee18ab44df46268f9113102dfb6f": [
+        "ADVAPI32.dll"
+      ],
+      "d939070d0f49cd65642c29f59d960b10ced752d0d6cd10d46621b9ee40f907ae": [
+        "ADVAPI32.dll"
+      ],
+      "57601f106fde141d0f04d3426c3f26846e62fce512dd2a1f76c6a8ba66649384": [
+        "ADVAPI32.dll"
+      ],
+      "dc0413af943c0d7ae88c2b07fadb4fdd69d89858491896bf9da77b291af638a2": [
+        "ADVAPI32.dll"
+      ],
+      "1d3cad389b4cf4bf1c198ef6c406487ac7931ce082d5d642d19382fc2270e1fa": [
+        "ADVAPI32.dll"
+      ],
+      "b6df7b735d5d39c30d4b0e8dc5040334eae423a5a2970af79d78b9636bff1761": [
+        "ADVAPI32.dll"
+      ],
+      "cfd5a9f7bd2dac5883a4d21f88f3d3390026ea4cf040ddfc50521005b46dae42": [
+        "ADVAPI32.dll"
+      ],
+      "6a65806afb0bbf01ce0c8d1fc40d45fd0a83957d12d09a49e8c66ae1725d8a0e": [
+        "ADVAPI32.dll"
+      ],
+      "5e7fdaac3a609f6ca9645e88354c7df28eeca7e41dfb77152bd9f33fd044c56a": [
+        "ADVAPI32.dll"
+      ],
+      "2b68cbc421e8c0c03285ff550ea233e0e2ec3ca642ae9c5bd97fe27d98a8e279": [
+        "ADVAPI32.dll"
+      ],
+      "9d9e9ec3509f776a522891e486c75c2c6a27a25a9b7bda5da10a2823260dcc4f": [
+        "ADVAPI32.dll"
+      ]
+    },
+    "cmd": {
+      "e039b160b23db31475cb0d145abccbd97953d045442a3b80a5e95bcff80ab913": [
+        "\"C:\\\\Windows\\\\system32\\\\cmd.exe\""
+      ],
+      "a22b9193e29d49924f9948810266ca406280584a123a8dad4f3a6e413df4cc79": [
+        "\"C:\\\\Windows\\\\system32\\\\cmd.exe\""
+      ],
+      "b89c79d9961077867d372a407ec29d9be517c4771aa19e3edfff4c86977ae78c": [
+        "\"C:\\\\Windows\\\\system32\\\\cmd.exe\""
+      ],
+      "14a4775c9246979d382436a9398d89ec12ffbf3e6f496d3374591651a34ae978": [
+        "C:\\Windows\\SysWOW64\\cmd.exe"
+      ],
+      "817c9e48a6c79149ad9b83b9e59df6b230a8ae3ebea454a631073120e28a5afa": [
+        "C:\\Windows\\SysWOW64\\cmd.exe"
+      ],
+      "60856545528facfeac2df0ab0f929cc08edf9e43b6d38dc295783c5c620c1d32": [
+        "C:\\Windows\\SysWOW64\\cmd.exe"
+      ],
+      "fe1549d4341bd462d4717be24649342c61305ce3a13f2ab8dbda55608e90ae8f": [
+        "cmd.exe"
+      ],
+      "dae47ed76de2cef73a060c73c57311c4e770a072ba9947f8c8f64b83455cd839": [
+        "%WINDIR%\\system32\\cmd.exe"
+      ],
+      "91f46c99cfc6ccfa1bd2a609eb9a26eea6a7eb53213557a33a1a29e88b74eb91": [
+        "%WINDIR%\\system32\\cmd.exe"
+      ],
+      "75fe6a9cbd23c4226fe350682c18f268161a761f3ac040adaf6befb425a01fe8": [
+        "C:\\Windows\\SysWOW64\\cmd.exe"
+      ],
+      "383ddec3254e42c4718730a20f7670375f85ae31084ba5b9ae615face72fe085": [
+        "1908 - C:\\Windows\\System32\\cmd.exe",
+        "C:\\Windows\\System32\\cmd.exe",
+        "C:\\Windows\\system32\\cmd.exe"
+      ],
+      "ad539464d6f9017240bc4980196b77c977aa21b4abd49a41d2968ab3f8d2416d": [
+        "C:\\Windows\\SysWOW64\\cmd.exe"
+      ],
+      "186a60a08d0ef164cccd28135509906947a0623ae41bc794dcaf544764fc13e7": [
+        "C:\\Windows\\SysWOW64\\cmd.exe"
+      ],
+      "15bed2172f0dbdcff5dc2eb7bb9f188c74385a1b86d3c0ceefb1c5b73e76826b": [
+        "C:\\Windows\\SysWOW64\\cmd.exe"
+      ],
+      "3705bb84503d887dd66e29d6978d2037cf6bb057ffbace684cacf11d03562fdf": [
+        "C:\\Windows\\SysWOW64\\cmd.exe"
+      ],
+      "71b31d85d6865d2a12f88b2916ae88a350c4664c2c2e57c33a2b482c5392d190": [
+        "C:\\Windows\\SysWOW64\\cmd.exe"
+      ],
+      "a2f393986ea535a87fc794ea268387b0090d39a2103c41ca6cbb1ecab3313a41": [
+        "C:\\Windows\\SysWOW64\\cmd.exe"
+      ],
+      "688c6cde8d744a5ae47e88fdc61a8aec9a296c5cfadbf88ec9137cab4952a2ee": [
+        "C:\\Windows\\SysWOW64\\cmd.exe"
+      ],
+      "611389f34382db20af0507046d067f5d06c7302fc54ac85f0c74815e3d0d8f57": [
+        "C:\\Windows\\System32\\cmd.exe"
+      ],
+      "d280726b5a11d9174e0db635548a91261a4d81300d037fc24dccd9d96b882f2f": [
+        "\"C:\\\\Windows\\\\system32\\\\cmd.exe\""
+      ],
+      "e3483ba023f675da1377c0ea9dedd4e95cb1c5b694cf5531e93a03d48167e90a": [
+        "2388 - cmd",
+        "6224 - cmd",
+        "C:\\Windows\\System32\\cmd.exe",
+        "C:\\Windows\\system32\\cmd.exe",
+        "cmd"
+      ],
+      "1de62fc2c8151c81e25c289d4f0af10fbda001006d5393efcf9119e665b0bf3f": [
+        "C:\\Windows\\SysWOW64\\cmd.exe"
+      ],
+      "dbbac4c9077a9c8ecb90181b5ae83800d97f1fd722d36e63057900709823a3ca": [
+        "%WINDIR%\\system32\\cmd.exe"
+      ],
+      "dd5353b539874d8a3e96aa29a1327d23c642c56fd97fbe7067a0a24157be40d7": [
+        "%WINDIR%\\system32\\cmd.exe",
+        "3428 - %WINDIR%\\system32\\cmd.exe",
+        "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\bam\\State\\UserSettings\\S-1-5-21-4226853953-3309226944-3078887307-1000\\%WINDIR%\\System32\\cmd.exe"
+      ],
+      "f8a4ee6249cb3826cc33863b8a34fbc21c46eeec45db67e174c5b4591a810e78": [
+        "C:\\Windows\\System32\\cmd.exe"
+      ],
+      "7f3478fec21af23728dd4564865876e5e29e270a24f37fdc1fb1b6cd42d845b8": [
+        "C:\\Windows\\System32\\cmd.exe"
+      ],
+      "8e0f564c748b91c07b69035431030c0ab9012e5912037bd82664f16ac6bc5132": [
+        "%WINDIR%\\system32\\cmd.exe"
+      ],
+      "1cb80082697049828c7f096e1d62421a3df2b4ca288ec9b2d2b8b8d332bc4b56": [
+        "C:\\Windows\\System32\\cmd.exe"
+      ],
+      "3efc965886cda8ccb727cd8a839181df88025c9e0bf751fc46daff65a6d090fc": [
+        "C:\\Windows\\SysWOW64\\cmd.exe"
+      ],
+      "b7287039ece777a33d89c338a0ef4fc2a733d401f400c7c844792bec9ba8b01d": [
+        "%WINDIR%\\system32\\cmd.exe"
+      ],
+      "e6f0c28acd229ccc644da8ffaf7374fb7fe9c18562ada79afb43746cf0e0e217": [
+        "6752 - C:\\Windows\\System32\\cmd.exe cmd.exe"
+      ],
+      "91f2170e3120908851e6b6c68fe171ad1c18900dbae703c323f6d44a3aa35829": [
+        "%WINDIR%\\system32\\cmd.exe"
+      ],
+      "6bab77edffa76201983e1c3f84115b200d2938cf3377f5e8ea27421c7ac3e3d4": [
+        "%WINDIR%\\system32\\cmd.exe"
+      ],
+      "a32ae600f84c0b4ff4351a96d3811ad98c79b82a6d7d527f7dfc76e3143eed2b": [
+        "C:\\Windows\\System32\\cmd.exe"
+      ],
+      "72547f28a3da9bd889aeefe6a47abf73852fc1523b456394f7b02e252a15199f": [
+        "C:\\Windows\\SysWOW64\\cmd.exe"
+      ],
+      "91467ec40682c6d8858a837205e447aebf195eace26e939906b48b318fe6d784": [
+        "%WINDIR%\\system32\\cmd.exe"
+      ]
+    },
+    "iphlpapi": {
+      "4ed4be9ff7f5e10bf25b2ed3b9fde9413fa175360ff9ed181004180b6d3089c2": [
+        "IPHLPAPI.DLL"
+      ],
+      "3f1e6ac5cad8eefdc08868c14208edd9716cc5bba33944e69dcfb720e84450b2": [
+        "IPHLPAPI.DLL"
+      ],
+      "e2d0749177245a9b8e3e0b72b75fec31ffb51c8dbad73f7a4def83f7efa8f9ee": [
+        "IPHLPAPI.DLL"
+      ],
+      "c8200125c4be406d246d2cdfcf180ff9a2c66e6bfb70b033da111b37e4469038": [
+        "C:\\Windows\\System\\IPHLPAPI.DLL",
+        "IPHLPAPI.DLL"
+      ],
+      "7ca56b545a3fdc32815d8e2ead195c64f87a1b74913e47123635be2695aae0d0": [
+        "C:\\Users\\<USER>\\Desktop\\IPHLPAPI.DLL",
+        "IPHLPAPI.DLL"
+      ],
+      "18d1b17afd851d6cc961c448e75424cd9eb8592377ffc486791c93066e1edb30": [
+        "C:\\Windows\\System\\IPHLPAPI.DLL",
+        "IPHLPAPI.DLL"
+      ],
+      "91e2eb283d24c4c66556817310f54438145a9496b82d320a53a232ffe3b20dbc": [
+        "IPHLPAPI.DLL"
+      ],
+      "1a9968f8a01c80ff46528724b195b78b1375233b8d2b54e72173dfbc5b53591d": [
+        "IPHLPAPI.DLL"
+      ],
+      "43bd68e711f8bddb7732c5ccf931dd5e6717cfe12eaa722e793498535180f381": [
+        "IPHLPAPI.DLL"
+      ],
+      "12539d9f604442286a828f95f1b433777f75f04ad7d1960f4017a02691ac6d8b": [
+        "C:\\Users\\<USER>\\Desktop\\IPHLPAPI.DLL"
+      ],
+      "ebace3859d9dacd7fcfe23d6a654cba15653f3ee2255fe423ca8f396bc900557": [
+        "IPHLPAPI.DLL"
+      ],
+      "8f63ffad50cd53e31ab59c5a373ef15c1a84d9a287275906306063196ffb1a81": [
+        "IPHLPAPI.DLL"
+      ],
+      "45d2d8a44cbefa236671484ba8e4358a863b8d2a379ead7b4087f288f74795d3": [
+        "IPHLPAPI.DLL"
+      ],
+      "f27eface1095f08996fe9a12d7239651cea30973fda69fb61167c7c0449e4999": [
+        "IPHLPAPI.DLL"
+      ],
+      "c412a56c63b22a98184c89f2867be3e983dea36ba2261782f0bfb0f8123dbb20": [
+        "IPHLPAPI.DLL"
+      ],
+      "9f31fb28eeb49b15674ab7aceaa1898c5858ad4756d67b2022a383de62358224": [
+        "IPHLPAPI.DLL"
+      ],
+      "a0ea6eecac6d70a16f384d19facfde69647ab7a106b49ab3fcaa928f20a7c428": [
+        "IPHLPAPI.DLL"
+      ],
+      "7ba8bef8accd9de1a07ae359b7d2c2016a760ddf0c897522190ac0e46acba381": [
+        "C:\\Windows\\SysWOW64\\IPHLPAPI.DLL"
+      ],
+      "497c498a9ab3442b4fbb8956676463d229b31feb5bac09850e2d17e36e2fc3cb": [
+        "C:\\Program Files\\Internet Explorer\\IPHLPAPI.DLL"
+      ],
+      "df1d2e68c6b20a8d67151e574a24a1b43861ed9429db849554db25e185de944c": [
+        "C:\\Program Files\\Internet Explorer\\IPHLPAPI.DLL"
+      ],
+      "c8340ca66910c9912a7f2dd8e1a98fb84c6ac27d9fb53ec1f1e3f0c3b3583c52": [
+        "C:\\Program Files\\Internet Explorer\\IPHLPAPI.DLL"
+      ],
+      "449db3226f6214b5601e88253fe31b5311f29c8793b00cb02cc253af5d9df663": [
+        "C:\\Program Files\\Internet Explorer\\IPHLPAPI.DLL"
+      ],
+      "e1cc03be96361a5e907102bf06512c310ec4b18e522aa6776fe6cfa6adfe01f7": [
+        "C:\\Program Files\\Internet Explorer\\IPHLPAPI.DLL"
+      ],
+      "d004dfc5003c6b3f1378acc80b8d603aac39cdc7fdaf3608f44e3ee8fa86c186": [
+        "C:\\Program Files\\Internet Explorer\\IPHLPAPI.DLL"
+      ],
+      "6a0a5ad67a7127d9f21f09513ce653ab93626af18865ed0f271b1fdc731ebcaf": [
+        "C:\\Users\\<USER>\\Desktop\\IPHLPAPI.DLL"
+      ],
+      "4a7ff41c51774db5e0d20b30138a18a85fea7d12b5ff9ea5e7068b144b611001": [
+        "C:\\Program Files\\Internet Explorer\\IPHLPAPI.DLL"
+      ],
+      "226b5457447df90e7f004abd22077c9f65a69cbca2ac2d98fc4e431fe45322e1": [
+        "C:\\Program Files\\Internet Explorer\\IPHLPAPI.DLL"
+      ],
+      "8fec0eeb5f9bbcf6c1c96e62e195a9bb5a98619217b5b09a73e58876cf997342": [
+        "IPHLPAPI.DLL"
+      ],
+      "da5a95c35118d2559f18d990af3f2ab207552c632d2df64c5a59082f720619fc": [
+        "IPHLPAPI.DLL"
+      ],
+      "7eafbbc5a3de7f671a3ab74cd283e143f9f69c413b51b3fb5b4a5dac34e9c6d1": [
+        "IPHLPAPI.DLL"
+      ]
+    },
+    "kernel32": {
+      "e039b160b23db31475cb0d145abccbd97953d045442a3b80a5e95bcff80ab913": [
+        "C:\\Windows\\system32\\kernel32.dll"
+      ],
+      "a22b9193e29d49924f9948810266ca406280584a123a8dad4f3a6e413df4cc79": [
+        "KERNEL32.dll"
+      ],
+      "b89c79d9961077867d372a407ec29d9be517c4771aa19e3edfff4c86977ae78c": [
+        "kernel32.dll"
+      ],
+      "e02085128fe77cc14a1c83fcbc0982849eb32a9eec6093a02295068ba787721f": [
+        "kernel32.dll"
+      ],
+      "f6a5e71a41393987ddc7cb40b0ff30adc06c7cd1d84f2e0eb9a994ee02d1c946": [
+        "kernel32"
+      ],
+      "f4b055d2c9ce2eeffb3c1d436084d6c1609a518a2fa179f5b1af0a212f403cb8": [
+        "C:\\Windows\\SysWOW64\\KERNEL32.DLL"
+      ],
+      "65a44df3f521f11fef1138c8fb32ad16749f12830025eeea925f9fb19f32edf1": [
+        "C:\\Windows\\system32\\KERNEL32.DLL"
+      ],
+      "bc441cfd0938a756232470a6fd768427f0b0a272b7f915aa9b21df75a6700694": [
+        "C:\\Windows\\SysWOW64\\KERNEL32.DLL",
+        "KERNEL32.DLL"
+      ],
+      "2b5c4c688a4483834d70bf809dd5b5b9ddf9b0e73ae7d782144e5a6aaf3654ab": [
+        "KERNEL32.dll"
+      ],
+      "1431f3142f9fefed944097d57adb5f2a30432e793b85c5bb2b097ae437bfc1f8": [
+        "C:\\Windows\\SysWOW64\\KERNEL32.DLL"
+      ],
+      "383ddec3254e42c4718730a20f7670375f85ae31084ba5b9ae615face72fe085": [
+        "C:\\Windows\\System32\\KERNEL32.DLL",
+        "kernel32"
+      ],
+      "9638ec005c1935e533e9c008b65f232c9bd6e75ad1db59ed9f317c5addb95b9d": [
+        "C:\\Windows\\System32\\KERNEL32.DLL"
+      ],
+      "0d025313677a031a3e3edfaa5602f5e36e8762b4da07fd0e83736e099e0245fc": [
+        "kernel32"
+      ],
+      "766042cd2225ee0f6192114cdea4b2b3029ba68afdb97a4ae7508f6ee15b16a5": [
+        "C:\\Users\\<USER>\\Desktop\\kernel32",
+        "kernel32"
+      ],
+      "611389f34382db20af0507046d067f5d06c7302fc54ac85f0c74815e3d0d8f57": [
+        "kernel32"
+      ],
+      "5c1a2c081fe75091f99bb1e6ed16d696eeb8b3e2abfc274ce46134d15cce7e0e": [
+        "kernel32"
+      ],
+      "762ffa3c39380c6e52b75126d4cc4cc06c2b1191db14754964360af2cfaca591": [
+        "c:\\windows\\system32\\kernel32.dll"
+      ],
+      "eb866e3248c1fcb6268112fea789078d7be0c8af59e75e6234797a14b764e5be": [
+        "C:\\WINDOWS\\system32\\KERNEL32.DLL"
+      ],
+      "8b1ed1c546e146a96447af88c4ad5f5d6bff3b674e58a2733558016f0510d409": [
+        "C:\\Windows\\System32\\KERNEL32.DLL"
+      ],
+      "8ec4f2e0dd5ba0870e25e97624fabf216df60263576c00976d5a5074ea32f868": [
+        "kernel32"
+      ],
+      "7c6943d36abb7c5060b4705959f6ff23ba571c828fe79220afe7d6dfaafa5d3e": [
+        "C:\\Windows\\SysWOW64\\KERNEL32.DLL"
+      ],
+      "7cd371bdd78f12976006b6df85e36fecf4026f261cb3d8005dfb643e80b4fdd5": [
+        "kernel32"
+      ],
+      "454d86da364015e9f9f649d20121ae4f30d21d6bb1c3f20b9d7969f8d3c24e8c": [
+        "kernel32"
+      ],
+      "ed300e316970590bc0b75f94b5c261875c0ffc362dcbd5ffa1c46858b01ff4fa": [
+        "kernel32"
+      ],
+      "f545f9343682f13e4d54b92e5e0df448b7f8cc39890f2d37bcefbaeafb3224f4": [
+        "kernel32"
+      ],
+      "44a3989e13a9ca1f215d60eae1778cd1e223382272444dfd7fb9a0cde2704d80": [
+        "kernel32"
+      ],
+      "c800fe1612811bae89d3a6dd7dbd65c0ff29829a9e72b562e42a356e5c430a50": [
+        "kernel32"
+      ],
+      "43a0aa3ecf3f3557de23fc12493f4774caa75ac35b281c4e30f655cc6d8bd17f": [
+        "C:\\Windows\\SysWOW64\\KERNEL32.DLL"
+      ]
+    },
+    "oleaut32": {
+      "a22b9193e29d49924f9948810266ca406280584a123a8dad4f3a6e413df4cc79": [
+        "OLEAUT32.dll"
+      ],
+      "4ed4be9ff7f5e10bf25b2ed3b9fde9413fa175360ff9ed181004180b6d3089c2": [
+        "OLEAUT32.dll"
+      ],
+      "3f1e6ac5cad8eefdc08868c14208edd9716cc5bba33944e69dcfb720e84450b2": [
+        "OLEAUT32.dll"
+      ],
+      "a0e3bf39e7ca7b63783829e0092aa91c8d7b0dd6af77bffc5a2c1db99b0145ff": [
+        "OLEAUT32.dll"
+      ],
+      "14a4775c9246979d382436a9398d89ec12ffbf3e6f496d3374591651a34ae978": [
+        "OLEAUT32.dll"
+      ],
+      "e2d0749177245a9b8e3e0b72b75fec31ffb51c8dbad73f7a4def83f7efa8f9ee": [
+        "OLEAUT32.dll"
+      ],
+      "c8200125c4be406d246d2cdfcf180ff9a2c66e6bfb70b033da111b37e4469038": [
+        "OLEAUT32.dll"
+      ],
+      "817c9e48a6c79149ad9b83b9e59df6b230a8ae3ebea454a631073120e28a5afa": [
+        "OLEAUT32.dll"
+      ],
+      "60856545528facfeac2df0ab0f929cc08edf9e43b6d38dc295783c5c620c1d32": [
+        "OLEAUT32.dll"
+      ],
+      "7ca56b545a3fdc32815d8e2ead195c64f87a1b74913e47123635be2695aae0d0": [
+        "OLEAUT32.dll"
+      ],
+      "18d1b17afd851d6cc961c448e75424cd9eb8592377ffc486791c93066e1edb30": [
+        "OLEAUT32.dll"
+      ],
+      "91e2eb283d24c4c66556817310f54438145a9496b82d320a53a232ffe3b20dbc": [
+        "OLEAUT32.dll"
+      ],
+      "1a9968f8a01c80ff46528724b195b78b1375233b8d2b54e72173dfbc5b53591d": [
+        "OLEAUT32.dll"
+      ],
+      "fe1549d4341bd462d4717be24649342c61305ce3a13f2ab8dbda55608e90ae8f": [
+        "OLEAUT32.dll"
+      ],
+      "dae47ed76de2cef73a060c73c57311c4e770a072ba9947f8c8f64b83455cd839": [
+        "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\OLEAUT32.dll"
+      ],
+      "e02085128fe77cc14a1c83fcbc0982849eb32a9eec6093a02295068ba787721f": [
+        "OLEAUT32.dll"
+      ],
+      "61e57f90e4118b0722c05f36d918e39bfd5bf2b5035e18c5f6dececd78b3c0f4": [
+        "OLEAUT32.dll"
+      ],
+      "43bd68e711f8bddb7732c5ccf931dd5e6717cfe12eaa722e793498535180f381": [
+        "OLEAUT32.dll"
+      ],
+      "6ec571fe90a4d0fc7e63cb02529bee8f26a904306039f6374c6f12ad9c4e3f59": [
+        "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\OLEAUT32.dll"
+      ],
+      "0570bc7b9034a587a096b167f69f8109a307589f555b9a04189d490be2e9b277": [
+        "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\OLEAUT32.dll"
+      ],
+      "1f2e9fba5f7f3cebf52dedd3d877608c4c1b7f224dd0baf636d698ec55fd2a9a": [
+        "OLEAUT32.dll"
+      ],
+      "87e18522b452b80955511a0bd99ac363987e6afbf49d2ff0b6fddd9fd9f23451": [
+        "OLEAUT32.dll"
+      ],
+      "5fab7474d9e799aaff5747f0f86421d3ca64a8e972608a91c9703d47fc896b9e": [
+        "OLEAUT32.dll"
+      ],
+      "ebace3859d9dacd7fcfe23d6a654cba15653f3ee2255fe423ca8f396bc900557": [
+        "OLEAUT32.dll"
+      ],
+      "98447959bc426815cd0e00d43b056db928120de428a381509a28d6ef6441e646": [
+        "OLEAUT32.dll"
+      ],
+      "45d2d8a44cbefa236671484ba8e4358a863b8d2a379ead7b4087f288f74795d3": [
+        "OLEAUT32.dll"
+      ],
+      "f4b055d2c9ce2eeffb3c1d436084d6c1609a518a2fa179f5b1af0a212f403cb8": [
+        "C:\\Windows\\SysWOW64\\OLEAUT32.dll"
+      ],
+      "396619b3f50f9f0de1a6ddcf012729e02939927c2234a56c8509e659e3f92b7a": [
+        "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\OLEAUT32.dll"
+      ],
+      "c43513d2681650724fc66a982b39206cdd12903df66d0841173922b7a8a96dc8": [
+        "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\OLEAUT32.dll"
+      ],
+      "a54a5145b1937763429507d95706374232b43305b9dd45bcf61be71f5272ae2c": [
+        "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\OLEAUT32.dll"
+      ],
+      "bc441cfd0938a756232470a6fd768427f0b0a272b7f915aa9b21df75a6700694": [
+        "OLEAUT32.DLL"
+      ],
+      "846da4692d1aec9eee7a2dd7940a5a623248ed9dbbdba5c8b02a525d456500de": [
+        "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\OLEAUT32.dll"
+      ],
+      "d9ffa79a863f8518f891a5bc1996bae42732af31e66086fc6ebbf8a77dcc7fb8": [
+        "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\OLEAUT32.dll"
+      ],
+      "2b5c4c688a4483834d70bf809dd5b5b9ddf9b0e73ae7d782144e5a6aaf3654ab": [
+        "OLEAUT32.dll"
+      ],
+      "9f31fb28eeb49b15674ab7aceaa1898c5858ad4756d67b2022a383de62358224": [
+        "OLEAUT32.dll"
+      ],
+      "198bf6577428b0321b14e68c7828c095c482d89bc79d7232e50fcf2c5c586685": [
+        "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\OLEAUT32.dll"
+      ],
+      "2c557babd57e0d116a0762adbfc687823b630fac5cf0a937368728779106a4a4": [
+        "OLEAUT32.dll"
+      ],
+      "e0ca1796fcdcc56c30c4ecfb79fbabe4767ce5d2ccc7c6148510d86237f07bd0": [
+        "OLEAUT32.dll"
+      ],
+      "1431f3142f9fefed944097d57adb5f2a30432e793b85c5bb2b097ae437bfc1f8": [
+        "C:\\Windows\\SysWOW64\\OLEAUT32.dll"
+      ],
+      "a8a1cc77eb97a1300829bb4656fe3bcfd71838234ca6d3f089bd912834963db5": [
+        "OLEAUT32.dll"
+      ],
+      "82ab09c56b6e776dd8ec1d86fb3fec5373e28c31b7554c89f88b7a4eed47df56": [
+        "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\OLEAUT32.dll"
+      ],
+      "76312f4531eba2aacd7483e1f3abb550469f4919a3d944d2fa85e4afbbf4ff99": [
+        "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\OLEAUT32.dll"
+      ],
+      "762ffa3c39380c6e52b75126d4cc4cc06c2b1191db14754964360af2cfaca591": [
+        "oleaut32.dll"
+      ],
+      "956f071a2dfb67dd1debdf77f3691a20d2ab10dc8f9b39413cbb49837377085a": [
+        "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\OLEAUT32.dll"
+      ],
+      "c8ebdb9d8aed9667ad6cca1bf8a89e644a974047745aae45cad16129a18ee1cb": [
+        "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\OLEAUT32.dll"
+      ],
+      "f2043359392c93914803c1542c7863573eb73f184be71f565d481efce44dd020": [
+        "oleaut32.dll"
+      ]
+    },
+    "programdata": {
+      "e039b160b23db31475cb0d145abccbd97953d045442a3b80a5e95bcff80ab913": [
+        "C:\\ProgramData"
+      ],
+      "a22b9193e29d49924f9948810266ca406280584a123a8dad4f3a6e413df4cc79": [
+        "C:\\ProgramData"
+      ],
+      "b89c79d9961077867d372a407ec29d9be517c4771aa19e3edfff4c86977ae78c": [
+        "C:\\ProgramData"
+      ],
+      "4ed4be9ff7f5e10bf25b2ed3b9fde9413fa175360ff9ed181004180b6d3089c2": [
+        "C:\\ProgramData"
+      ],
+      "3f1e6ac5cad8eefdc08868c14208edd9716cc5bba33944e69dcfb720e84450b2": [
+        "C:\\ProgramData"
+      ],
+      "a0e3bf39e7ca7b63783829e0092aa91c8d7b0dd6af77bffc5a2c1db99b0145ff": [
+        "C:\\ProgramData"
+      ],
+      "14a4775c9246979d382436a9398d89ec12ffbf3e6f496d3374591651a34ae978": [
+        "C:\\ProgramData"
+      ],
+      "e2d0749177245a9b8e3e0b72b75fec31ffb51c8dbad73f7a4def83f7efa8f9ee": [
+        "C:\\ProgramData"
+      ],
+      "817c9e48a6c79149ad9b83b9e59df6b230a8ae3ebea454a631073120e28a5afa": [
+        "C:\\ProgramData"
+      ],
+      "60856545528facfeac2df0ab0f929cc08edf9e43b6d38dc295783c5c620c1d32": [
+        "C:\\ProgramData"
+      ],
+      "fe1549d4341bd462d4717be24649342c61305ce3a13f2ab8dbda55608e90ae8f": [
+        "C:\\ProgramData"
+      ],
+      "dae47ed76de2cef73a060c73c57311c4e770a072ba9947f8c8f64b83455cd839": [
+        "C:\\ProgramData"
+      ],
+      "61e57f90e4118b0722c05f36d918e39bfd5bf2b5035e18c5f6dececd78b3c0f4": [
+        "C:\\ProgramData"
+      ],
+      "f6a5e71a41393987ddc7cb40b0ff30adc06c7cd1d84f2e0eb9a994ee02d1c946": [
+        "C:\\ProgramData"
+      ],
+      "6ec571fe90a4d0fc7e63cb02529bee8f26a904306039f6374c6f12ad9c4e3f59": [
+        "C:\\ProgramData"
+      ],
+      "0570bc7b9034a587a096b167f69f8109a307589f555b9a04189d490be2e9b277": [
+        "C:\\ProgramData"
+      ],
+      "1f2e9fba5f7f3cebf52dedd3d877608c4c1b7f224dd0baf636d698ec55fd2a9a": [
+        "C:\\ProgramData"
+      ],
+      "87e18522b452b80955511a0bd99ac363987e6afbf49d2ff0b6fddd9fd9f23451": [
+        "C:\\ProgramData"
+      ],
+      "5fab7474d9e799aaff5747f0f86421d3ca64a8e972608a91c9703d47fc896b9e": [
+        "C:\\ProgramData"
+      ],
+      "98447959bc426815cd0e00d43b056db928120de428a381509a28d6ef6441e646": [
+        "C:\\ProgramData"
+      ],
+      "f27eface1095f08996fe9a12d7239651cea30973fda69fb61167c7c0449e4999": [
+        "C:\\ProgramData"
+      ],
+      "65a44df3f521f11fef1138c8fb32ad16749f12830025eeea925f9fb19f32edf1": [
+        "C:\\ProgramData"
+      ],
+      "396619b3f50f9f0de1a6ddcf012729e02939927c2234a56c8509e659e3f92b7a": [
+        "C:\\ProgramData"
+      ],
+      "c43513d2681650724fc66a982b39206cdd12903df66d0841173922b7a8a96dc8": [
+        "C:\\ProgramData"
+      ],
+      "a54a5145b1937763429507d95706374232b43305b9dd45bcf61be71f5272ae2c": [
+        "C:\\ProgramData"
+      ],
+      "91f46c99cfc6ccfa1bd2a609eb9a26eea6a7eb53213557a33a1a29e88b74eb91": [
+        "C:\\ProgramData"
+      ],
+      "03c19fb4d363e8bf9df50e73ec5d79689e53e4a36350d549047fef9b1ab895f7": [
+        "C:\\ProgramData"
+      ],
+      "846da4692d1aec9eee7a2dd7940a5a623248ed9dbbdba5c8b02a525d456500de": [
+        "C:\\ProgramData"
+      ],
+      "d9ffa79a863f8518f891a5bc1996bae42732af31e66086fc6ebbf8a77dcc7fb8": [
+        "C:\\ProgramData"
+      ],
+      "46c78c943d630ca4be4125adb0ce134bde0dc4c10b0e0c02a6adeab5c6c973d3": [
+        "C:\\ProgramData"
+      ],
+      "198bf6577428b0321b14e68c7828c095c482d89bc79d7232e50fcf2c5c586685": [
+        "C:\\ProgramData"
+      ],
+      "5a90b6d7ae54c3a28b4b99d4b5be22d24cc010d8882dcfb54a1e375affd55013": [
+        "C:\\ProgramData"
+      ],
+      "23af1a7f7307b004c2a3bb52e8881eb5e9b5e3eeabd962c9f59519b3e35c8dcb": [
+        "C:\\ProgramData"
+      ],
+      "c72bf5953cecf191982fff023ee08b9194c96f9595e206e31c803c165c786673": [
+        "C:\\ProgramData"
+      ],
+      "5434be09787ea5b5a1b9208826faa9d60f51a95eb8a86114412325a1224477ef": [
+        "C:\\ProgramData"
+      ],
+      "b838b19bbd05e89ba575c720d390190a7c5f322cb3a2a757d8546d6154f68542": [
+        "C:\\ProgramData"
+      ],
+      "a00e7cbf48afb7085e7e257a03e75313c22344057672f48f390f65e8f5b53ebd": [
+        "C:\\ProgramData"
+      ],
+      "b72329385c89b14aff7f98834918d32e47e4470648013efa4cf9c76eb3115282": [
+        "C:\\ProgramData"
+      ],
+      "cd00b173d39a42f7bba11e8adcc5579b15e45f46763bd696cb7d52af402eaf17": [
+        "C:\\ProgramData"
+      ],
+      "a2f393986ea535a87fc794ea268387b0090d39a2103c41ca6cbb1ecab3313a41": [
+        "C:\\ProgramData"
+      ],
+      "fd72a2e715bcec2d268e2fec90a288c4574f86cb6490487bb70c0218d3448aca": [
+        "C:\\ProgramData"
+      ],
+      "0d025313677a031a3e3edfaa5602f5e36e8762b4da07fd0e83736e099e0245fc": [
+        "C:\\ProgramData"
+      ],
+      "22aba24b7b7cc1d5df423edf2f9abe9bd2bc73a9cbb45eeed2c8970a125551eb": [
+        "C:\\ProgramData"
+      ],
+      "5ec1433dfe80f6a8ee3887e02049c62dadb52a8bfa86e15d77b8f15657135462": [
+        "C:\\ProgramData"
+      ],
+      "19e5b60db4ae60c7d619277f29b60058adcaf610939e910aa05d2bfe5a9e8718": [
+        "C:\\ProgramData"
+      ],
+      "d0663a4e04a8752f59584049c90079cd1d2ceb569b0ccf9386a4f049c6d74aa7": [
+        "C:\\ProgramData"
+      ],
+      "1508d3b5040f2bb3143ee1d8dfc36336f76233fb6a45d94652d1aafd05c0d67a": [
+        "C:\\ProgramData"
+      ],
+      "bad9184ccd76b5011a647caf687bbbb08daf9a8dbbad4e76e67f043b41fee31f": [
+        "C:\\ProgramData"
+      ],
+      "45039d0d2b26e328ddd385124075d000b29b2357e0f63aaeafcbb1a91c018d7b": [
+        "C:\\ProgramData"
+      ],
+      "754efe9ae4dfe9bb6aa0a0f75b8125df70dc68cd4f2b4962b335a8b1e220843e": [
+        "C:\\ProgramData"
+      ],
+      "807a6b45137347132855377137c377424db00d6bdc953d44d7bd1a0e5cc30cb0": [
+        "C:\\ProgramData"
+      ],
+      "aa3383d54770623293f993e52d4c3535dd633d506eb234f1234e0dbd181bc0fd": [
+        "C:\\ProgramData"
+      ],
+      "90f1bcf4c8480de03dd34aebe1ae7cc739ccc6fe261ec5183eef32abc8fdd472": [
+        "C:\\ProgramData"
+      ],
+      "b2b9e06249eca4b3378f0fcc6b2dbf3fe279f8d2e803f053a406c1de4145623d": [
+        "C:\\ProgramData"
+      ],
+      "083704a6b120b6476f93bc0cef95aedeee3cef7a0fe4db8870b2ec0ee1591711": [
+        "C:\\ProgramData"
+      ],
+      "67c246bd892818aba5a8bbb62ae0997dc13cacc0ef878ef93a9cdc8193f5632f": [
+        "C:\\ProgramData"
+      ],
+      "945b6ff42203c0222596ea79758c38032b98b0d4291e11090162ea8dd435f128": [
+        "C:\\ProgramData"
+      ],
+      "756bcc66900a8bc2d8f6fe5824191d2ebe0c3edbc0a6283016ec522c26356bd3": [
+        "C:\\ProgramData"
+      ],
+      "39bbd36141dd4252707028e045e01a862c83c06d4efff4faf8bac5c4b5a24bda": [
+        "C:\\ProgramData"
+      ],
+      "6b158bd4f2f370b842dcdea070dd48396f2fcc7e0888b0ab7ea460ddf50fdf73": [
+        "C:\\ProgramData"
+      ],
+      "a112cd8a58445a2f82bca94df97bea7496973797fea254fbe8f86d601caf074f": [
+        "C:\\ProgramData"
+      ],
+      "b4a82e81daa45d76d3fd6d08b9614c488eec0fc52b776ac84f84cce659e7ef5b": [
+        "C:\\ProgramData"
+      ],
+      "640d351c10e8ce58158d8a57fb17d9105f65095d78429bc03fb14e62eef85c20": [
+        "C:\\ProgramData"
+      ],
+      "e8c3596dff14cc5c9339c9790a171b41606486918ce8bd6a4a6625df9bf91f71": [
+        "C:\\ProgramData"
+      ],
+      "ea282e509d8d56d634e58a1766c7f8924ca0c682a98e3b8f28f01decebf20d43": [
+        "C:\\ProgramData"
+      ],
+      "a10e59d0aac734f38925d8b39f9298f3fc1007f6262b96e747e529d387f7b9a5": [
+        "C:\\ProgramData"
+      ],
+      "aa03ed0a72fa3a4cca989e528ebb6d30d6119e5da66724be63a0394a10ba86b5": [
+        "C:\\ProgramData"
+      ]
+    },
+    "user32": {
+      "e02085128fe77cc14a1c83fcbc0982849eb32a9eec6093a02295068ba787721f": [
+        "USER32.dll"
+      ],
+      "c412a56c63b22a98184c89f2867be3e983dea36ba2261782f0bfb0f8123dbb20": [
+        "user32.dll"
+      ],
+      "03c19fb4d363e8bf9df50e73ec5d79689e53e4a36350d549047fef9b1ab895f7": [
+        "USER32.dll"
+      ],
+      "bc441cfd0938a756232470a6fd768427f0b0a272b7f915aa9b21df75a6700694": [
+        "USER32.DLL"
+      ],
+      "46c78c943d630ca4be4125adb0ce134bde0dc4c10b0e0c02a6adeab5c6c973d3": [
+        "USER32.dll"
+      ],
+      "2c557babd57e0d116a0762adbfc687823b630fac5cf0a937368728779106a4a4": [
+        "USER32.dll"
+      ],
+      "38532fb24f8b0afc8cf389d8664be0db2c683f99abe9db16dcebf7338b1ec868": [
+        "USER32.dll"
+      ],
+      "7dc4c4071ea563d74a1825ff5b1245d6ac67d210fd43f7230b14d9d912b40b02": [
+        "USER32.dll"
+      ],
+      "766042cd2225ee0f6192114cdea4b2b3029ba68afdb97a4ae7508f6ee15b16a5": [
+        "C:\\Users\\<USER>\\Desktop\\user32"
+      ],
+      "47636471c07ba6878d1aef93e2567be625dc51b170e233bfb65ca984af60e4a7": [
+        "user32"
+      ],
+      "5c1a2c081fe75091f99bb1e6ed16d696eeb8b3e2abfc274ce46134d15cce7e0e": [
+        "user32"
+      ],
+      "514289064d726ce744c5d5db84882dcba128df43b5e335796554855f37aad487": [
+        "USER32.dll"
+      ],
+      "4f97a8fc32eabbf93188aa497a645b2f0b5b967f9fba748a0962ff5ec00ac236": [
+        "USER32.dll"
+      ],
+      "46642f517e72a3a35b2e828372a43ac22a3acc3e4ca96378a09b10bf362cd73a": [
+        "USER32.dll"
+      ],
+      "4177584251bc992f3676c9a5c0c52b910debbd9df32948ff20c66a8955a70f16": [
+        "USER32.dll"
+      ]
+    },
+    "wininet": {
+      "7ba8bef8accd9de1a07ae359b7d2c2016a760ddf0c897522190ac0e46acba381": [
+        "C:\\Windows\\SysWOW64\\WININET.dll"
+      ]
+    },
+    "ws2_32": {
+      "e039b160b23db31475cb0d145abccbd97953d045442a3b80a5e95bcff80ab913": [
+        "C:\\Windows\\system32\\ws2_32.dll"
+      ],
+      "b89c79d9961077867d372a407ec29d9be517c4771aa19e3edfff4c86977ae78c": [
+        "ws2_32.dll"
+      ],
+      "a0e3bf39e7ca7b63783829e0092aa91c8d7b0dd6af77bffc5a2c1db99b0145ff": [
+        "WS2_32.dll"
+      ],
+      "c8200125c4be406d246d2cdfcf180ff9a2c66e6bfb70b033da111b37e4469038": [
+        "WS2_32.dll"
+      ],
+      "7ca56b545a3fdc32815d8e2ead195c64f87a1b74913e47123635be2695aae0d0": [
+        "WS2_32.dll"
+      ],
+      "18d1b17afd851d6cc961c448e75424cd9eb8592377ffc486791c93066e1edb30": [
+        "WS2_32.dll"
+      ],
+      "91e2eb283d24c4c66556817310f54438145a9496b82d320a53a232ffe3b20dbc": [
+        "WS2_32.dll"
+      ],
+      "1a9968f8a01c80ff46528724b195b78b1375233b8d2b54e72173dfbc5b53591d": [
+        "WS2_32.dll"
+      ],
+      "12539d9f604442286a828f95f1b433777f75f04ad7d1960f4017a02691ac6d8b": [
+        "WS2_32.dll"
+      ],
+      "8f63ffad50cd53e31ab59c5a373ef15c1a84d9a287275906306063196ffb1a81": [
+        "WS2_32.dll"
+      ],
+      "a0ea6eecac6d70a16f384d19facfde69647ab7a106b49ab3fcaa928f20a7c428": [
+        "WS2_32.dll"
+      ],
+      "6777b2cc2a6a770e728061b0eac9ecbccf630c7105381fdbb1e94db1af4cb5a9": [
+        "ws2_32"
+      ],
+      "9638ec005c1935e533e9c008b65f232c9bd6e75ad1db59ed9f317c5addb95b9d": [
+        "ws2_32"
+      ],
+      "0dfb02874ceb74fd0f4ec0c55b7de38837bb06d2cbef739a50e3385c83138ac9": [
+        "ws2_32"
+      ],
+      "e3483ba023f675da1377c0ea9dedd4e95cb1c5b694cf5531e93a03d48167e90a": [
+        "ws2_32"
+      ]
+    }
+  },
+  "whitelisted_matches": {
+    "shell32": {
+      "61e57f90e4118b0722c05f36d918e39bfd5bf2b5035e18c5f6dececd78b3c0f4": [
+        "SHELL32.dll"
+      ],
+      "a0e3bf39e7ca7b63783829e0092aa91c8d7b0dd6af77bffc5a2c1db99b0145ff": [
+        "SHELL32.dll"
+      ],
+      "2ef383d196c3cdb53d01c36815c221a9880c7c67037afead58473618ffa0c4be": [
+        "SHELL32.dll"
+      ],
+      "43bd68e711f8bddb7732c5ccf931dd5e6717cfe12eaa722e793498535180f381": [
+        "SHELL32.dll"
+      ],
+      "14a4775c9246979d382436a9398d89ec12ffbf3e6f496d3374591651a34ae978": [
+        "SHELL32.dll"
+      ],
+      "c8200125c4be406d246d2cdfcf180ff9a2c66e6bfb70b033da111b37e4469038": [
+        "SHELL32.dll"
+      ],
+      "1f2e9fba5f7f3cebf52dedd3d877608c4c1b7f224dd0baf636d698ec55fd2a9a": [
+        "SHELL32.dll"
+      ],
+      "87e18522b452b80955511a0bd99ac363987e6afbf49d2ff0b6fddd9fd9f23451": [
+        "SHELL32.dll"
+      ],
+      "12539d9f604442286a828f95f1b433777f75f04ad7d1960f4017a02691ac6d8b": [
+        "SHELL32.dll"
+      ],
+      "5fab7474d9e799aaff5747f0f86421d3ca64a8e972608a91c9703d47fc896b9e": [
+        "SHELL32.dll"
+      ],
+      "cd00b173d39a42f7bba11e8adcc5579b15e45f46763bd696cb7d52af402eaf17": [
+        "C:\\Windows\\assembly\\GAC_MSIL\\System\\2.0.0.0__b77a5c561934e089\\shell32.dll"
+      ],
+      "8f63ffad50cd53e31ab59c5a373ef15c1a84d9a287275906306063196ffb1a81": [
+        "SHELL32.dll"
+      ],
+      "98447959bc426815cd0e00d43b056db928120de428a381509a28d6ef6441e646": [
+        "SHELL32.dll"
+      ],
+      "45d2d8a44cbefa236671484ba8e4358a863b8d2a379ead7b4087f288f74795d3": [
+        "SHELL32.dll"
+      ],
+      "817c9e48a6c79149ad9b83b9e59df6b230a8ae3ebea454a631073120e28a5afa": [
+        "SHELL32.dll"
+      ],
+      "f4b055d2c9ce2eeffb3c1d436084d6c1609a518a2fa179f5b1af0a212f403cb8": [
+        "C:\\Windows\\SysWOW64\\SHELL32.dll"
+      ],
+      "a8a1cc77eb97a1300829bb4656fe3bcfd71838234ca6d3f089bd912834963db5": [
+        "SHELL32.dll"
+      ],
+      "aacac6f017273933187b9f13510f9e3eaa5825f30a38f898873e6a6bb20057d3": [
+        "C:\\Windows\\system32\\shell32.dll"
+      ],
+      "b89c79d9961077867d372a407ec29d9be517c4771aa19e3edfff4c86977ae78c": [
+        "Shell32"
+      ],
+      "60856545528facfeac2df0ab0f929cc08edf9e43b6d38dc295783c5c620c1d32": [
+        "SHELL32.dll"
+      ],
+      "4843435ed197ba72634bafc118df791a48d4d9ce9a57e60206d358a77dc33921": [
+        "SHELL32.dll"
+      ],
+      "47636471c07ba6878d1aef93e2567be625dc51b170e233bfb65ca984af60e4a7": [
+        "shell32"
+      ],
+      "1c46a82f5f7a7d6a44e9e691f02c346d3f5412df3849f1cd8990069580f5a27c": [
+        "C:\\WINDOWS\\system32\\SHELL32.dll"
+      ],
+      "bad9184ccd76b5011a647caf687bbbb08daf9a8dbbad4e76e67f043b41fee31f": [
+        "SHELL32.dll"
+      ],
+      "7ca56b545a3fdc32815d8e2ead195c64f87a1b74913e47123635be2695aae0d0": [
+        "SHELL32.dll"
+      ],
+      "c412a56c63b22a98184c89f2867be3e983dea36ba2261782f0bfb0f8123dbb20": [
+        "shell32.dll"
+      ],
+      "18d1b17afd851d6cc961c448e75424cd9eb8592377ffc486791c93066e1edb30": [
+        "SHELL32.dll"
+      ],
+      "514289064d726ce744c5d5db84882dcba128df43b5e335796554855f37aad487": [
+        "SHELL32.dll"
+      ],
+      "91e2eb283d24c4c66556817310f54438145a9496b82d320a53a232ffe3b20dbc": [
+        "SHELL32.dll"
+      ],
+      "b71442410ad6d3a3ba4115633df6d5feeff3a76a3458405a8c1c8eebd056e1b4": [
+        "C:\\Windows\\system32\\shell32.dll"
+      ],
+      "bc441cfd0938a756232470a6fd768427f0b0a272b7f915aa9b21df75a6700694": [
+        "SHELL32.DLL"
+      ],
+      "eb866e3248c1fcb6268112fea789078d7be0c8af59e75e6234797a14b764e5be": [
+        "C:\\WINDOWS\\system32\\SHELL32.dll"
+      ],
+      "5dcb5bf9301829767aa868833f04f640052c900499454d3b75948f394508f5f8": [
+        "SHELL32.dll"
+      ],
+      "1a9968f8a01c80ff46528724b195b78b1375233b8d2b54e72173dfbc5b53591d": [
+        "SHELL32.dll"
+      ],
+      "fe1549d4341bd462d4717be24649342c61305ce3a13f2ab8dbda55608e90ae8f": [
+        "SHELL32.dll"
+      ],
+      "2b5c4c688a4483834d70bf809dd5b5b9ddf9b0e73ae7d782144e5a6aaf3654ab": [
+        "SHELL32.dll"
+      ],
+      "9f31fb28eeb49b15674ab7aceaa1898c5858ad4756d67b2022a383de62358224": [
+        "SHELL32.dll"
+      ],
+      "2c557babd57e0d116a0762adbfc687823b630fac5cf0a937368728779106a4a4": [
+        "SHELL32.dll"
+      ],
+      "a0ea6eecac6d70a16f384d19facfde69647ab7a106b49ab3fcaa928f20a7c428": [
+        "SHELL32.dll"
+      ]
+    }
+  }
+}

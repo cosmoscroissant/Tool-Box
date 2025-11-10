@@ -26,7 +26,7 @@ Indicator Based Strings: 5
 
 DETAILED RESULTS
 ================================================================================
-File: Data/WannaCry/ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.asm
+File: Data/Sample/WannaCry/ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.asm
 ------------------------------------------------------------
 File Hashes:
 SHA256: ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa
@@ -104,7 +104,7 @@ kernel32.dll
 tasksche.exe
 
 
-File: Data/WannaCry/24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.asm
+File: Data/Sample/WannaCry/24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c.asm
 ------------------------------------------------------------
 File Hashes:
 SHA256: 24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c

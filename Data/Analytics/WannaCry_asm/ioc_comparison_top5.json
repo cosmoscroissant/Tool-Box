@@ -1,0 +1,145 @@
+{
+  "json_file": "asm_footprint_result.json",
+  "text_file": "malware_ioc.txt",
+  "top5_hashes": [
+    {
+      "hash": "e039b160b23db31475cb0d145abccbd97953d045442a3b80a5e95bcff80ab913",
+      "ioc_count": 5,
+      "total_indicators": 5,
+      "ioc_groups": {
+        "programdata": [
+          "C:\\ProgramData"
+        ],
+        "advapi32": [
+          "C:\\Windows\\system32\\advapi32.dll"
+        ],
+        "kernel32": [
+          "C:\\Windows\\system32\\kernel32.dll"
+        ],
+        "ws2_32": [
+          "C:\\Windows\\system32\\ws2_32.dll"
+        ],
+        "cmd": [
+          "\"C:\\\\Windows\\\\system32\\\\cmd.exe\""
+        ]
+      },
+      "all_indicators": [
+        "\"C:\\\\Windows\\\\system32\\\\cmd.exe\"",
+        "C:\\ProgramData",
+        "C:\\Windows\\system32\\advapi32.dll",
+        "C:\\Windows\\system32\\kernel32.dll",
+        "C:\\Windows\\system32\\ws2_32.dll"
+      ]
+    },
+    {
+      "hash": "a22b9193e29d49924f9948810266ca406280584a123a8dad4f3a6e413df4cc79",
+      "ioc_count": 5,
+      "total_indicators": 5,
+      "ioc_groups": {
+        "programdata": [
+          "C:\\ProgramData"
+        ],
+        "advapi32": [
+          "ADVAPI32.dll"
+        ],
+        "kernel32": [
+          "KERNEL32.dll"
+        ],
+        "oleaut32": [
+          "OLEAUT32.dll"
+        ],
+        "cmd": [
+          "\"C:\\\\Windows\\\\system32\\\\cmd.exe\""
+        ]
+      },
+      "all_indicators": [
+        "\"C:\\\\Windows\\\\system32\\\\cmd.exe\"",
+        "ADVAPI32.dll",
+        "C:\\ProgramData",
+        "KERNEL32.dll",
+        "OLEAUT32.dll"
+      ]
+    },
+    {
+      "hash": "b89c79d9961077867d372a407ec29d9be517c4771aa19e3edfff4c86977ae78c",
+      "ioc_count": 5,
+      "total_indicators": 6,
+      "ioc_groups": {
+        "programdata": [
+          "C:\\ProgramData"
+        ],
+        "advapi32": [
+          "ADVAPI32.dll",
+          "Advapi32"
+        ],
+        "kernel32": [
+          "kernel32.dll"
+        ],
+        "ws2_32": [
+          "ws2_32.dll"
+        ],
+        "cmd": [
+          "\"C:\\\\Windows\\\\system32\\\\cmd.exe\""
+        ]
+      },
+      "all_indicators": [
+        "\"C:\\\\Windows\\\\system32\\\\cmd.exe\"",
+        "ADVAPI32.dll",
+        "Advapi32",
+        "C:\\ProgramData",
+        "kernel32.dll",
+        "ws2_32.dll"
+      ]
+    },
+    {
+      "hash": "4ed4be9ff7f5e10bf25b2ed3b9fde9413fa175360ff9ed181004180b6d3089c2",
+      "ioc_count": 4,
+      "total_indicators": 4,
+      "ioc_groups": {
+        "programdata": [
+          "C:\\ProgramData"
+        ],
+        "advapi32": [
+          "ADVAPI32.dll"
+        ],
+        "iphlpapi": [
+          "IPHLPAPI.DLL"
+        ],
+        "oleaut32": [
+          "OLEAUT32.dll"
+        ]
+      },
+      "all_indicators": [
+        "ADVAPI32.dll",
+        "C:\\ProgramData",
+        "IPHLPAPI.DLL",
+        "OLEAUT32.dll"
+      ]
+    },
+    {
+      "hash": "3f1e6ac5cad8eefdc08868c14208edd9716cc5bba33944e69dcfb720e84450b2",
+      "ioc_count": 4,
+      "total_indicators": 4,
+      "ioc_groups": {
+        "programdata": [
+          "C:\\ProgramData"
+        ],
+        "advapi32": [
+          "ADVAPI32.dll"
+        ],
+        "iphlpapi": [
+          "IPHLPAPI.DLL"
+        ],
+        "oleaut32": [
+          "OLEAUT32.dll"
+        ]
+      },
+      "all_indicators": [
+        "ADVAPI32.dll",
+        "C:\\ProgramData",
+        "IPHLPAPI.DLL",
+        "OLEAUT32.dll"
+      ]
+    }
+  ]
+}
