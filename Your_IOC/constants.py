@@ -1,0 +1,1 @@
+MALWAREBAZAAR_API_KEY = "hash"

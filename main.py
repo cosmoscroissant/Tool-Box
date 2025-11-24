@@ -16,7 +16,6 @@ from datetime import datetime
 
 from Logger.stdout_logger import *
 from Analyzer.ir_asm_cross_reference_analyzer import CrossReferenceModule
-from IOC.constants import *
 
 PORT = 8080
 
@@ -237,7 +236,7 @@ def run_ioc_comparison(output_dir: Path) -> bool:
     print("RUNNING IOC COMPARISON ANALYSIS")
     print(f"{'='*80}\n")
     
-    ioc_text = IOC_Path
+    ioc_text = "../Data/Sample/1_IOC/malware_ioc.txt"
     asm_json = output_dir / 'asm_footprint_result.json'
     
     if not asm_json.exists():

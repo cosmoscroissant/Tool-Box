@@ -1,24 +1,40 @@
 import re
+from collections import defaultdict
 
-from collections import Counter
-
-import sys
-sys.path.insert(0, '..')
-from IOC.constants import *
-
-with open(IOC.PATH, 'r') as f:
+with open("../Data/Sample/1_IOC/malware_ioc.txt", 'r') as f:
     content = f.read()
 
-hashes = re.findall(r'HASH: ([a-f0-9]{64})', content)
+sep = "=" * 80
+parts = content.split(sep + "\n\n" + sep)
 
-print(f"Total Hashes Found: {len(hashes)}")
+records = []
+for part in parts:
+    hash_match = re.search(r'HASH: ([a-f0-9]{64})', part)
+    ts_match = re.search(r'TIMESTAMP: ([^\n]+)', part)
+    
+    if hash_match and ts_match:
+        records.append({
+            'hash': hash_match.group(1),
+            'timestamp': ts_match.group(1),
+            'content': part
+        })
 
-hash_counts = Counter(hashes)
-duplicates = {h: count for h, count in hash_counts.items() if count > 1}
+print(f"Total records before: {len(records)}")
 
-if duplicates:
-    print(f"\nFound {len(duplicates)} Duplicate Hash(es):\n")
-    for hash_val, count in sorted(duplicates.items(), key=lambda x: x[1], reverse=True):
-        print(f"  {hash_val}: appears {count} times")
-else:
-    print("\nNo duplicates found! All hashes are unique.")
+hash_groups = defaultdict(list)
+for rec in records:
+    hash_groups[rec['hash']].append(rec)
+
+kept = []
+for hash_val, group in hash_groups.items():
+    newest = max(group, key=lambda x: x['timestamp'])
+    kept.append(newest)
+
+new_content = (sep + "\n\n" + sep).join(rec['content'] for rec in kept)
+new_content = sep + "\n" + new_content + "\n" + sep
+
+with open("../Data/Sample/1_IOC/malware_ioc.txt", 'w') as f:
+    f.write(new_content)
+
+print(f"Total records after: {len(kept)}")
+print(f"Removed: {len(records) - len(kept)} duplicates")
